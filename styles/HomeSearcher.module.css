@@ -1,0 +1,90 @@
+.homeSearcher{
+    padding: 30px calc(50% - 632.5px) 30px;
+}
+
+@media (max-width:1285px) {
+    .homeSearcher{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+.homeSearcher > h1{
+    font-weight: 700;
+    font-size: 3rem;
+    letter-spacing: normal;
+    line-height: 3.125rem;
+}
+
+@media (max-width:1285px) {
+    .homeSearcher > h1{
+        padding-bottom: 75px;
+    }
+}
+
+@media (max-width:550px) {
+    .homeSearcher > h1{
+        font-size: 2.3rem;
+        line-height: 2.5rem;
+        padding-bottom: 16px;
+        margin: 16px 0;
+    }
+}
+
+.homeSearcher > h1 > span:nth-of-type(1){
+    color: #abb4bc;
+    display: inline-block;
+    margin-bottom: 4px;
+}
+
+.homeSearcher > h1 > span:nth-of-type(2){
+    display: inline-block;
+    position: relative;
+    color: #000!important;
+}
+
+.homeSearcher > form{
+    width: 100%;
+    position: relative;
+    margin: 16px 0;
+}
+
+.homeSearcher > form > input{
+    padding: 24px 16px;
+    border: 1px solid #abb4bc85;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px 0 #0000001f;
+    font-size: 20px;
+    width: 100%;
+    outline: none;
+    letter-spacing: .00937em;
+    line-height: 28px;
+}
+
+@media (max-width:550px) {
+    .homeSearcher > form > input{
+        font-size: 13px;
+    }
+}
+
+.homeSearcher > form > input::placeholder{
+    color: #abb4bc;
+    opacity: 0.7;
+}
+
+.homeSearcher > form > button{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 16px;
+    padding: 8px 24px;
+    border: 1px solid #02aea2;
+    border-radius: 4px;
+    background-color: #02aea2;
+    color: white;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: .03125em;
+    line-height: 1.5rem;
+    cursor: pointer;
+}
