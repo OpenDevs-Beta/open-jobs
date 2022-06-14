@@ -1,8 +1,11 @@
 import React from 'react'
+import { HomeSearcher } from '../components/HomeSearcher'
 
 function HomePage() {
   return (
-    <div>¡Bienvenidos al lienzo en blanco de OpenJobs!</div>
+    <div>
+        <HomeSearcher />
+    </div>
   )
 }
 
