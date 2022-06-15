@@ -3,7 +3,7 @@ import React from 'react'
 import { HomeSearcher } from '../components/HomeSearcher'
 import { getAllJobs } from '../shared/middlewares/APImiddleware';
 
-import styles from '../styles/Index.module.css'
+import styles from '../styles/index.module.css'
 
 function HomePage() {
     return (
@@ -11,7 +11,7 @@ function HomePage() {
           <HomeSearcher />
       </div>
     )
-  }
+}
 
 export const getStaticProps: GetStaticProps = async () => {
 
