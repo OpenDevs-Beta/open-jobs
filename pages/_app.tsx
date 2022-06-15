@@ -1,5 +1,6 @@
 import '../styles/globals.css'
 import Script from 'next/script';
+import '../styles/globals.css'
 import type { AppProps } from 'next/app';
 
 import { Partytown } from '@builder.io/partytown/react';

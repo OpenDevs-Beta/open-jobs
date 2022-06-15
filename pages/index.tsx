@@ -1,9 +1,11 @@
 import React from 'react'
-import { CardHomeGrid } from '../components/cardHomeGrid'
+import { HomeSearcher } from '../components/HomeSearcher'
 
 function HomePage() {
   return (
-    <CardHomeGrid />
+    <div>
+        <HomeSearcher />
+    </div>
   )
 }
 
