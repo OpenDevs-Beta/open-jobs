@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import Image from 'next/image'
 import logo from '../utils/images/logo_mock.svg'
-import styles from '../styles/navBar.module.css'
+import styles from './navBar.module.css'
 import { useState } from "react";
 
 export const NavBar = () => {
