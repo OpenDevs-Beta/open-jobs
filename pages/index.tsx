@@ -11,7 +11,7 @@ function HomePage(props: any) {
   )
 }
 
-export const getStaticProps: GetStaticProps = async (context) => {
+export const getStaticProps: GetStaticProps = async () => {
 
   // Call from a middleware to fetch data
   const data = await getAllJobs();
