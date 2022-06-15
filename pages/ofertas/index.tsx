@@ -1,10 +1,10 @@
 import { useRouter } from 'next/router';
 import { GetStaticProps, NextPage } from 'next/types';
 import React from 'react'
-import { CardGrid } from '../components/cardGrid';
-import { NavBar } from '../components/navBar';
-import SearchBar from '../components/SearchBar';
-import { getAllJobs } from '../shared/middlewares/APImiddleware';
+import { CardGrid } from '../../components/cardGrid';
+import { Navbar } from '../../components/navBar';
+import SearchBar from '../../components/SearchBar';
+import { getAllJobs } from '../../shared/middlewares/APImiddleware';
 
 const Ofertas: NextPage = (props: any) => {
 
@@ -16,7 +16,7 @@ const Ofertas: NextPage = (props: any) => {
 
   return (
     <div>
-      <NavBar />
+      <Navbar />
       <SearchBar query={queryParam} />
       <CardGrid ofertas={ofertas} />
     </div>
