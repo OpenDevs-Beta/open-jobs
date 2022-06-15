@@ -5,22 +5,22 @@ import { useWindowSize } from '../shared/hooks/useWindowSize';
 import styles from './cardHomeGrid.module.css'
 import left from '../utils/images/left-arrow.svg'
 import right from '../utils/images/right-arrow.svg'
+import Card from './card';
 
-export const CardHomeGrid = () => {
+export const CardHomeGrid = (ofertas: any) => {
 
   const windowWidth = useWindowSize()
 
   // Mock info para comprobar que funciona
-  // TODO usar datos de la API
   const gridData = {
     title: 'Últimas ofertas',
     allLink: '#',
-    cards: ['Card1', 'Card2', 'Card3', 'Card4', 'Card5', 'Card6', 'Card7', 'Card8', 'Card9', 'Card10']
-  }
+ }
 
-  const extractCards = gridData.cards
-  extractCards.push('Ver más')
+ const cards: [] = ofertas.ofertas
 
+  const extractCards = cards
+ 
   const [cardIndex, setCardIndex] = useState(0)
   const [cardLimit, setCardLimit] = useState(4)
   const [totalPages, setTotalPages] = useState(1)
@@ -72,7 +72,7 @@ export const CardHomeGrid = () => {
         <div className={styles.controlSmall}><button onClick={cardIndexRewind}><Image src={left} width='20' height='20' /></button><button onClick={cardIndexForward}><Image src={right} width='20' height='20' /></button></div>
         <div className={styles.grid}>
           {cardsPaginated.map((card: any) => (
-            <div className={styles.card}>{card}</div>
+            <Card nombre={card.nombre} image={'/'} empresa={card.empresa.nombre} ubicacion={card.ubicacion} habilidades={card.habilidades} experiencia={card.experiencia} id={card.id} />
           ))}
         </div>
 
@@ -80,3 +80,4 @@ export const CardHomeGrid = () => {
     </div>
   )
 }
+

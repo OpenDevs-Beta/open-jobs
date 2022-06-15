@@ -1,0 +1,47 @@
+.wrapper {
+  background-color: #abb4bc1f;
+  padding: 30px calc(50% - 591px);
+}
+
+.container {
+  max-width: 1180px;
+  padding: 1rem 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid {
+  width: 100%;
+  display: flex;
+  flex: auto;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 1196px) {
+  .wrapper {
+    padding: 30px 20px;
+  }
+}
+
+@media (max-width: 924px) {
+  .card {
+    width: calc(33% - 16px);
+  }
+}
+
+@media (max-width: 694px) {
+  .card {
+    width: calc(50% - 16px);
+  }
+}
+
+@media (max-width: 463px) {
+  .card {
+    width: calc(100% - 16px);
+  }
+}

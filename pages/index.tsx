@@ -1,14 +1,19 @@
 import { GetStaticProps } from 'next/types';
-import React from 'react'
+import React, { useEffect } from 'react'
+import { CardHomeGrid } from '../components/cardHomeGrid';
 import { HomeSearcher } from '../components/HomeSearcher'
 import { NavBar } from '../components/navBar';
-import SearchBar from '../components/SearchBar';
 import { getAllJobs } from '../shared/middlewares/APImiddleware';
 
 function HomePage(props: any) {
+
+  const ofertas = props.data.data.data
+
   return (
     <div>
-        <SearchBar />
+      <NavBar />
+      <HomeSearcher />
+      <CardHomeGrid ofertas={ofertas} />
     </div>
   )
 }
