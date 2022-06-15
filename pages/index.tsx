@@ -1,6 +1,6 @@
 import { GetStaticProps } from 'next/types';
 import React from 'react'
-import { HomeSearcher } from '../components/HomeSearcher'
+import { HomeSearcher } from '../components/HomeSearcher';
 import { getAllJobs } from '../shared/middlewares/APImiddleware';
 
 import styles from '../styles/index.module.css'
