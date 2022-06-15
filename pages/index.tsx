@@ -1,8 +1,9 @@
 import React from 'react'
+import { CardHomeGrid } from '../components/cardHomeGrid'
 
 function HomePage() {
   return (
-    <div>¡Bienvenidos al lienzo en blanco de OpenJobs!</div>
+    <CardHomeGrid />
   )
 }
 
