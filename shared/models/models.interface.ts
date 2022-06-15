@@ -16,3 +16,14 @@ export type IOferta = {
   habilidades: Object[],
   empresa: Object
 }
+
+export type IUsuario = {
+  id: number,
+username: string,
+nombreCompleto: string,
+email: string,
+telefono: string,
+avatar: string,
+rol: string,
+empresas: Object[]
+}

@@ -2,7 +2,16 @@ import styles from "../styles/card.module.css";
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ICard } from "../shared/models/ICard.interface";
+
+type ICard = {
+  nombre: string,
+  image: string,
+  empresa: string,
+  ubicacion: string,
+  habilidades: string[],
+  experiencia: string,
+  id: string
+}
 
 export default function Card({
   nombre,
