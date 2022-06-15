@@ -1,23 +1,21 @@
-import { GetStaticPaths, GetStaticPathsContext, GetStaticPathsResult, GetStaticProps, NextPage } from "next"
-import { useState } from "react"
+import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
+import { useState } from 'react'
+import { getAllJobs, getJobByID } from '../../../shared/middlewares/APImiddleware'
 
-const IndexOferta: NextPage = ({ data }: any): JSX.Element => {
+const IndexOferta: NextPage = ({ jobData }: any): JSX.Element => {
 
-  const [testData, setTestData] = useState(data)
+  const [testData, setTestData] = useState(jobData)
   
   return (
     <div style={{marginTop: '80px'}}>
-      if putting numbers on Id params and take out different results, that means this is working successfully:
-      <p>{ testData.id } - { testData.title } - { testData.body }</p>
     </div>
   )
 }
 
 export const getStaticPaths: GetStaticPaths | any = async () => {
   try {
-    const res = await fetch('https://jsonplaceholder.typicode.com/posts')
-    const dataFetched = await res.json()
-    const paths = dataFetched.map(({id}: any) => ({ params: { id: `${id}` }}))
+    const jobsFetched = await getAllJobs()
+    const paths = jobsFetched.map(({ id }: any) => ({ params: { id: `${id}` }}))
     return {
       paths,
       fallback: false
@@ -28,17 +26,16 @@ export const getStaticPaths: GetStaticPaths | any = async () => {
 }
 
 export const getStaticProps: GetStaticProps | any = async ({ params }: any) => {
-  console.log(params)
   try {
-    const res = await fetch('https://jsonplaceholder.typicode.com/posts/' + params.id)
-    const dataFetched = await res.json()
+    const id = params.id
+    const jobFetched = await getJobByID(id)
     return {
       props: {
-        data: dataFetched
+        jobData: jobFetched
       }
     }
   } catch (error) {
-    console.log(error)
+    console.log(`[ERROR]: ${error}`)
   }
 }
 
