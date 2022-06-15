@@ -1,5 +1,5 @@
 import { MobileMenu } from "./header/MobileMenu"
-import { Navbar } from "./Navbar"
+import { Navbar } from "../components/navBar"
 
 export const Layout = ({ children }: any) => {
     return (

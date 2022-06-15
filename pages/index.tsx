@@ -1,12 +1,13 @@
 import { GetStaticProps } from 'next/types';
 import React from 'react'
-import { NavBar } from '../components/navBar';
+import { Navbar } from '../components/navBar';
 import SearchBar from '../components/SearchBar';
 import { getAllJobs } from '../shared/middlewares/APImiddleware';
 
 function HomePage(props: any) {
   return (
     <div>
+        <Navbar />
         <SearchBar />
     </div>
   )
