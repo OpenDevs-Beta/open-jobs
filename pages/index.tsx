@@ -5,7 +5,7 @@ import { CardHomeGrid } from '../components/cardHomeGrid';
 import { HomeSearcher } from '../components/HomeSearcher'
 import SearchBar from '../components/SearchBar';
 import { getAllJobs } from '../shared/middlewares/APImiddleware';
-import styles from '../styles/index.module.css'
+import styles from '../styles/Index.module.css'
 
 function HomePage(props: any) {
 
@@ -14,7 +14,7 @@ function HomePage(props: any) {
   return (
     <div className={styles.homepageContainer}>
         <Navbar />
-        <SearchBar />
+        <HomeSearcher />
         <CardHomeGrid ofertas={ofertas} />
     </div>
   )

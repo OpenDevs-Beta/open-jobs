@@ -6,6 +6,8 @@ import { Navbar } from '../../components/navBar';
 import SearchBar from '../../components/SearchBar';
 import { getAllJobs } from '../../shared/middlewares/APImiddleware';
 
+import styles from '../../styles/Ofertas.module.css'
+
 const Ofertas: NextPage = (props: any) => {
 
   const router = useRouter();
@@ -15,7 +17,7 @@ const Ofertas: NextPage = (props: any) => {
   const ofertas = props.data.data.data
 
   return (
-    <div>
+    <div className={styles.ofertasContainer}>
       <Navbar />
       <SearchBar query={queryParam} />
       <CardGrid ofertas={ofertas} />
