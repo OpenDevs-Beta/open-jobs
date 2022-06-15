@@ -1,0 +1,148 @@
+.wrapper {
+  background-color: #abb4bc1f;
+  padding: 30px calc(50% - 591px);
+}
+
+.title {
+  max-width: 1180px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 32px;
+}
+
+.title a {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #02aea2;
+}
+
+.title div {
+  margin-left: 8px;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.title span {
+  margin-right: 16px;
+}
+
+.container {
+  max-width: 1180px;
+  padding: 1rem 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid {
+  width: 100%;
+  display: flex;
+  flex: auto;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+
+.card {
+  width: calc(25% - 16px);
+  min-width: 215px;
+  height: 310px;
+  margin: 8px;
+  background-color: #fff;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 1196px) {
+  .wrapper {
+    padding: 30px 20px;
+  }
+}
+
+@media (max-width: 924px) {
+  .card {
+    width: calc(33% - 16px);
+  }
+}
+
+@media (max-width: 694px) {
+  .card {
+    width: calc(50% - 16px);
+  }
+}
+
+@media (max-width: 463px) {
+  .card {
+    width: calc(100% - 16px);
+  }
+}
+
+.control {
+  width: 75px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  right: 0;
+  top: 0;
+}
+
+.title button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e0e0e0;
+  border: none;
+  height: 34px;
+  width: 34px;
+  padding: 0;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+@media (max-width: 463px) {
+  .control {
+    display: none;
+  }
+  .title {
+    max-width: 1180px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 8px;
+  }
+  
+}
+
+.controlSmall {
+  display: none;
+}
+
+@media (max-width: 463px) {
+  .container button {
+    display: inline;
+    justify-content: center;
+    align-items: center;
+    background-color: #e0e0e0;
+    border: none;
+    height: 34px;
+    width: 34px;
+    padding: 0;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  .controlSmall {
+    padding: 10px;
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
