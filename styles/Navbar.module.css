@@ -1,0 +1,122 @@
+.header{
+    padding: 0 calc(50% - 640.5px);
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 200;
+}
+
+.header.headerMobile{
+    position: fixed;
+    padding: 0 12px;
+}
+
+.header > div{
+    min-height: 50px;
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.header > div > .headerLogo{
+    flex: 0 1 auto;
+    width: 16.6667%;
+    padding-right: 12px;
+}
+
+.header.headerMobile > div > .headerLogo{
+    width: 50%;
+}
+
+.header > div > .headerLogo > a{
+    display: flex;
+    align-items: center;
+    max-width: 85%;
+}
+
+.header > div > .headerItems{
+    padding: 16px 0 16px;
+}
+
+.header > div > .headerItems > a{
+    letter-spacing: .01786em;
+    line-height: 1.25rem;
+    color: #000;
+    cursor: pointer;
+    font-size: .95rem;
+    font-weight: 400;
+    padding: 5px 16px;
+    transition: all .1s;
+    position: relative;
+}
+
+.header > div > .headerMenu{
+    flex: 0 0 auto;
+    margin-left: auto;
+}
+
+@media (max-width:1200px){
+    .header > div > .headerItems > a{
+        font-size: .85rem;
+        padding: 5px 12px;
+    }
+}
+
+@media (max-width:1050px){
+    .header > div > .headerItems > a{
+        font-size: .85rem;
+        padding: 5px 12px;
+    }
+}
+
+@media (max-width:920px){
+    .header > div > .headerItems > a{
+        font-size: .7rem;
+        padding: 5px 7px
+    }
+}
+
+.header > div > .headerItems > a.current:after{
+    background-color: #02aea2;
+    bottom: 0;
+    content: "";
+    height: 2px;
+    left: 10px;
+    position: absolute;
+    right: 10px;
+}
+
+.header > div > .headerItems > a:hover{
+    opacity: .6;
+}
+
+.header > div > .headerMenu > div{
+    display: flex;
+    flex-direction: column;
+    height: 32px;
+}
+
+.header > div > .headerMenu > div > span{
+    display: flex;
+    background-color: black;
+    width: 26px;
+    height: 3px;
+    border-radius: 4px;
+    margin-top: 4px;
+}
+
+@media (max-width:768px){
+    .header:not(.headerMobile){
+        display: none;
+    }
+}
+
+@media (min-width:768px){
+    .headerMobile{
+        display: none;
+    }
+}
