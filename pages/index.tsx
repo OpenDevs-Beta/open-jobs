@@ -3,10 +3,11 @@ import React from 'react'
 import { Navbar } from '../components/navBar';
 import SearchBar from '../components/SearchBar';
 import { getAllJobs } from '../shared/middlewares/APImiddleware';
+import styles from '../styles/index.module.css'
 
 function HomePage(props: any) {
   return (
-    <div>
+    <div className={styles.homepageContainer}>
         <Navbar />
         <SearchBar />
     </div>
