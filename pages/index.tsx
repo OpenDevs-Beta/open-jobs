@@ -1,15 +1,16 @@
 import { GetStaticProps } from 'next/types';
 import React from 'react'
-import { NavBar } from '../components/navBar';
-import SearchBar from '../components/SearchBar';
+import { HomeSearcher } from '../components/HomeSearcher';
 import { getAllJobs } from '../shared/middlewares/APImiddleware';
 
-function HomePage(props: any) {
-  return (
-    <div>
-        <SearchBar />
-    </div>
-  )
+import styles from '../styles/index.module.css'
+
+function HomePage() {
+    return (
+      <div className={styles.homepageContainer}>
+          <HomeSearcher />
+      </div>
+    )
 }
 
 export const getStaticProps: GetStaticProps = async () => {
