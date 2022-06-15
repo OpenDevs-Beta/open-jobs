@@ -2,6 +2,7 @@ import styles from "./card.module.css";
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { ICard } from "../shared/models/ICard.interface";
 
 export default function Card({
   nombre,
@@ -11,15 +12,7 @@ export default function Card({
   habilidades,
   experiencia,
   id,
-}: {
-  nombre: string;
-  image: string;
-  empresa: string;
-  ubicacion: string;
-  habilidades: string[];
-  experiencia: string;
-  id: string;
-}) {
+}: ICard) {
   return (
     <div className={styles.card}>
       <Link href={"/ofertas/" + id}>
