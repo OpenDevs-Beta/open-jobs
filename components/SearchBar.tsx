@@ -7,11 +7,12 @@ import styles from './Search.module.css'
 
 import searchIcon from '../utils/images/search-24.svg'
 
-import SearchIcon from '@mui/icons-material/Search';
-
-const SearchBar = () => {
+const SearchBar = (query: any) => {
 
   const router: any = useRouter()
+
+  const queryParam = query.query
+
   const [searchInputHome, setSearchInputHome] = useState<string>('')
 
   const handleSearchInputHome = (e: any): void => {
@@ -45,7 +46,7 @@ const SearchBar = () => {
             type='text'
             placeholder='Front End Developer, Madrid'
             className={styles.inputSearch}
-            value={searchInputHome}
+            value={queryParam}
             onChange={
               (e) => handleSearchInputHome(e)
             }

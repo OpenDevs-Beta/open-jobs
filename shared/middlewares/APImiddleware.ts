@@ -1,6 +1,6 @@
 import fetch from 'isomorphic-unfetch'
 
-const ENDPOINT = '/api/ofertas'
+const ENDPOINT = 'api/ofertas'
 
 export const getAllJobs = async () => {
   const res = await fetch(process.env.NEXT_PUBLIC_API_URL + ENDPOINT);

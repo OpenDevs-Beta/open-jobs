@@ -4,20 +4,20 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function Card({
-  title,
+  nombre,
   image,
-  companyName,
-  location,
-  tags,
-  experience,
+  empresa,
+  ubicacion,
+  habilidades,
+  experiencia,
   id,
 }: {
-  title: string;
+  nombre: string;
   image: string;
-  companyName: string;
-  location: string;
-  tags: string[];
-  experience: string;
+  empresa: string;
+  ubicacion: string;
+  habilidades: string[];
+  experiencia: string;
   id: string;
 }) {
   return (
@@ -32,18 +32,18 @@ export default function Card({
               height={64}
             ></Image>
           </div>
-          <div className={styles["card-title"]}>{title}</div>
+          <div className={styles["card-title"]}>{nombre}</div>
           <div className={styles["card-inline"]}>
-            <div className={styles["card-companyName"]}>{companyName}</div>
+            <div className={styles["card-companyName"]}>{empresa}</div>
             <div>&nbsp;·&nbsp;</div>
-            <div className={styles["card-location"]}>{location}</div>
+            <div className={styles["card-location"]}>{ubicacion}</div>
           </div>
           <div className={styles["card-tags"]}>
-            {tags.map((tag) => (
-              <span>{tag}</span>
-            ))}
+            {habilidades ? habilidades.map((habilidad: string) => (
+              <span>{habilidad}</span>
+            )) : null}
           </div>
-          <div className={styles["card-experience"]}>{experience}</div>
+          <div className={styles["card-experience"]}>{experiencia}</div>
         </a>
       </Link>
     </div>
