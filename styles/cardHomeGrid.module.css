@@ -78,6 +78,24 @@
   color: #fff;
 }
 
+@media (max-width: 948px) {
+  .grid .see {
+    width: calc(33% - 16px);
+  }
+}
+
+@media (max-width: 717px) {
+  .grid .see {
+    width: calc(50% - 16px);
+  }
+}
+
+@media (max-width: 486px) {
+  .grid .see {
+    width: calc(100% - 16px);
+  }
+}
+
 .grid .see h1{
   font-size: 5em;
   margin-top: -10px;
