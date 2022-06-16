@@ -1,41 +1,24 @@
 import { useRouter } from 'next/router'
-import { useState } from 'react'
-
 import Image from 'next/image'
-
-// import styles from '../styles/Search.module.css'
 import styles from '../styles/Searcher.module.css'
-
 import searchIcon from '../utils/images/search-24.svg'
+import cross from '../utils/images/cross.svg'
+import { useState } from 'react'
 
 const SearchBar = (query: any) => {
 
   const router: any = useRouter()
 
-  const queryParam = query.query
-
-  const [searchInputHome, setSearchInputHome] = useState<string>('')
+  const [queryParam, setQueryParam] = useState(query.query)
 
   const handleSearchInputHome = (e: any): void => {
-    const text: string = e.target.value
-    setSearchInputHome(text)
-    if (e.key === 'Enter') {
-      handleClickSearchBtn()
-    }
+    e === undefined || e === '' ? router.replace('/ofertas') : router.replace(`/ofertas/?query=${e}`)
+    setQueryParam(e)
   }
 
-  const handleClickSearchBtn = async (): Promise<any> => {
-    await fetch('/ofertas', {
-      method: 'POST',
-      body: searchInputHome
-    })
-
-    router.push({
-      pathname: '/ofertas',
-      query: {
-        lookFor: searchInputHome
-      }
-    })
+  const handleEraseSearch = () => {
+    setQueryParam('')
+    router.replace('/ofertas')
   }
 
   return (
@@ -48,14 +31,10 @@ const SearchBar = (query: any) => {
             className={styles.inputSearch}
             value={queryParam}
             onChange={
-              (e) => handleSearchInputHome(e)
+              (e) => handleSearchInputHome(e.target.value)
             }
-            onKeyDown={
-              (e) => e.key === 'Enter' ? handleClickSearchBtn() : null
-            }></input>
-            <button className={styles.searcherOfertasButton} onClick={handleClickSearchBtn}>
-              <Image src={searchIcon}/>
-            </button>
+            ></input>
+            { queryParam === undefined || queryParam === '' ? <button className={styles.searcherOfertasButton}><Image src={searchIcon}/></button> : <button className={styles.searcherOfertasButton} onClick={handleEraseSearch}><Image src={cross} width='15' height='15'/></button>}
       </div>
       <div className={styles.searcherOfertasFilters}>
           <button>Área</button>

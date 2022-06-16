@@ -91,6 +91,8 @@
 
 
 .searcher > .searcherForm button.searcherOfertasButton {
+  width: 44px;
+  height: 44px;
   position: absolute;
   display: flex;
   top: 50%;
@@ -101,7 +103,8 @@
   cursor: pointer;
   transition: all ease 0.4s;
   border-radius: 100%;
-  padding: 10px;
+  justify-content: center;
+  align-items: center;
 }
 
 .searcher > .searcherForm button.searcherOfertasButton:hover {
@@ -110,7 +113,7 @@
   background-color: #f2f2f2;
 }
 
-.searcher > .searcherHomeFilters > a{
+.searcher > .searcherHomeFilters > span{
     padding: 8px 8px 0;
     margin-right: 8px;
     font-size: 1.25rem;
@@ -119,9 +122,10 @@
     line-height: 2rem;
     color: #abb4bc;
     transition: color .6s;
+    cursor: pointer;
 }
 
-.searcher > .searcherHomeFilters > a:hover{
+.searcher > .searcherHomeFilters > span:hover{
   color: #02aea2;
 }
 

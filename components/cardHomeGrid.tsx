@@ -55,9 +55,7 @@ export const CardHomeGrid = (ofertas: any) => {
       <div className={styles.container}>
         <div className={styles.controlSmall}><button onClick={cardIndexRewind}><Image src={left} width='20' height='20' /></button><button onClick={cardIndexForward}><Image src={right} width='20' height='20' /></button></div>
         <div className={styles.grid}>
-          {cardsPaginated.map((card: any) => (
-            <Card nombre={card.nombre} image={'/'} empresa={card.empresa.nombre} ubicacion={card.ubicacion} habilidades={card.habilidades} experiencia={card.experiencia} id={card.id} />
-          ))}
+          {cardsPaginated.map((card: any) => ( <Card nombre={card.nombre} image={'/'} empresa={card.empresa.nombre} ubicacion={card.ubicacion} habilidades={card.habilidades} experiencia={card.experiencia} id={card.id} /> ))}
         </div>
 
       </div>

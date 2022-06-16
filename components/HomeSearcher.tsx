@@ -34,24 +34,12 @@ export const HomeSearcher = () => {
               </form>
             </div>
             <div className={styles.searcherHomeFilters}>
-              <Link href="#">
-                <a>Javascript</a>
-              </Link>
-              <Link href="#">
-                <a>Madrid</a>
-              </Link>
-              <Link href="#">
-                <a>Python</a>
-              </Link>
-              <Link href="#">
-                <a>Front-end</a>
-              </Link>
-              <Link href="#">
-                <a>Node.js</a>
-              </Link>
-              <Link href="#">
-                <a>Remoto</a>
-              </Link>
+              <span onClick={() => router.push('/ofertas/?query=Javascript')}>Javascript</span>
+              <span onClick={() => router.push('/ofertas/?query=Madrid')}>Madrid</span>
+              <span onClick={() => router.push('/ofertas/?query=Python')}>Python</span>
+              <span onClick={() => router.push('/ofertas/?query=Front-end')}>Front-end</span>
+              <span onClick={() => router.push('/ofertas/?query=Node.js')}>Node.js</span>
+              <span onClick={() => router.push('/ofertas/?query=Remoto')}>Remoto</span>
             </div>
         </div>
     )
