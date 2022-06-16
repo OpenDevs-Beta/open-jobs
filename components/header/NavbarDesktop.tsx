@@ -14,12 +14,7 @@ export const NavbarDesktop = () => {
                 <div className={styles.headerLogo}>
                     <Link href="/">
                         <a>
-                            <Image
-                                src="/th-logo-desktop.d291e623.png"
-                                alt="Logo de Open Jobs"
-                                width={198}
-                                height={40}
-                            /> 
+                            LOGO OPEN JOBS
                         </a>
                     </Link>
                 </div>
