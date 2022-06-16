@@ -27,8 +27,6 @@ export async function getJobById(id: any) {
 	let response = await fetch(process.env.NEXT_PUBLIC_API_URL + ENDPOINT + `/${id}`)
 		.then(r => r.json())
     .catch(e => console.error(`Error al hacer petición de ofertaID: ${e}`))
-  
-  console.log({response})
 
   return {
     data: response?.data,

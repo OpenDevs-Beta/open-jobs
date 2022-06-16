@@ -8,6 +8,7 @@ import styles from '../styles/index.module.css'
 
 export const getStaticProps: GetStaticProps = async () => {
   const { data } = await getAllJobs()
+  console.log({data})
   return  {props: { data: data || null }}
 }
 
