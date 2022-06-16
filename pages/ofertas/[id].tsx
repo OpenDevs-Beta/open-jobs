@@ -6,9 +6,7 @@ import { getAllJobs, getJobById } from '../../shared/middlewares/APImiddleware'
 export const getStaticPaths: GetStaticPaths = async () => {
   const { data } = await getAllJobs()
 
-  const paths = data?.map((oferta: any) => ({
-      params: { id: oferta?.id.toString() }
-  }))
+  const paths = data?.map((oferta: any) => ({params: { id: oferta?.id?.toString() }}))
 
   return { paths, fallback: false }
 }
