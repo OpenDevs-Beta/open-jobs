@@ -37,7 +37,7 @@ export const HomeSearcher = () => {
               <span onClick={() => router.push('/ofertas/?query=Javascript')}>Javascript</span>
               <span onClick={() => router.push('/ofertas/?query=Madrid')}>Madrid</span>
               <span onClick={() => router.push('/ofertas/?query=Python')}>Python</span>
-              <span onClick={() => router.push('/ofertas/?query=Front-end')}>Front-end</span>
+              <span onClick={() => router.push('/ofertas/?query=Frontend')}>Frontend</span>
               <span onClick={() => router.push('/ofertas/?query=Node.js')}>Node.js</span>
               <span onClick={() => router.push('/ofertas/?query=Remoto')}>Remoto</span>
             </div>

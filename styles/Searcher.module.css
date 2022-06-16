@@ -16,13 +16,7 @@
     line-height: 3.125rem;
 }
 
-@media (max-width:1285px) {
-    .searcher > h1{
-        padding-bottom: 75px;
-    }
-}
-
-@media (max-width:550px) {
+@media (max-width:717px) {
     .searcher > h1{
         font-size: 2.3rem;
         line-height: 2.5rem;
@@ -113,6 +107,12 @@
   background-color: #f2f2f2;
 }
 
+.searcher > .searcherHomeFilters {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
 .searcher > .searcherHomeFilters > span{
     padding: 8px 8px 0;
     margin-right: 8px;
@@ -127,6 +127,13 @@
 
 .searcher > .searcherHomeFilters > span:hover{
   color: #02aea2;
+}
+
+@media (max-width:717px) {
+  .searcher > .searcherHomeFilters > span{
+      font-size: 1rem;
+      line-height: 1.25rem;
+  }
 }
 
 .searcher > .searcherOfertasFilters{
