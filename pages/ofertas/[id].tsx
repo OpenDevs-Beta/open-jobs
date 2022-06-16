@@ -10,8 +10,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
       params: { id: oferta?.id + '' }
   }))
 
-  console.log({id: paths[0].params.id})
-
   return { paths, fallback: false }
 }
 
