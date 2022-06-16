@@ -7,7 +7,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const { data } = await getAllJobs()
 
   const paths = data?.map((oferta: any) => ({
-      params: { id: oferta?.id + '' }
+      params: { id: oferta?.id.toString() }
   }))
 
   return { paths, fallback: false }
