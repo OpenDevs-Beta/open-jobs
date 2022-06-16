@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { Navbar } from '../components/navBar'
-import styles from '../styles/Empresa.module.css'
+import styles from '../styles/empresa.module.css'
 
 function Empresa() {
     return (

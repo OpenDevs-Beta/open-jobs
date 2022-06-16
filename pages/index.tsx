@@ -3,9 +3,8 @@ import React from 'react'
 import { Navbar } from '../components/navBar';
 import { CardHomeGrid } from '../components/cardHomeGrid';
 import { HomeSearcher } from '../components/HomeSearcher'
-import SearchBar from '../components/SearchBar';
 import { getAllJobs } from '../shared/middlewares/APImiddleware';
-import styles from '../styles/Index.module.css'
+import styles from '../styles/index.module.css'
 
 function HomePage(props: any) {
 
