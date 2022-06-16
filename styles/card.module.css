@@ -19,7 +19,7 @@
 .card:hover,
 .card:focus,
 .card:active {
-  margin-top: -8px;
+  margin-top: -2px;
   box-shadow: 0 4px 4px 0 #0000001f;
 }
 
