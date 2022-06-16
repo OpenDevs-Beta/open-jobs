@@ -5,15 +5,13 @@ import fetch from 'isomorphic-unfetch'
  * @returns Json data and isError
  */
 export async function getAllJobs() {
-  let isError: boolean = false
-
-	let response: Response = await fetch(process.env.NEXT_PUBLIC_API_URL + '/')
-		.then(r => r.json())
-    .catch(e => ({ isError: true, e }))
   
+  let response = await fetch(process.env.NEXT_PUBLIC_API_URL + '/')
+  .then(r => r.json())
+  .catch(e => console.error(`Error al hacer petición de ofertas: ${e}`))
+
   return {
-    data: isError ? [] : response,
-    isError: isError,
+    data: response?.data?.data,
     isLoading: response ? false: true
   }  
 }
@@ -24,15 +22,13 @@ export async function getAllJobs() {
  * @returns Json data and isError
  */
 export async function getJobById(id: number) {
-  let isError: boolean = false
 
 	let response = await fetch(process.env.NEXT_PUBLIC_API_URL + `/${id}`)
 		.then(r => r.json())
-    .catch(e => ({ isError: true, e }))
+    .catch(e => console.error(`Error al hacer petición de ofertaID: ${e}`))
   
   return {
-    data: isError ? [] : response,
-    isError: isError,
+    data: response.data.data,
     isLoading: response ? false: true
   }  
 }

@@ -4,11 +4,14 @@ import { Navbar } from '../components/navBar';
 import { CardHomeGrid } from '../components/cardHomeGrid';
 import { HomeSearcher } from '../components/HomeSearcher'
 import { getAllJobs } from '../shared/middlewares/APImiddleware';
-import styles from '../styles/Index.module.css'
+import styles from '../styles/index.module.css'
 
-function HomePage(props: any) {
+export const getStaticProps: GetStaticProps = async () => {
+  const {data, isLoading} = await getAllJobs()
+  return  {props: { data, isLoading }} 
+}
 
-  const {data, isError, isLoading} = props.data.data.data
+function HomePage({data, isLoading}:{data:any, isLoading:boolean}) {
 
   return (
     <div className={styles.homepageContainer}>
@@ -19,9 +22,5 @@ function HomePage(props: any) {
   )
 }
 
-export const getStaticProps: GetStaticProps = async () => {
-  const data = await getAllJobs()
-  return { props: { data } }
-}
 
 export default HomePage
