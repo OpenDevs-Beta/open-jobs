@@ -1,0 +1,9 @@
+.ofertasContainer{
+    padding-top: 100px;
+}
+
+@media (max-width: 550px){
+    .ofertasContainer{
+        padding-top: 60px;
+    }
+}
