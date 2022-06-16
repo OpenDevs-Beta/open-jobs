@@ -1,10 +1,12 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import styles from '../styles/Empresa.module.css'
+import { Navbar } from '../components/navBar'
+import styles from '../styles/empresa.module.css'
 
 function Empresa() {
     return (
-        <div className={styles.empresaContainer}>
+              <div className={styles.empresaContainer}>
+          <Navbar />
             <div className={styles.empresaHeader}>
                 <div>
                     <div className={styles.empresaHeaderText}>
