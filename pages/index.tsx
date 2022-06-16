@@ -7,11 +7,11 @@ import { getAllJobs } from '../shared/middlewares/APImiddleware';
 import styles from '../styles/index.module.css'
 
 export const getStaticProps: GetStaticProps = async () => {
-  const {data, isLoading} = await getAllJobs()
-  return  {props: { data, isLoading }} 
+  const { data } = await getAllJobs()
+  return  {props: { data: data || null }}
 }
 
-function HomePage({data, isLoading}:{data:any, isLoading:boolean}) {
+function HomePage({data}:{data:any}) {
 
   return (
     <div className={styles.homepageContainer}>

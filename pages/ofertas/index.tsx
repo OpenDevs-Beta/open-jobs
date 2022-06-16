@@ -9,11 +9,11 @@ import { getAllJobs } from '../../shared/middlewares/APImiddleware';
 import styles from '../../styles/Ofertas.module.css'
 
 export const getStaticProps: GetStaticProps = async () => {
-  const {data, isLoading} = await getAllJobs()
-  return  {props: { data, isLoading }} 
+  const {data} = await getAllJobs()
+  return  {props: { data }} 
 };
 
-const Ofertas = ({data, isLoading}:{data:any, isLoading:boolean}) => {
+const Ofertas = ({data}:{data:any}) => {
 
   const router = useRouter();
 
