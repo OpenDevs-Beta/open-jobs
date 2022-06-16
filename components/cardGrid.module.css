@@ -18,8 +18,9 @@
   display: flex;
   flex: auto;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
   flex-wrap: wrap;
+  gap: 16px;
 }
 
 @media (max-width: 1285px) {

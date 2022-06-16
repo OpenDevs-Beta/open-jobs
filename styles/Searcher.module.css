@@ -140,7 +140,7 @@
 }
 
 .searcher > .searcherOfertasFilters > button {
-  border: 1px solid grey;
+  border: 1px solid rgb(158, 158, 158);
   font-weight: 500;
   height: auto;
   min-height: 2.572em;
