@@ -1,0 +1,58 @@
+[33m7a218e1[m[33m ([m[1;36mHEAD -> [m[1;32mdevelop[m[33m, [m[1;31morigin/develop[m[33m)[m Merge pull request #52 from OpenDevs-Beta/develop-albaMCh
+[33m8b6f0c7[m Merge pull request #53 from OpenDevs-Beta/develop_ceskkk
+[33mf27d911[m Merge branch 'develop' into develop_ceskkk
+[33mdfc70c8[m feat: revision
+[33m67ec245[m feat: maquetar/ofertas
+[33m384f889[m Feat: Middlewares, getStatisProps & getStaticPath
+[33m6751dc7[m Merge branch 'develop-albaMCh' into develop
+[33m1a03724[m feat: mejora estilos home
+[33m5ea632b[m Merge pull request #48 from OpenDevs-Beta/develop-ivan
+[33ma36c1ea[m feat: Añadir funcionalidad a buscadores
+[33m6228e9c[m hot-fix: imports
+[33m5894738[m Merge pull request #45 from OpenDevs-Beta/develop-ivan
+[33m17e66c3[m feat: ligeras mejoras en el css de los Grids
+[33m1b2d428[m feat: Hacer componente Grid de ofertas del home, Eliminar componente Layout de app y en general de todas partes
+[33m550c04c[m Merge pull request #43 from OpenDevs-Beta/develop_ceskkk
+[33m4e69f28[m[33m ([m[1;31morigin/develop_ceskkk[m[33m)[m Feat: Maquetacion barra de busqueda con filtros (home y ofertas)
+[33m6061256[m Merge pull request #42 from OpenDevs-Beta/develop_bradley
+[33m42599f4[m Fixed API middlewares implemented /ofertas/[id]
+[33mf2ba805[m .editorconfig file added
+[33mcb027bd[m Added Props and Paths functions to /ofertas/[id].tsx
+[33m0fc48d3[m[33m ([m[1;31morigin/beta[m[33m)[m Merge pull request #39 from OpenDevs-Beta/develop-ivan
+[33ma5204a7[m feat: Hacer modelos
+[33m70b5466[m Merge pull request #38 from OpenDevs-Beta/develop-ivan
+[33m7ee4047[m feat: Hacer modelos
+[33m733e435[m feat: reparaciones
+[33mf3e2393[m Merge remote-tracking branch 'origin/develop-ivan' into develop
+[33mc182a8d[m feat: reparaciones
+[33ma1ed8b6[m feat: Maquetar home, Hacer componente grid ofertas, maquetar ofertas
+[33m1e32529[m Merge branch 'develop' of https://github.com/OpenDevs-Beta/open-jobs into develop
+[33mde514ec[m feat: reparaciones
+[33m3e4b1f5[m Merge pull request #36 from OpenDevs-Beta/develop_ceskkk
+[33m850f9e0[m Merge
+[33m4130e9a[m Feat: Empresa page
+[33m9a68784[m Merge pull request #34 from OpenDevs-Beta/develop_ceskkk
+[33m3237574[m Merge branch 'develop' into develop_ceskkk
+[33mebf1736[m Merge pull request #35 from OpenDevs-Beta/develop-ivan
+[33m3371ebc[m feat: Hacer componente de búsqueda de /ofertas
+[33md6ffdde[m Navbar
+[33me54b970[m Merge pull request #33 from OpenDevs-Beta/develop-ivan
+[33ma367334[m feat: Hacer navbar + Hacer enrutado a Home, empresas, ofertas
+[33m27dc0a9[m feat: Hacer navbar + Hacer enrutado a Home, empresas, ofertas
+[33m8182c2b[m feat: reparaciones
+[33mfa38b78[m Merge pull request #32 from OpenDevs-Beta/develop
+[33mb2aa7f4[m Merge pull request #31 from OpenDevs-Beta/develop-ivan
+[33m37864b9[m Merge pull request #30 from OpenDevs-Beta/develop
+[33m3a52ff3[m feat: Añadir a home getStaticProps
+[33m959bcf7[m Merge pull request #29 from OpenDevs-Beta/develop-ivan
+[33m7578554[m Merge branch 'develop' into develop-ivan
+[33mc356ada[m Merge pull request #28 from OpenDevs-Beta/develop
+[33m3cab6f6[m Hacer componente Grid de ofertas del home
+[33m10947a6[m Merge pull request #27 from OpenDevs-Beta/develop-albaMCh
+[33m3f20e88[m feat: maquetación del componente card
+[33m767cbd9[m Merge pull request #25 from OpenDevs-Beta/develop_ceskkk
+[33mbf7c442[m Merge pull request #26 from OpenDevs-Beta/develop-albaMCh
+[33me1aa960[m feat: implementación de componente card
+[33m6200beb[m Feat: Componente Barra de búsqueda home
+[33m871ebb5[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;31mbackup/main[m[33m, [m[1;32mmain[m[33m)[m feat: project init
+[33m7b30bad[m Initial commit
