@@ -8,22 +8,26 @@ import { getAllJobs } from '../../shared/middlewares/APImiddleware';
 
 import styles from '../../styles/Ofertas.module.css'
 
-const Ofertas: NextPage = (props: any) => {
+export const getStaticProps: GetStaticProps = async () => {
+  const {data, isLoading} = await getAllJobs()
+  return  {props: { data, isLoading }} 
+};
+
+const Ofertas = ({data, isLoading}:{data:any, isLoading:boolean}) => {
 
   const router = useRouter();
 
   const queryParam = router.query.query
+  
 
-  const ofertas = props.data.data.data
-
-  const [ofertasSearch, setOfertasSearch] = useState(ofertas)
+  const [ofertasSearch, setOfertasSearch] = useState(data)
 
   const search = () => {
     if (queryParam === undefined || queryParam === '') {
-      setOfertasSearch(ofertas)
+      setOfertasSearch(data)
     }
     else {
-      let dataChange = ofertas.filter((oferta: any) => {
+      let dataChange = data.filter((oferta: any) => {
         return oferta.nombre.includes(queryParam) || oferta.nombre.toLowerCase().includes(queryParam) || oferta.nombre.toUpperCase().includes(queryParam) ||
           oferta.experiencia.toLowerCase().includes(queryParam) || oferta.experiencia.toUpperCase().includes(queryParam) || oferta.experiencia.includes(queryParam) ||
           oferta.descripcion.toLowerCase().includes(queryParam) || oferta.descripcion.toUpperCase().includes(queryParam) || oferta.descripcion.includes(queryParam) ||
@@ -47,13 +51,5 @@ const Ofertas: NextPage = (props: any) => {
   )
 }
 
-export const getStaticProps: GetStaticProps = async (context) => {
-
-  // Call from a middleware to fetch data
-  const data = await getAllJobs();
-  return {
-    props: { data },
-  };
-};
 
 export default Ofertas

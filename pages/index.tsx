@@ -6,26 +6,21 @@ import { HomeSearcher } from '../components/HomeSearcher'
 import { getAllJobs } from '../shared/middlewares/APImiddleware';
 import styles from '../styles/index.module.css'
 
-function HomePage(props: any) {
+export const getStaticProps: GetStaticProps = async () => {
+  const {data, isLoading} = await getAllJobs()
+  return  {props: { data, isLoading }} 
+}
 
-  const ofertas = props.data.data.data
+function HomePage({data, isLoading}:{data:any, isLoading:boolean}) {
 
   return (
     <div className={styles.homepageContainer}>
         <Navbar />
         <HomeSearcher />
-        <CardHomeGrid ofertas={ofertas} />
+        <CardHomeGrid ofertas={data} />
     </div>
   )
 }
 
-export const getStaticProps: GetStaticProps = async () => {
-
-  // Call from a middleware to fetch data
-  const data = await getAllJobs();
-  return {
-    props: { data },
-  };
-};
 
 export default HomePage
