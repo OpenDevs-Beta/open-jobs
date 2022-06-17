@@ -19,7 +19,7 @@ function Empresa() {
                     <div className={styles.empresaHeaderGif}>
                         <div>
                             <Image
-                                src="/TH_Isotipo_lineal.2772311c.gif"
+                                src="/93533501-53aa0d80-f943-11ea-90d1-e6e70eca2e29.gif"
                                 alt="Animación de Open Jobs"
                                 width={250}
                                 height={250}

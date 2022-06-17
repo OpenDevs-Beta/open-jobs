@@ -1,4 +1,4 @@
-import styles from './cardGrid.module.css'
+import styles from '../styles/cardGrid.module.css'
 import Card from './card';
 
 export const CardGrid = (ofertas: any) => {
