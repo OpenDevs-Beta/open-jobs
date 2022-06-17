@@ -34,7 +34,7 @@ const SearchBar = (query: any) => {
               (e) => handleSearchInputHome(e.target.value)
             }
             ></input>
-            { queryParam === undefined || queryParam === '' ? <button className={styles.searcherOfertasButton}><Image src={searchIcon}/></button> : <button className={styles.searcherOfertasButton} onClick={handleEraseSearch}><Image src={cross} width='15' height='15'/></button>}
+            { queryParam === undefined || queryParam === '' ? <button className={styles.searcherOfertasButton}><Image src={searchIcon}/></button> : <button className={styles.crossOfertasButton} onClick={handleEraseSearch}><Image src={cross} width='15' height='15'/></button>}
       </div>
       <div className={styles.searcherOfertasFilters}>
           <button>Área</button>

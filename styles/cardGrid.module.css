@@ -1,10 +1,10 @@
 .wrapper {
   background-color: #abb4bc1f;
-  padding: 30px calc(50% - 639px);
+  padding: 30px calc(50% - 633px);
 }
 
 .container {
-  max-width: 1278px;
+  max-width: 1266px;
   padding: 1rem 0;
   flex: 1;
   display: flex;
@@ -18,13 +18,14 @@
   display: flex;
   flex: auto;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
+  gap: 16px;
   flex-wrap: wrap;
   gap: 16px;
 }
 
-@media (max-width: 1285px) {
+@media (max-width: 1300px) {
   .wrapper {
-    padding: 30px 12px;
+    padding: 30px 20px;
   }
 }
