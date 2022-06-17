@@ -1,6 +1,7 @@
 import { GetStaticPaths, GetStaticProps } from 'next'
 import { Navbar } from '../../components/navBar'
-import DivBanner from '../../components/ofertas_components/DivBanner'
+import Banner from '../../components/ofertas/Banner'
+import OfertaDetail from '../../components/ofertas/OfertaDetail'
 import { getAllJobs, getJobById } from '../../shared/middlewares/APImiddleware'
 
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -19,9 +20,10 @@ export const getStaticProps: GetStaticProps = async ({params}) => {
 const IndexOferta = ({data}:{data:any }) => {
 
   return (
-    <div style={{marginTop: '80px'}}>
+    <div>
       <Navbar />
-      <DivBanner />
+      <Banner />
+      <OfertaDetail data={data} />
     </div>
   )
 }
