@@ -1,0 +1,123 @@
+.ofertaDetailContainer{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  padding: 16px calc(50% - 400px) 48px;
+  position: relative;
+}
+
+@media (max-width: 1023px){
+  .ofertaDetailContainer{
+    flex-wrap: wrap;
+    padding-top: 20px;
+  }
+}
+
+@media (max-width: 770px){
+  .ofertaDetailContainer{
+    padding-top: 70px;
+  }
+}
+
+@media (max-width: 550px){
+  .ofertaDetailContainer{
+    padding-bottom: 40px;
+  }
+}
+
+.ofertaDetailContainer > .ofertaDetailLogo{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding-bottom: 8px;
+  width: 100%;
+}
+
+.ofertaDetailContainer > .ofertaDetailLogo img{
+  margin-top: 4px !important;
+  margin-bottom: 4px !important;
+  border-radius: 6px;
+  padding-right: 8px !important;
+}
+
+.ofertaDetailContainer > .ofertaDetailLogo > div{
+  display: flex;
+  flex-flow: wrap column;
+  align-items: center;
+  align-items: flex-start;
+}
+
+.ofertaDetailContainer > .ofertaDetailLogo > div > span{
+  display: flex;
+}
+
+.ofertaDetailContainer > .ofertaDetailLogo > div > span:nth-of-type(1){
+  font-size: .875rem;
+  letter-spacing: .01786em;
+  line-height: 1.25rem;
+}
+
+.ofertaDetailContainer > .ofertaDetailLogo > div > span:nth-of-type(2){
+  font-size: .75rem;
+  letter-spacing: .03333em;
+  line-height: 1.25rem;
+  opacity: .6;
+  text-transform: uppercase;
+}
+
+.ofertaDetailContainer > .ofertaDetailTitle{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.ofertaDetailContainer > .ofertaDetailTitle > h4{
+  margin-top: 8px;
+  margin-bottom: 0;
+  width: 100%;
+}
+
+.ofertaDetailContainer > .ofertaDetailTitle > div{
+  padding: 8px 0;
+  width: 100%;
+}
+
+.ofertaDetailContainer > .ofertaDetailTitle > div > span:nth-of-type(1){
+  display: inline-block;
+  font-size: 18px;
+  line-height: 1.2;
+  padding: 0 10px;
+  padding-left: 0;
+  border-right: 1px solid #000;
+}
+
+.ofertaDetailContainer > .ofertaDetailTitle > div > span:nth-of-type(2){
+  display: inline-block;
+  font-size: 18px;
+  line-height: 1.2;
+  padding: 0 10px;
+}
+
+.ofertaDetailContainer > hr{
+  background: #0000001f;
+  margin: 24px 0 16px 0;
+  display: block;
+  height: 1px;
+  width: 100%;
+}
+
+.ofertaDetailContainer > .ofertaDetailDescription{
+  margin-top: 70px;
+}
+
+.ofertaDetailContainer > .ofertaDetailDescription > h6 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -.02em;
+  margin: 0 0 10px;
+}
+
+.ofertaDetailContainer > .ofertaDetailDescription > p{
+  font-size: 1.2em;
+  line-height: 1.6em;
+}

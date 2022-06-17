@@ -14,7 +14,7 @@ export const NavbarDesktop = () => {
             <div>
                 <div className={styles.headerLogo}>
                     <Link href="/">
-                    <Image src={logo} />
+                      <Image src={logo} />
                     </Link>
                 </div>
                 <div className={styles.headerItems}>

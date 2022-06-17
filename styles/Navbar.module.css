@@ -26,6 +26,7 @@
     flex-wrap: nowrap;
     align-items: center;
     padding: 10px 0;
+    justify-content: space-between;
 }
 
 .header > div > .headerLogo{
@@ -41,6 +42,10 @@
     display: flex;
     align-items: center;
     max-width: 85%;
+}
+
+.header > div > .headerLogo img{
+  cursor: pointer;
 }
 
 .header > div > .headerItems{
@@ -93,13 +98,13 @@
     margin-top: 4px;
 }
 
-@media (max-width:835px){
+@media (max-width:766px){
     .header:not(.headerMobile){
         display: none;
     }
 }
 
-@media (min-width:836px){
+@media (min-width:768px){
     .headerMobile{
         display: none;
     }
