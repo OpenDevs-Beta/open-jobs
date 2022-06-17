@@ -6,8 +6,6 @@ import { Navbar } from '../../components/navBar';
 import SearchBar from '../../components/SearchBar';
 import { getAllJobs } from '../../shared/middlewares/APImiddleware';
 
-import styles from '../../styles/Ofertas.module.css'
-
 export const getStaticProps: GetStaticProps = async () => {
   const {data} = await getAllJobs()
   return  {props: { data }} 
@@ -42,7 +40,7 @@ const Ofertas = ({data}:{data:any}) => {
 
 
   return (
-    <div className={styles.ofertasContainer}>
+    <div>
       <Navbar />
       <SearchBar query={queryParam} />
       <CardGrid ofertas={ofertasSearch} />
