@@ -1,6 +1,6 @@
 .card {
-  width: calc(25% - 13.25px);
-  min-width: 215px;
+  width: calc(25% - 12px);
+  min-width: 250px;
   height: 310px;
   padding: 16px;
   background-color: #fff;
@@ -23,21 +23,21 @@
   box-shadow: 0 4px 4px 0 #0000001f;
 }
 
-@media (max-width: 948px) {
+@media (max-width: 1088px) {
   .card {
-    width: calc(33% - 16px);
+    width: calc(33% - 8px);
   }
 }
 
-@media (max-width: 717px) {
+@media (max-width: 836px) {
   .card {
-    width: calc(50% - 16px);
+    width: calc(50% - 8px);
   }
 }
 
-@media (max-width: 486px) {
+@media (max-width: 555px) {
   .card {
-    width: calc(100% - 16px);
+    width: 100%;
   }
 }
 

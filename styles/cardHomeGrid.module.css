@@ -1,10 +1,10 @@
 .wrapper {
   background-color: #abb4bc1f;
-  padding: 30px calc(50% - 639px);
+  padding: 30px calc(50% - 633px);
 }
 
 .title {
-  max-width: 1278px;
+  max-width: 1266px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -27,7 +27,7 @@
 }
 
 .container {
-  max-width: 1278px;
+  max-width: 1266px;
   height: 358px;
   padding: 1rem 0;
   flex: 1;
@@ -42,17 +42,16 @@
   display: flex;
   flex: auto;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
+  gap: 16px;
   flex-wrap: wrap;
   overflow-x: hidden;
 }
 
 .grid .see {
-  width: calc(25% - 16px);
-  min-width: 215px;
+  width: calc(25% - 12px);
+  min-width: 250px;
   height: 310px;
-  margin: 8px;
-  padding: 16px;
   background-color: #fff;
   display: flex;
   flex-direction: column;
@@ -77,28 +76,27 @@
   color: #fff;
 }
 
-@media (max-width: 948px) {
+@media (max-width: 1088px) {
   .grid .see {
-    width: calc(33% - 16px);
+    width: calc(33% - 8px);
   }
 }
 
-@media (max-width: 717px) {
+@media (max-width: 836px) {
   .grid .see {
-    width: calc(50% - 16px);
+    width: calc(50% - 8px);
   }
 }
 
-@media (max-width: 486px) {
+@media (max-width: 555px) {
   .grid .see {
-    width: calc(100% - 16px);
+    width: 100%;
   }
 }
 
 .grid .see h1{
-  font-size: 5em;
-  margin-top: -10px;
-  margin-bottom: -15px;
+  font-weight: 100;
+  font-size: 3em;
 }
 
 .control {
@@ -127,13 +125,13 @@
   display: none;
 }
 
-@media (max-width: 1285px) {
+@media (max-width: 1300px) {
   .wrapper {
-    padding: 30px 12px;
+    padding: 30px 20px;
   }
 }
 
-@media (max-width: 486px) {
+@media (max-width: 555px) {
   .control {
     display: none;
   }
@@ -168,4 +166,39 @@
   border-radius: 50%;
   cursor: pointer;
   box-shadow: 0 2px 4px 0 #0000000f;
+}
+
+.outercircle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+width: 50px;
+height: 50px;
+border-radius: 50%;
+background-color: #000;
+margin-bottom: 5px;
+transition: background-color 0.15s ease;
+}
+
+.grid .see:hover .outercircle,
+.grid .see:focus .outercircle,
+.grid .see:active .outercircle {
+  background-color: #fff;
+}
+
+.innercircle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background-color: #fff;
+  transition: background-color 0.15s ease;
+}
+
+.grid .see:hover .innercircle,
+.grid .see:focus .innercircle,
+.grid .see:active .innercircle {
+  background-color: #02aea2;
 }

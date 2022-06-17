@@ -30,9 +30,9 @@ export const CardHomeGrid = (ofertas: any) => {
 
   const paginateCards = () => {
 
-    if (windowWidth >= 948) { setCardLimit(4) }
-    else if (windowWidth <= 948 && windowWidth >= 717) { setCardLimit(3) }
-    else if (windowWidth <= 717 && windowWidth >= 486) { setCardLimit(2) }
+    if (windowWidth >= 1088) { setCardLimit(4) }
+    else if (windowWidth <= 1088 && windowWidth >= 836) { setCardLimit(3) }
+    else if (windowWidth <= 836 && windowWidth >= 555) { setCardLimit(2) }
     else { setCardLimit(1) }
 
     if (Math.ceil(cards.length / cardLimit) === cards.length / cardLimit) {
@@ -62,7 +62,7 @@ export const CardHomeGrid = (ofertas: any) => {
           {cardsPaginated.map((card: any) => (
             <Card nombre={card.nombre} image={'/'} empresa={card.empresa.nombre} ubicacion={card.ubicacion} habilidades={card.habilidades} experiencia={card.experiencia} id={card.id} />
           ))}
-          {cardsPaginated.length < cardLimit ? <div className={styles.see} onClick={() => router.push('/ofertas')}><h1>+</h1><span>Ver más</span></div> : null}
+          {cardsPaginated.length < cardLimit ? <div className={styles.see} onClick={() => router.push('/ofertas')}><div className={styles.outercircle}><div className={styles.innercircle}><h1>+</h1></div></div><span>Ver más</span></div> : null}
         </div>
 
       </div>

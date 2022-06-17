@@ -1,6 +1,6 @@
 import fetch from 'isomorphic-unfetch'
 
-const ENDPOINT = '/api/ofertas'
+const ENDPOINT = 'api/ofertas'
 
 /**
  * Method to get all jobs

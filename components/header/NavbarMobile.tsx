@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { useRouter } from 'next/router'
 
 import styles from '../../styles/Navbar.module.css'
+import logo from '../../utils/images/logo_mock.svg'
 
 export const NavbarMobile = () => {
 
@@ -16,9 +17,7 @@ export const NavbarMobile = () => {
             <div>
                 <div className={styles.headerLogo}>
                         <Link href="/">
-                            <a>
-                                LOGO OPEN JOBS
-                            </a>
+                            <Image src={logo} />
                         </Link>
                     </div>
                 <div className={styles.headerMenu}>
