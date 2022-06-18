@@ -1,18 +1,26 @@
 import React from "react";
 import Image from "next/image";
+import Questions from "../components/questions";
 
 export default function preguntasFrecuentes() {
+  const questions = [
+    {
+      question: "Soy autónomo, ¿Puedo facturar la recompensa?",
+    },
+    {
+      question: "¿Qué pasa si no quiero recibir la recompensa?",
+    },
+    {
+      question: "¿Qué pasa si no quiero recibir la recompensa?",
+    },
+    {
+      question: "¿Qué pasa si no quiero recibir la recompensa?",
+    },
+  ];
+
   return (
     <div>
-      <Image src="/question.png" width={60} height={60} />
-      <h1>FAQ</h1>
-      <p>Las preguntas más comunes de nuestros usuarios</p>
-      <div>
-        <div>Recomendadores</div>
-        <div className="question-list">
-          <div className="question-item"></div>
-        </div>
-      </div>
+      <Questions items={questions} />
     </div>
   );
 }
