@@ -4,6 +4,7 @@ import { useRouter } from 'next/router'
 
 import styles from '../../styles/Navbar.module.css'
 import logo from '../../utils/images/logo_mock.svg'
+import logoWhite from '../../utils/images/logo_mock_white.svg'
 
 export const NavbarDesktop = () => {
 
@@ -14,10 +15,16 @@ export const NavbarDesktop = () => {
             <div>
                 <div className={styles.headerLogo}>
                     <Link href="/">
-                      <Image src={logo} />
+                      {
+                        router.pathname == '/ofertas/[id]' ? 
+                        <Image src={logoWhite} /> :
+                        <Image src={logo} />
+                      }
                     </Link>
                 </div>
-                <div className={styles.headerItems}>
+                <div className={ router.pathname == '/ofertas/[id]' ?
+                    styles.headerItemsBgBlack :
+                    styles.headerItems}>
                     <Link href="/ofertas">
                         { router.pathname == '/ofertas' ?
                             <a className={styles.current}>Ofertas</a>
