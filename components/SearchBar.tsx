@@ -90,7 +90,7 @@ const SearchBar = (query: any) => {
           </button>
         ) : (
           <button
-            className={styles.searcherOfertasButton}
+            className={styles.crossOfertasButton}
             onClick={handleEraseSearch}
           >
             <Image src={cross} width="15" height="15" />
