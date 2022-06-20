@@ -61,7 +61,7 @@ export const CardHomeGrid = (ofertas: any) => {
           {cardsPaginated.map((card: any) => (
             <Card nombre={card.nombre} image={'/'} empresa={card.empresa.nombre} ubicacion={card.ubicacion} habilidades={card.habilidades} experiencia={card.experiencia} id={card.id} />
           ))}
-          {cardsPaginated.length < cardLimit ? <div className={styles.see} onClick={() => router.push('/ofertas')}><div className={styles.outercircle}><div className={styles.innercircle}><h1>+</h1></div></div><span>Ver más</span></div> : null}
+          {cardsPaginated.length < cardLimit || cardLimit > 4 ? <div className={styles.see} onClick={() => router.push('/ofertas')}><div className={styles.outercircle}><div className={styles.innercircle}><h1>+</h1></div></div><span>Ver más</span></div> : null}
         </div>
 
       </div>
