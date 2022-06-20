@@ -3,7 +3,6 @@ import { useRouter } from "next/router";
 import Image from "next/image";
 import Questions from "../components/questions";
 import QuestionSearcher from "../components/questionsSearcher";
-import { Navbar } from "../components/navBar";
 import styles from '../styles/index.module.css'
 
 export default function preguntasFrecuentes() {
