@@ -34,13 +34,13 @@ function Empresa() {
                     <p>Las ofertas de siempre. Solo los candidatos en búsqueda activa –15% del total– se inscriben en tus ofertas. Por eso sólo pagas la publicación.</p>
                 </div>
                 <div>
-                    <h4>Con la potencia de Talent Hackers</h4>
+                    <h4>Con la potencia de Open Jobs</h4>
                     <p>Las ofertas inteligentes. El algoritmo hace su trabajo: descubrir y activar el talento, también el pasivo –85% restante–.</p>
                 </div>
             </div>
             <div className={styles.empresaContacto}>
                 <div>
-                    <h4>Un portal de empleo <br/> con la potencia de Talent Hackers</h4>
+                    <h4>Un portal de empleo <br/> con la potencia de Open Jobs</h4>
                     <p>La revolución de las ofertas de empleo: gracias a la tecnología y las referencias alcanzas a los profesionales que estás buscando.</p>
                 </div>
                 <div>

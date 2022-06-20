@@ -25,33 +25,30 @@ const HeroOpenBootcamper = () => {
             <div className={styles.stepContainer}>
               <h5 className={styles.stepTitle}>
                 <span className={styles.stepNumber}>01</span>
-                Elige la oferta de empleo
+                Entra en nuestro campus
               </h5>
               <p className={styles.stepDesc}>
-                Y descubre qué personas de tu red encajan con el puesto 
-                con el botón «Contactos que podrían encajar».
+                Y descubre que cursos puedes aprender.
               </p>
             </div>
 
             <div className={styles.stepContainer}>
               <h5 className={styles.stepTitle}>
                 <span className={styles.stepNumber}>02</span>
-                Recomienda a los mejores
+                Aprende
               </h5>
               <p className={styles.stepDesc}>
-                Elige entre ellos los que mejor encajen, así aumentarás 
-                tus posibilidades de ganar la recompensa.
+                Elige entre ellos los que mejor encajen contigo.
               </p>
             </div>
 
             <div className={styles.stepContainer}>
               <h5 className={styles.stepTitle}>
                 <span className={styles.stepNumber}>03</span>
-                Gana la recompensa
+                Presentate a nuestras ofertas
               </h5>
               <p className={styles.stepDesc}>
-                Cuando uno de tus recomendados sea contratado, cobrarás 
-                la recompensa el día de su incorporación.
+                Consigue un trabajo así de facil.
               </p>
             </div>
           </div>
