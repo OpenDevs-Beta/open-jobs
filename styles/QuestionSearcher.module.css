@@ -1,0 +1,191 @@
+.searcher {
+  padding: 30px calc(50% - 632.5px) 30px;
+  background-color: #04435b;
+}
+
+.headerLogo {
+  cursor: pointer;
+}
+
+@media (max-width:835px) {
+  .searcher{
+      margin-top: 72px;
+  }
+}
+
+@media (max-width: 1285px) {
+  .searcher {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+.searcher > h1 {
+  font-weight: 700;
+  font-size: 3rem;
+  letter-spacing: normal;
+  line-height: 3.125rem;
+}
+
+@media (max-width: 717px) {
+  .searcher > h1 {
+    font-size: 2.3rem;
+    line-height: 2.5rem;
+    padding-bottom: 16px;
+    margin: 16px 0;
+  }
+}
+
+.searcher > h1 > span:nth-of-type(1) {
+  color: #abb4bc;
+  display: inline-block;
+  margin-bottom: 4px;
+}
+
+.searcher > h1 > span:nth-of-type(2) {
+  display: inline-block;
+  position: relative;
+  color: #000 !important;
+}
+
+.searcher > .searcherForm {
+  width: 100%;
+  position: relative;
+  margin: 16px 0;
+}
+
+.searcher > .searcherForm input {
+  padding: 24px 16px;
+  background-color: #1d5a6e;
+  color: #fff;
+  border: 1px solid #abb4bc85;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px 0 #0000001f;
+  font-size: 20px;
+  width: 100%;
+  outline: none;
+  letter-spacing: 0.00937em;
+  line-height: 28px;
+}
+
+@media (max-width: 550px) {
+  .searcher > .searcherForm input {
+    font-size: 13px;
+  }
+}
+
+.searcher > .searcherForm input::placeholder {
+  color: #abb4bc;
+  opacity: 0.7;
+}
+
+.searcher > .searcherForm button.searcherHomeButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 16px;
+  padding: 8px 24px;
+  border: 1px solid #02aea2;
+  border-radius: 4px;
+  background-color: #02aea2;
+  color: white;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.03125em;
+  line-height: 1.5rem;
+  cursor: pointer;
+}
+
+.searcher > .searcherForm button.searcherOfertasButton {
+  width: 44px;
+  height: 44px;
+  position: absolute;
+  display: flex;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 16px;
+  border: none;
+  background: transparent;
+  border-radius: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.searcher > .searcherForm button.crossOfertasButton {
+  width: 44px;
+  height: 44px;
+  position: absolute;
+  display: flex;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 16px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  transition: all ease 0.4s;
+  border-radius: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.searcher > .searcherForm button.crossOfertasButton:hover {
+  border: none;
+  background: transparent;
+  background-color: #36697c;
+}
+
+.searcher > .searcherHomeFilters {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.searcher > .searcherHomeFilters > span {
+  padding: 8px 8px 0;
+  margin-right: 8px;
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 0.0125em;
+  line-height: 2rem;
+  color: #abb4bc;
+  transition: color 0.6s;
+  cursor: pointer;
+}
+
+.searcher > .searcherHomeFilters > span:hover {
+  color: #02aea2;
+}
+
+@media (max-width: 717px) {
+  .searcher > .searcherHomeFilters > span {
+    font-size: 1rem;
+    line-height: 1.25rem;
+  }
+}
+
+.searcher > .searcherOfertasFilters {
+  display: flex;
+  padding: 6px 0 16px;
+  margin-left: -16px;
+  margin-top: -16px;
+}
+
+.searcher > .searcherOfertasFilters > button {
+  border: 1px solid grey;
+  font-weight: 500;
+  height: auto;
+  min-height: 2.572em;
+  padding: 4px 16px;
+  position: relative;
+  text-align: center;
+  font-size: 14px;
+  margin-left: 16px;
+  margin-top: 16px;
+  border-radius: 28px;
+  background-color: white;
+  cursor: pointer;
+}
+
+.searcher > .searcherOfertasFilters > button:hover {
+  background: rgba(79, 179, 179, 0.1);
+}
