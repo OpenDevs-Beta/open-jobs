@@ -1,6 +1,6 @@
 .banner{
   position: relative;
-  z-index: -9999;
+  z-index: 0;
 }
 
 @media (max-width: 767px){
@@ -69,13 +69,9 @@
   cursor: pointer;
 }
 
-.banner > .bannerTitleBox > .titleBox > .btnsContainer button[name='startNow'] {
+.banner > .bannerTitleBox > .titleBox > .btnsContainer button {
   background-color: #11B1A6;
   color: white;
   border-color: #11B1A6;
-}
-
-.banner > .bannerTitleBox > .titleBox > .btnsContainer button[name='howItWorks'] {
-  background-color: #fff;
-  border-color: #abb4bc;
+  cursor: pointer;
 }
