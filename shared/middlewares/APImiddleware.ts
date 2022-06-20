@@ -17,6 +17,22 @@ export async function getAllJobs() {
   }  
 }
 
+/** 
+ * Method to get jobs by page
+ * @param page 
+ * @returns Json data and isError
+ */
+ export async function getJobsPaginated(page: any) {
+  
+  let response = await fetch(process.env.NEXT_PUBLIC_API_URL + ENDPOINT + `/?page=${page}`)
+  .then(r => r.json())
+  .catch(e => console.error(`Error al hacer petición de ofertas: ${e}`))
+
+  return {
+    data: response?.data?.data,
+  }  
+}
+
 /*
  * Method to get job by Id
  * @param id 
