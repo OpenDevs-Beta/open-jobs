@@ -1,6 +1,10 @@
 .wrapper {
   background-color: #abb4bc1f;
   padding: 30px calc(50% - 633px);
+  margin-bottom: 0px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
 .title {
@@ -30,7 +34,7 @@
   max-width: 1266px;
   height: 358px;
   padding: 1rem 0;
-  flex: 1;
+  flex: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -89,6 +93,22 @@
 }
 
 @media (max-width: 555px) {
+
+  .container {
+    height: auto;
+  }
+
+  .grid {
+    width: 100%;
+    display: flex;
+    flex: auto;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 16px;
+    flex-wrap: wrap;
+    overflow-x: visible;
+  }
+
   .grid .see {
     width: 100%;
   }
@@ -121,10 +141,6 @@
   cursor: pointer;
 }
 
-.controlSmall {
-  display: none;
-}
-
 @media (max-width: 1300px) {
   .wrapper {
     padding: 30px 20px;
@@ -142,15 +158,6 @@
     justify-content: space-between;
     align-items: center;
     padding-right: 8px;
-  }
-
-  .controlSmall {
-    padding: 3px;
-    position: absolute;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
   }
 }
 
