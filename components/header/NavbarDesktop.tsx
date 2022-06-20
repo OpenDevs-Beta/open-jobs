@@ -18,6 +18,13 @@ export const NavbarDesktop = () => {
                     </Link>
                 </div>
                 <div className={styles.headerItems}>
+                    <Link href="/hazte-open-bootcamper">
+                        { router.pathname == '/hazte-open-bootcamper' ?
+                            <a className={styles.current}>Hazte Open Bootcamper</a>
+                        :
+                            <a>Ofertas</a>
+                        }
+                    </Link>
                     <Link href="/ofertas">
                         { router.pathname == '/ofertas' ?
                             <a className={styles.current}>Ofertas</a>
