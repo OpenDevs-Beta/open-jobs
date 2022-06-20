@@ -15,11 +15,11 @@ export const getStaticProps: GetStaticProps = async () => {
 function HomePage({data}:{data:any}) {
 
   return (
-    <>
+    <div className={styles.homepageContainer}>
         <Navbar />
         <HomeSearcher />
         <CardHomeGrid ofertas={data} />
-    </>
+    </div>
   )
 }
 
