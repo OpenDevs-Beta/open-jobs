@@ -43,7 +43,7 @@ const QuestionSearcher = (query: any) => {
         ></input>
         {queryParam === undefined || queryParam === "" ? (
           <button className={styles.searcherOfertasButton}>
-            <Image src={searchIcon} onClick={() => router.push('/')} />
+            <Image src={searchIcon} onClick={() => router.push('/preguntas-frecuentes')} />
           </button>
         ) : (
           <button

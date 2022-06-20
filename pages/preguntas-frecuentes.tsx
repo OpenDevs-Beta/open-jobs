@@ -33,7 +33,14 @@ export default function preguntasFrecuentes() {
     }
     else {
       let dataChange = questions.filter((question: any) => {
-        return question.question.includes(queryParam) || question.question.toLowerCase().includes(queryParam) || question.question.toUpperCase().includes(queryParam) 
+        // .normalize("NFD").replace(/[\u0300-\u036f]/g, "") Quitar tildes //
+        return question.question.normalize("NFD").replace(/[\u0300-\u036f]/g, "").includes(queryParam) ||
+        question.question.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().includes(queryParam) ||
+        question.question.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toUpperCase().includes(queryParam) ||
+        // Con tildes
+        question.question.includes(queryParam) ||
+        question.question.toLowerCase().includes(queryParam) ||
+        question.question.toUpperCase().includes(queryParam)
       })
       setQuestionsSearch(dataChange)
     }
