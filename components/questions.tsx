@@ -1,38 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import Image from "next/image";
 import styles from "../styles/question.module.css";
 import { useRouter } from "next/router";
 
 export default function questions({ items }: { items: any[] }) {
-  const [elems, setElems] = useState(items);
-
-  const toggleQuestion = (elem: any, index: number) => {
-    if (elem.collapsed === undefined) {
-      elem.collapsed = true;
-    }
-
-    elem.collapsed = !elem.collapsed;
-
-    const newElems = [...elems];
-
-    newElems[index] = elem;
-
-    setElems(newElems);
-
-    const node: any = document.getElementById(`question-detail-${index}`);
-    if (node) {
-      const newOpacity = node.style.opacity !== "1" ? "1" : "0";
-      const newVisibility =
-        node.style.visibility !== "visible" ? "visible" : "hidden";
-
-      const newHeight = node.style.height !== "auto" ? "auto" : "0";
-
-      node.style.setProperty("opacity", newOpacity);
-      node.style.setProperty("visibility", newVisibility);
-      node.style.setProperty("height", newHeight);
-    }
-  };
-
   const router = useRouter();
 
   const queryParam = router.query.query;
@@ -55,35 +26,9 @@ export default function questions({ items }: { items: any[] }) {
           <div className={styles.title}>Recomendadores</div>
         ) : null}
         <div className={styles["question-list"]}>
-          {elems.map((elem: any, index) => (
+          {items.map((item: any) => (
             <div className={styles["question-item"]}>
-              <div className={styles["question-line"]}>
-                <div className={styles["question-text"]}>{elem.question}</div>
-                <button
-                  className={styles["question-button"]}
-                  onClick={() => toggleQuestion(elem, index)}
-                >
-                  {elem.collapsed === false ? (
-                    <Image
-                      src="/down-svgrepo-com.svg"
-                      width={20}
-                      height={20}
-                    ></Image>
-                  ) : (
-                    <Image
-                      src="/up-svgrepo-com.svg"
-                      width={20}
-                      height={20}
-                    ></Image>
-                  )}
-                </button>
-              </div>
-              <div
-                id={`question-detail-${index}`}
-                className={styles["question-detail"]}
-              >
-                {elem.answer}
-              </div>
+              <div className={styles["question-text"]}>{item.question}</div>
             </div>
           ))}
         </div>

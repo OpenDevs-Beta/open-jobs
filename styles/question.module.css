@@ -44,11 +44,6 @@
   box-shadow: 0 2px 6px 0 rgb(0 0 0 / 5%);
 }
 
-.questions-wrapper .list-wrapper .question-list .question-line {
-  display: flex;
-  justify-content: space-between;
-}
-
 .questions-wrapper .list-wrapper .question-list .question-item {
   background-color: #fff;
   padding: 30px 20px;
@@ -80,25 +75,4 @@
 
 .questions-wrapper .list-wrapper .question-list .question-item .question-text {
   color: #02aea2;
-}
-.questions-wrapper
-  .list-wrapper
-  .question-list
-  .question-item
-  .question-detail {
-  visibility: hidden;
-  opacity: 0;
-  height: 0;
-  transition: visibility 0s, opacity 0.5s linear;
-}
-
-.questions-wrapper
-  .list-wrapper
-  .question-list
-  .question-item
-  .question-button {
-  padding: 0;
-  border: 0;
-  background: transparent;
-  cursor: pointer;
 }
