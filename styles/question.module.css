@@ -1,9 +1,13 @@
 .questions-wrapper {
-  margin-top: 15px;
-  margin: 40px;
+  padding: 30px calc(50% - 633px);
   background-color: #ebeef1;
-  padding: 30px;
-  border-radius: 4px;
+  flex-grow: 1;
+}
+
+@media (max-width: 1300px) {
+  .questions-wrapper {
+    padding: 30px 20px;
+  }
 }
 
 .questions-wrapper .main-content {

@@ -47,6 +47,15 @@ export const NavbarMobile = () => {
                       </Link>
                   </div>
                   <div>
+                    <Link href="/hazte-open-bootcamper">
+                      { router.pathname == '/hazte-open-bootcamper' ?
+                        <a className={styles.current}>Hazte Open Bootcamper</a>
+                      :
+                        <a>Hazte Open Bootcamper</a>
+                      }
+                    </Link>
+                  </div>
+                  <div>
                       <Link href="/ofertas">
                           { router.pathname == '/ofertas' ?
                               <a className={styles.current}>Ofertas</a>
@@ -56,13 +65,13 @@ export const NavbarMobile = () => {
                       </Link>
                   </div>
                   <div>
-                  <Link href="/empresa">
-                          { router.pathname == '/empresa' ?
-                              <a className={styles.current}>Empresa</a>
-                          :
-                              <a>Empresa</a>
-                          }
-                      </Link>
+                    <Link href="/empresa">
+                      { router.pathname == '/empresa' ?
+                        <a className={styles.current}>Empresa</a>
+                      :
+                        <a>Empresa</a>
+                      }
+                    </Link>
                   </div>
               </div>
           </div>

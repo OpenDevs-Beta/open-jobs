@@ -2,9 +2,9 @@
   padding: 30px calc(50% - 632.5px) 30px;
 }
 
-@media (max-width:835px) {
-  .searcher{
-      margin-top: 72px;
+@media (max-width: 835px) {
+  .searcher {
+    margin-top: 72px;
   }
 }
 
@@ -212,7 +212,7 @@
   top: -3px;
 }
 .switch-button .switch-button__checkbox:checked + .switch-button__label {
-  background-color: #00a878;
+  background-color: #4aaea1;
 }
 .switch-button .switch-button__checkbox:checked + .switch-button__label:before {
   transform: translateX(17.5px);
@@ -253,15 +253,22 @@
   max-width: 560px;
 
   position: absolute;
-  top: 180px;
   left: 80px;
   display: none;
   z-index: 1;
+  justify-content: space-between;
 }
-.salary label {
-  display: inline-block;
-  width: 2em;
+
+.salary span {
+  align-self: flex-end;
+  margin-bottom: 4px;
 }
+
+.salary div label {
+  display: block;
+  text-align: left;
+}
+
 .salary input[type="range"] {
   width: 20em;
   display: inline-block;

@@ -1,0 +1,71 @@
+.banner{
+  position: relative;
+  margin-top: 72px;
+}
+
+.banner > picture{
+  display: block;
+  height: 100%;
+  position: relative;
+  width: 100%;
+  margin-top: -72px;
+}
+
+.banner img{
+  height: 500px;
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+}
+
+.banner > .bannerTitleBox {
+  position: absolute;
+  bottom: 150px;
+  padding: 0 calc(50% - 633px);
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 100%;
+  align-items: center;
+}
+
+.banner > .bannerTitleBox > .titleBox {
+  padding: 0 20px;
+  max-width: 450px;
+  width: 90%;
+}
+
+.banner > .bannerTitleBox > .titleBox > .title {
+  font-weight: bold;
+  font-size: 2.5em;
+}
+
+.banner > .bannerTitleBox > .titleBox > .description {
+  line-height: 30px;
+}
+
+.banner > .bannerTitleBox > .titleBox > .btnsContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.banner > .bannerTitleBox > .titleBox > .btnsContainer > button {
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid;
+  padding: 10px 24px;
+  border-radius: 5px;
+  font-size: 1em;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.banner > .bannerTitleBox > .titleBox > .btnsContainer button {
+  background-color: #11B1A6;
+  color: white;
+  border-color: #11B1A6;
+  cursor: pointer;
+}
