@@ -32,7 +32,7 @@ export const NavbarDesktop = () => {
             {router.pathname == "/hazte-open-bootcamper" ? (
               <a className={styles.current}>Hazte Open Bootcamper</a>
             ) : (
-              <a>Ofertas</a>
+              <a>Hazte Open Bootcamper</a>
             )}
           </Link>
           <Link href="/ofertas">
