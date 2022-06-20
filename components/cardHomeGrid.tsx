@@ -33,7 +33,7 @@ export const CardHomeGrid = (ofertas: any) => {
     if (windowWidth >= 1088) { setCardLimit(4) }
     else if (windowWidth <= 1088 && windowWidth >= 836) { setCardLimit(3) }
     else if (windowWidth <= 836 && windowWidth >= 555) { setCardLimit(2) }
-    else { setCardLimit(1) }
+    else { setCardLimit(10) }
 
     if (Math.ceil(cards.length / cardLimit) === cards.length / cardLimit) {
       setTotalPages((cards.length / cardLimit) + 1)
@@ -57,8 +57,7 @@ export const CardHomeGrid = (ofertas: any) => {
       <div className={styles.title}><div><span>Últimas ofertas</span><span className={styles.link} onClick={() => router.push('/ofertas')}>Ver todas</span></div>
         <div className={styles.control}><button onClick={cardIndexRewind}><Image src={left} width='20' height='20' /></button><button onClick={cardIndexForward}><Image src={right} width='20' height='20' /></button></div></div>
       <div className={styles.container}>
-        <div className={styles.controlSmall}><button onClick={cardIndexRewind}><Image src={left} width='20' height='20' /></button><button onClick={cardIndexForward}><Image src={right} width='20' height='20' /></button></div>
-        <div className={styles.grid}>
+                <div className={styles.grid}>
           {cardsPaginated.map((card: any) => (
             <Card nombre={card.nombre} image={'/'} empresa={card.empresa.nombre} ubicacion={card.ubicacion} habilidades={card.habilidades} experiencia={card.experiencia} id={card.id} />
           ))}

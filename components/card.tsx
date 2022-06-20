@@ -8,9 +8,13 @@ type ICard = {
   image: string,
   empresa: string,
   ubicacion: string,
-  habilidades: string[],
+  habilidades: ISkill[],
   experiencia: string,
-  id: string
+  id: number
+}
+
+type ISkill = {
+  nombre: string,
 }
 
 export default function Card({
@@ -41,8 +45,8 @@ export default function Card({
             <div className={styles["card-location"]}>{ubicacion}</div>
           </div>
           <div className={styles["card-tags"]}>
-            {habilidades ? habilidades.map((habilidad: string) => (
-              <span>{habilidad}</span>
+            {habilidades ? habilidades.map((habilidad: ISkill) => (
+              <span>{habilidad.nombre}</span>
             )) : null}
           </div>
           <div className={styles["card-experience"]}>{experiencia}</div>
