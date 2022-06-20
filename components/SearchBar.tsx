@@ -10,23 +10,6 @@ const SearchBar = (query: any) => {
 
   const [queryParam, setQueryParam] = useState(query.query);
 
-  useEffect(() => {
-    var input = document.querySelector("input[type=range]");
-    actualizarInput(input);
-
-    if (input) {
-      input.addEventListener("input", function (evt) {
-        actualizarInput(input);
-      });
-    }
-  }, []);
-
-  function actualizarInput(input: any) {
-    var inputMin = input.getAttribute("min");
-    var inputMax = input.getAttribute("max");
-    var unidad = (inputMax - inputMin) / 100;
-    input.style.setProperty("--value", (input.value - inputMin) / unidad);
-  }
   const handleSearchInputHome = (e: any): void => {
     e === undefined || e === ""
       ? router.replace("/ofertas")
@@ -42,25 +25,37 @@ const SearchBar = (query: any) => {
   const toggleExperience = (e: any) => {
     const node: any = document.querySelector("#experience");
     if (node) {
-      const newValue = node.style.display !== "block" ? "block" : "none";
+      const displayValue = node.style.display !== "block" ? "block" : "none";
       hidePopovers();
-      node.style.setProperty("display", newValue);
+
+      const topValue = e.target.offsetTop + 30;
+      node.style.setProperty("top", `${topValue}px`);
+
+      node.style.setProperty("display", displayValue);
     }
   };
   const toggleSalary = (e: any) => {
     const node: any = document.querySelector("#salary");
     if (node) {
-      const newValue = node.style.display !== "block" ? "block" : "none";
+      const displayValue = node.style.display !== "flex" ? "flex" : "none";
       hidePopovers();
-      node.style.setProperty("display", newValue);
+
+      const topValue = e.target.offsetTop + 30;
+      node.style.setProperty("top", `${topValue}px`);
+
+      node.style.setProperty("display", displayValue);
     }
   };
   const toggleCity = (e: any) => {
     const node: any = document.querySelector("#city");
     if (node) {
-      const newValue = node.style.display !== "block" ? "block" : "none";
+      const displayValue = node.style.display !== "block" ? "block" : "none";
       hidePopovers();
-      node.style.setProperty("display", newValue);
+
+      const topValue = e.target.offsetTop + 30;
+      node.style.setProperty("top", `${topValue}px`);
+
+      node.style.setProperty("display", displayValue);
     }
   };
   const hidePopovers = () => {
@@ -124,11 +119,15 @@ const SearchBar = (query: any) => {
         </div>
       </div>
       <div id="salary" className={styles.salary}>
-        <p>
+        <div>
           <label>Salario mín</label>
-          <input type="range" min="30" max="170" step="1" value="90" />
+          <input type="number" step="500" value="10000" />
+        </div>
+        <span>&nbsp;-&nbsp;</span>
+        <div>
           <label>Salario máx</label>
-        </p>
+          <input type="number" step="500" value="45000" />
+        </div>
       </div>
 
       <div id="experience" className={styles.experience}>
