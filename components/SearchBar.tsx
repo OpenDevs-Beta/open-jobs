@@ -11,6 +11,7 @@ const SearchBar = (query: any) => {
 
   const [queryParam, setQueryParam] = useState(query.query);
   const [isModalOpen, setIsModalOpen] = useState(false)
+  const [mobileFiltersVisibility, setMobileFiltersVisibility] = useState<boolean>(false)
 
   const setModalShow = (status: boolean) => {
     setIsModalOpen(status)
@@ -122,6 +123,10 @@ const SearchBar = (query: any) => {
     }
   };
 
+  const toggleMobileFilters = () => {
+    setMobileFiltersVisibility(!mobileFiltersVisibility)
+  }
+
   return (
     <div className={styles.searcher}>
       <div className={styles.searcherForm}>
@@ -146,7 +151,11 @@ const SearchBar = (query: any) => {
           </button>
         )}
       </div>
-      <div className={styles.searcherOfertasFilters}>
+      <div className={styles.searcherOfertasFiltersToggler}>
+        <button onClick={toggleMobileFilters} className={`${mobileFiltersVisibility ? styles.filtersShow : ''}`}>Filtros</button>
+      </div>
+      <div className={`${styles.searcherOfertasFilters} ${mobileFiltersVisibility ? styles.mobileShow : styles.mobileHide}`}>
+
         <button>Habilidades</button>
         
         <button onClick={(e: any) => toggleSalary(e)}>Salario aprox.</button>
@@ -171,7 +180,6 @@ const SearchBar = (query: any) => {
           <span className={styles.remote}>Remoto</span>
         </div>
       </div>
-
 
       {
         isModalOpen ? (
