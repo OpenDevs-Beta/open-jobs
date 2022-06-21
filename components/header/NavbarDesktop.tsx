@@ -14,7 +14,7 @@ export const NavbarDesktop = () => {
       <div>
         <div className={styles.headerLogo}>
           <Link href="/">
-            {router.pathname == "/ofertas/[id]" ? (
+            {router.pathname == "/pageConNavbarYFondoNegro?" ? (
               <Image src={logoWhite} />
             ) : (
               <Image src={logo} />
@@ -23,7 +23,7 @@ export const NavbarDesktop = () => {
         </div>
         <div
           className={
-            router.pathname == "/ofertas/[id]"
+            router.pathname == "/pageConNavbarYFondoNegro?"
               ? styles.headerItemsBgBlack
               : styles.headerItems
           }
@@ -36,7 +36,7 @@ export const NavbarDesktop = () => {
             )}
           </Link>
           <Link href="/ofertas">
-            {router.pathname == "/ofertas" ? (
+            {router.pathname == "/ofertas" || router.pathname == "/ofertas/[id]" ? (
               <a className={styles.current}>Ofertas</a>
             ) : (
               <a>Ofertas</a>

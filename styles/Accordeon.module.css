@@ -16,32 +16,25 @@
   align-items: flex-start;
 }
 
-.questions-wrapper .main-content .main-image-wrapper {
-  padding: 10px;
-}
-
 .questions-wrapper .main-content .title {
-  font-size: 33px;
+  font-size: 28px;
   margin-top: 0;
   color: #3a3c4c;
-  font-weight: 400;
+  font-weight: 600;
+  margin: auto;
 }
 
-.questions-wrapper .main-content .description {
-  font-weight: 300;
-}
 .questions-wrapper .list-wrapper {
   margin-top: 45px;
 }
 
-.questions-wrapper .list-wrapper .title {
-  font-size: 16px;
-  font-weight: 500;
-  padding-bottom: 11px;
-}
-
 .questions-wrapper .list-wrapper .question-list {
   box-shadow: 0 2px 6px 0 rgb(0 0 0 / 5%);
+}
+
+.questions-wrapper .list-wrapper .question-list .question-line {
+  display: flex;
+  justify-content: space-between;
 }
 
 .questions-wrapper .list-wrapper .question-list .question-item {
@@ -73,12 +66,35 @@
   border-top: 0;
 }
 
-.questions-wrapper .list-wrapper .question-list .question-item .question-text {
-  color: #02aea2;
+.questions-wrapper
+  .list-wrapper
+  .question-list
+  .question-item
+  .question-detail {
+  visibility: hidden;
+  opacity: 0;
+  height: 0;
+  transition: visibility 0s, opacity 0.5s linear;
 }
 
-.questions-wrapper .list-wrapper .question-list .question-item .question-response {
-  margin: 12px 0 0;
-  font-weight: 500;
-  color: rgb(0 0 0 / 50%)
+.questions-wrapper
+  .list-wrapper
+  .question-list
+  .question-item
+  .question-button {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+.questions-wrapper .button-wrapper {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.questions-wrapper .button-wrapper .view-all-button {
+  padding: 8px 20px;
+  border-radius: 20px;
+  border: 1px solid #2b2b2b;
+  background-color: #eaeaea;
 }
