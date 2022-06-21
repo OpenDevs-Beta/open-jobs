@@ -5,22 +5,9 @@ import Questions from "../components/questions";
 import QuestionSearcher from "../components/questionsSearcher";
 import styles from '../styles/index.module.css'
 
-export default function preguntasFrecuentes() {
-  const questions = [
-    {
-      question: "Soy autónomo, ¿Puedo facturar la recompensa?",
-    },
-    {
-      question: "¿Qué pasa si no quiero recibir la recompensa?",
-    },
-    {
-      question: "¿Qué pasa si no quiero recibir la recompensa?",
-    },
-    {
-      question: "¿Qué pasa si no quiero recibir la recompensa?",
-    },
-  ];
+import questions from '../public/faqs.json'
 
+export default function preguntasFrecuentes() {
   const router = useRouter();
 
   const queryParam = router.query.query
@@ -46,7 +33,7 @@ export default function preguntasFrecuentes() {
   return (
     <div className={styles.homepageContainer}>
       <QuestionSearcher />
-      <Questions items={questionsSearch} />
+      <Questions questionsList={questionsSearch} />
     </div>
   );
 }

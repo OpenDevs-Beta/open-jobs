@@ -1,12 +1,6 @@
 .banner{
   position: relative;
-  z-index: -9999;
-}
-
-@media (max-width: 767px){
-  .banner{
-    display: none;
-  }
+  margin-top: 72px;
 }
 
 .banner > picture{
@@ -38,7 +32,7 @@
 .banner > .bannerTitleBox > .titleBox {
   padding: 0 20px;
   max-width: 450px;
-  width: 66%;
+  width: 90%;
 }
 
 .banner > .bannerTitleBox > .titleBox > .title {
@@ -69,13 +63,9 @@
   cursor: pointer;
 }
 
-.banner > .bannerTitleBox > .titleBox > .btnsContainer button[name='startNow'] {
+.banner > .bannerTitleBox > .titleBox > .btnsContainer button {
   background-color: #11B1A6;
   color: white;
   border-color: #11B1A6;
-}
-
-.banner > .bannerTitleBox > .titleBox > .btnsContainer button[name='howItWorks'] {
-  background-color: #fff;
-  border-color: #abb4bc;
+  cursor: pointer;
 }
