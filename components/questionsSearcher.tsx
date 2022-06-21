@@ -3,17 +3,15 @@ import Image from "next/image";
 import styles from "../styles/QuestionSearcher.module.css";
 import searchIcon from "../utils/images/search-24.svg";
 import cross from "../utils/images/cross.svg";
-import { useEffect, useState } from "react";
-import Link from "next/link";
+import { useState } from "react";
 
-import logo from '../utils/images/logo_mock.svg'
 import logoWhite from '../utils/images/logo_mock_white.svg'
 
-const QuestionSearcher = (query: any) => {
+const QuestionSearcher = () => {
 
   const router: any = useRouter();
 
-  const [queryParam, setQueryParam] = useState(query.query);
+  const [queryParam, setQueryParam] = useState(router.query.query);
 
   const handleSearchInputHome = (e: any): void => {
     e === undefined || e === ""

@@ -5,6 +5,9 @@ import { useRouter } from "next/router";
 import preguntasFrecuentes from "../../pages/preguntas-frecuentes";
 
 export default function Accordeon({ items }: { items: any[] }) {
+
+  const router = useRouter();
+
   const [elems, setElems] = useState(items);
   const router = useRouter();
 

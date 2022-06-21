@@ -9,11 +9,11 @@ import { getAllJobs, getJobsPaginated } from '../../shared/middlewares/APImiddle
 import styles from '../../styles/Ofertas.module.css'
 
 export const getStaticProps: GetStaticProps = async () => {
-  const {data} = await getAllJobs()
-  return  {props: { data }} 
+  const { data } = await getAllJobs()
+  return { props: { data } }
 };
 
-const Ofertas = ({data}:{data:any}) => {
+const Ofertas = ({ data }: { data: any }) => {
 
   const router = useRouter();
 
@@ -40,10 +40,31 @@ const Ofertas = ({data}:{data:any}) => {
     }
     else {
       let dataChange = dataSaved.filter((oferta: any) => {
-        return oferta.nombre.includes(queryParam) || oferta.nombre.toLowerCase().includes(queryParam) || oferta.nombre.toUpperCase().includes(queryParam) ||
-          oferta.ubicacion.toLowerCase().includes(queryParam) || oferta.ubicacion.toUpperCase().includes(queryParam) || oferta.ubicacion.includes(queryParam) ||
-          oferta.experiencia.toLowerCase().includes(queryParam) || oferta.experiencia.toUpperCase().includes(queryParam) || oferta.experiencia.includes(queryParam) ||
-          oferta.empresa.nombre.toLowerCase().includes(queryParam) || oferta.empresa.nombre.toUpperCase().includes(queryParam) || oferta.empresa.nombre.includes(queryParam)
+        // .normalize("NFD").replace(/[\u0300-\u036f]/g, "") Quitar tildes //
+        return oferta.nombre.normalize("NFD").replace(/[\u0300-\u036f]/g, "").includes(queryParam) ||
+          oferta.nombre.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().includes(queryParam) ||
+          oferta.nombre.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toUpperCase().includes(queryParam) ||
+          oferta.ubicacion.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().includes(queryParam) ||
+          oferta.ubicacion.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toUpperCase().includes(queryParam) ||
+          oferta.ubicacion.normalize("NFD").replace(/[\u0300-\u036f]/g, "").includes(queryParam) ||
+          oferta.experiencia.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().includes(queryParam) ||
+          oferta.experiencia.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toUpperCase().includes(queryParam) ||
+          oferta.experiencia.normalize("NFD").replace(/[\u0300-\u036f]/g, "").includes(queryParam) ||
+          oferta.empresa.nombre.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().includes(queryParam) ||
+          oferta.empresa.nombre.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toUpperCase().includes(queryParam) ||
+          oferta.empresa.nombre.normalize("NFD").replace(/[\u0300-\u036f]/g, "").includes(queryParam) ||
+          // Con tildes
+          oferta.nombre.includes(queryParam) ||
+          oferta.nombre.toLowerCase().includes(queryParam) ||
+          oferta.nombre.toUpperCase().includes(queryParam) ||
+          oferta.ubicacion.toLowerCase().includes(queryParam) ||
+          oferta.ubicacion.toUpperCase().includes(queryParam) ||
+          oferta.ubicacion.includes(queryParam) ||
+          oferta.experiencia.toLowerCase().includes(queryParam) ||
+          oferta.experiencia.toUpperCase().includes(queryParam) || oferta.experiencia.includes(queryParam) ||
+          oferta.empresa.nombre.toLowerCase().includes(queryParam) ||
+          oferta.empresa.nombre.toUpperCase().includes(queryParam) ||
+          oferta.empresa.nombre.includes(queryParam)
       })
       setOfertasSearch(dataChange)
       setPage(page)
@@ -69,7 +90,7 @@ const Ofertas = ({data}:{data:any}) => {
   return (
     <div className={styles.ofertasContainer} onScroll={handleScroll}>
       <Navbar />
-      <SearchBar query={queryParam} />
+      <SearchBar />
       <CardGrid ofertas={ofertasSearch} />
     </div>
   )
