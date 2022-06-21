@@ -76,3 +76,9 @@
 .questions-wrapper .list-wrapper .question-list .question-item .question-text {
   color: #02aea2;
 }
+
+.questions-wrapper .list-wrapper .question-list .question-item .question-response {
+  margin: 12px 0 0;
+  font-weight: 500;
+  color: rgb(0 0 0 / 50%)
+}
