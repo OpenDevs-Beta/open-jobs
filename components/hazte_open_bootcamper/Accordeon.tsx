@@ -4,6 +4,9 @@ import styles from "../../styles/Accordeon.module.css";
 import { useRouter } from "next/router";
 
 export default function Accordeon({ items }: { items: any[] }) {
+
+  const router = useRouter();
+
   const [elems, setElems] = useState(items);
 
   const toggleQuestion = (elem: any, index: number) => {
@@ -75,7 +78,7 @@ export default function Accordeon({ items }: { items: any[] }) {
       </div>
 
       <div className={styles["button-wrapper"]}>
-        <button className={styles["view-all-button"]}>Ver todas</button>
+        <button className={styles["view-all-button"]} onClick={() => router.push('/preguntas-frecuentes')}>Ver todas</button>
       </div>
     </div>
   );
