@@ -1,7 +1,4 @@
 .card {
-  animation: fadeInAnimation ease 0.8s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
   width: calc(25% - 12px);
   min-width: 250px;
   height: 310px;
@@ -17,15 +14,6 @@
     sans-serif;
   box-shadow: 0 2px 4px 0 #0000000f;
   cursor: pointer;
-}
-
-@keyframes fadeInAnimation {
-  0% {
-      opacity: 0;
-  }
-  100% {
-      opacity: 1;
-   }
 }
 
 .card:hover,

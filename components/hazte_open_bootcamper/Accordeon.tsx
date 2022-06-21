@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Image from "next/image";
 import styles from "../../styles/Accordeon.module.css";
 import { useRouter } from "next/router";
-import preguntasFrecuentes from "../../pages/preguntas-frecuentes";
 
 export default function Accordeon({ items }: { items: any[] }) {
 
@@ -35,7 +34,19 @@ export default function Accordeon({ items }: { items: any[] }) {
       node.style.setProperty("visibility", newVisibility);
       node.style.setProperty("height", newHeight);
     }
+
+    const height: any = document.getElementById(`question-item-${index}`);
+
+  const lineHeight: any = document.getElementById(`question-line-${index}`);
+
+  if (lineHeight) {
+    const newHeight = lineHeight.style.height !== "30px" ? "30px" : "18px";
+    lineHeight.style.setProperty("height", newHeight);
+  }
+
   };
+
+  
 
   return (
     <div className={styles["questions-wrapper"]}>
@@ -46,7 +57,7 @@ export default function Accordeon({ items }: { items: any[] }) {
         <div className={styles["question-list"]}>
           {elems.map((elem: any, index) => (
             <div className={styles["question-item"]}>
-              <div className={styles["question-line"]}>
+              <div className={styles["question-line"]} id={`question-line-${index}`}>
                 <div className={styles["question-text"]}>{elem.question}</div>
                 <button
                   className={styles["question-button"]}
