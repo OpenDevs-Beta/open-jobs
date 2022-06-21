@@ -2,6 +2,10 @@
   background-color: #04435b;
   overflow: hidden;
   position: relative;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .empresaContainer > .empresaHeader > div{
@@ -144,14 +148,13 @@
 .empresaContainer > .empresaFeatured > div h4{
   margin-top: 0;
   margin-bottom: 16px;
-  font-weight: 600;
+  font-size: 1.7rem;
 }
 
 .empresaContainer > .empresaFeatured > div p{
-  font-size: 1rem;
-  font-weight: 400;
-  letter-spacing: .03125em;
-  line-height: 1.5rem;
+  color: #A3A3A3;
+  font-size: 1em;
+  line-height: 1.5em;
 }
 
 .empresaContainer > .empresaContacto{
@@ -273,4 +276,5 @@
   font-size: 14px;
   font-weight: 600;
   box-shadow: 0 1px 5px #0003, 0 2px 2px #00000024, 0 3px 1px -2px #0000001f;
+  cursor: pointer;
 }

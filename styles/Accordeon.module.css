@@ -33,8 +33,10 @@
 }
 
 .questions-wrapper .list-wrapper .question-list .question-line {
+  height: 18px;
   display: flex;
   justify-content: space-between;
+  transition: height 0.5s linear;
 }
 
 .questions-wrapper .list-wrapper .question-list .question-item {
@@ -63,11 +65,16 @@
   border-top: 0;
 }
 
+.questions-wrapper .list-wrapper .question-list .question-item .question-text {
+  color: #02aea2;
+}
+
 .questions-wrapper .list-wrapper .question-list .question-item .question-detail {
   visibility: hidden;
   opacity: 0;
+  font-weight: 100;
   height: 0;
-  transition: visibility 0s, opacity 0.5s linear;
+  transition: visibility 0s, opacity 0.5s linear, height 0.5s linear;
 }
 
 .questions-wrapper .list-wrapper .question-list .question-item .question-button {

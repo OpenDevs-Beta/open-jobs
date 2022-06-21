@@ -16,7 +16,7 @@ const Banner = () => {
       <div className={styles.bannerTitleBox}>
         <div className={styles.titleBox}>
           <h1 className={styles.title}>Hazte Open Bootcamper</h1>
-          <p className={styles.description}>Por fin tendrás la recompensa que te mereces por recomendar al mejor talento</p>
+          <p className={styles.description}>Por fín tendrás la educación que mereces para presentarte a las mejores ofertas IT</p>
           <div className={styles.btnsContainer}>
             <Link href={'https://www.open-bootcamp.com/register'}><button name='startNow'>Empieza ahora</button></Link>
           </div>

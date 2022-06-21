@@ -21,10 +21,17 @@
 }
 
 .questions-wrapper .main-content .title {
+  display: flex;
+  align-items: center;
   font-size: 33px;
   margin-top: 0;
   color: #3a3c4c;
   font-weight: 400;
+  margin-bottom: 5px;
+}
+
+.questions-wrapper .main-content .title span{
+  margin-right: 8px;
 }
 
 .questions-wrapper .main-content .description {

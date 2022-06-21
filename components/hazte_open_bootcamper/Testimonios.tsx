@@ -23,7 +23,7 @@ export const Testimonios = ({testimonios}: {testimonios: ITestimonio[]}) => {
 
     return (
         <div className={styles.testimoniosContainer}>
-          <div>
+          <div className={styles.testimoniosBox}>
             <div className={styles.testimoniosOpiniones}>
               <div>
                 <div className={styles.testimoniosCarousel} style={{transform: "translateX(" + carouselPosition + "%)"}}>
@@ -54,12 +54,12 @@ export const Testimonios = ({testimonios}: {testimonios: ITestimonio[]}) => {
                   <h6>Recomendadores activos</h6>
                 </div>
                 <div>
-                  <h3>+30.000&euro;</h3>
-                  <h6>Repartidos en recompensas</h6>
+                  <h3>+30.000</h3>
+                  <h6>Alumnos inscritos</h6>
                 </div>
                 <div>
-                  <h3>+100</h3>
-                  <h6>Recomendaciones diarias</h6>
+                  <h3>+50</h3>
+                  <h6>Cursos a tu disposición</h6>
                 </div>
               </div>
             </div>

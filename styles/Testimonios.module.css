@@ -2,6 +2,11 @@
   padding: 60px calc(50% - 632.5px);
 }
 
+.testimoniosBox{
+  border-radius: 10px;
+  box-shadow: 0 3px 5px 0 #00000055;
+}
+
 @media (max-width: 1285px){
   .testimoniosContainer{
     padding: 60px 20px;
