@@ -25,37 +25,71 @@ const SearchBar = (query: any) => {
   const toggleExperience = (e: any) => {
     const node: any = document.querySelector("#experience");
     if (node) {
-      const displayValue = node.style.display !== "block" ? "block" : "none";
+      const visibilityValue =
+        node.style.visibility !== "visible" ? "visible" : "hidden";
+      const opacityValue = node.style.opacity !== "1" ? "1" : "0";
+
       hidePopovers();
 
       const topValue = e.target.offsetTop + 30;
       node.style.setProperty("top", `${topValue}px`);
 
-      node.style.setProperty("display", displayValue);
+      const experienceWidth = node.clientWidth;
+
+      const buttonWidth = e.target.clientWidth;
+
+      const leftValue =
+        e.target.offsetLeft - experienceWidth / 2 + buttonWidth / 2;
+      node.style.setProperty("left", `${leftValue}px`);
+
+      node.style.setProperty("visibility", visibilityValue);
+      node.style.setProperty("opacity", opacityValue);
     }
   };
   const toggleSalary = (e: any) => {
     const node: any = document.querySelector("#salary");
     if (node) {
-      const displayValue = node.style.display !== "flex" ? "flex" : "none";
+      const visibilityValue =
+        node.style.visibility !== "visible" ? "visible" : "hidden";
+      const opacityValue = node.style.opacity !== "1" ? "1" : "0";
+
       hidePopovers();
 
       const topValue = e.target.offsetTop + 30;
       node.style.setProperty("top", `${topValue}px`);
 
-      node.style.setProperty("display", displayValue);
+      const salaryWidth = node.clientWidth;
+
+      const buttonWidth = e.target.clientWidth;
+
+      const leftValue = e.target.offsetLeft - salaryWidth / 2 + buttonWidth / 2;
+      node.style.setProperty("left", `${leftValue}px`);
+
+      node.style.setProperty("visibility", visibilityValue);
+      node.style.setProperty("opacity", opacityValue);
     }
   };
   const toggleCity = (e: any) => {
     const node: any = document.querySelector("#city");
     if (node) {
-      const displayValue = node.style.display !== "block" ? "block" : "none";
+      const visibilityValue =
+        node.style.visibility !== "visible" ? "visible" : "hidden";
+      const opacityValue = node.style.opacity !== "1" ? "1" : "0";
+
       hidePopovers();
 
       const topValue = e.target.offsetTop + 30;
       node.style.setProperty("top", `${topValue}px`);
 
-      node.style.setProperty("display", displayValue);
+      const cityWidth = node.clientWidth;
+
+      const buttonWidth = e.target.clientWidth;
+
+      const leftValue = e.target.offsetLeft - cityWidth / 2 + buttonWidth / 2;
+      node.style.setProperty("left", `${leftValue}px`);
+
+      node.style.setProperty("visibility", visibilityValue);
+      node.style.setProperty("opacity", opacityValue);
     }
   };
   const hidePopovers = () => {
@@ -63,13 +97,16 @@ const SearchBar = (query: any) => {
     const salaryNode: any = document.querySelector("#salary");
     const cityNode: any = document.querySelector("#city");
     if (experienceNode) {
-      experienceNode.style.setProperty("display", "none");
+      experienceNode.style.setProperty("visibility", "hidden");
+      experienceNode.style.setProperty("opacity", "0");
     }
     if (salaryNode) {
-      salaryNode.style.setProperty("display", "none");
+      salaryNode.style.setProperty("visibility", "hidden");
+      salaryNode.style.setProperty("opacity", "0");
     }
     if (cityNode) {
-      cityNode.style.setProperty("display", "none");
+      cityNode.style.setProperty("visibility", "hidden");
+      cityNode.style.setProperty("opacity", "0");
     }
   };
 
