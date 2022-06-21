@@ -1,0 +1,211 @@
+.filterModalContainer {
+  border: 1px solid grey;
+  font-weight: 500;
+  height: auto;
+  min-height: 2.572em;
+  padding: 16px;
+  left: calc(50% - 350px);
+  text-align: center;
+  font-size: 14px;
+  margin-left: 16px;
+  margin-top: 16px;
+  border-radius: 7px;
+  background-color: white;
+  cursor: pointer;
+  max-width: 500px;
+
+  position: absolute;
+  top: 180px;
+  left: 250px;
+  display: none;
+}
+
+/********** Experience Modal Styles **********/
+
+.filterModalContainer[id='experience'] > button {
+  border: 1px solid grey;
+  font-weight: 500;
+  height: auto;
+  min-height: 2.572em;
+  padding: 4px 16px;
+  position: relative;
+  text-align: center;
+  font-size: 14px;
+  margin-left: 16px;
+  border-radius: 7px;
+  background-color: white;
+  cursor: pointer;
+}
+
+.filterModalContainer[id='experience'] > button:first-child {
+  margin-left: 0;
+}
+
+
+
+/********** City Modal Styles **********/
+
+.filterModalContainer[id='city'] > div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.filterModalContainer[id='city'] > div > button {
+  border: 1px solid grey;
+  font-weight: 500;
+  height: auto;
+  min-height: 2.572em;
+  padding: 4px 16px;
+  position: relative;
+  text-align: center;
+  font-size: 14px;
+  border-radius: 7px;
+  background-color: white;
+  cursor: pointer;
+}
+
+.filterModalContainer[id='city'] > input {
+  text-align: center;
+  height: 40px;
+  width: 100%;
+}
+
+
+/********** Salary Modal Styles **********/
+
+.filterModalContainer[id='salary'] span {
+  align-self: flex-end;
+  margin-bottom: 4px;
+}
+
+.filterModalContainer[id='salary'] div {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.filterModalContainer[id='salary'] div label {
+  display: block;
+  text-align: left;
+}
+
+.filterModalContainer[id='salary'] input[type="range"] {
+  width: 20em;
+  display: inline-block;
+}
+.filterModalContainer[id='salary'] > p {
+  margin: 2em 0;
+  text-align: center;
+}
+
+.filterModalContainer[id='salary'] input[type="range"]:focus {
+  outline: none;
+}
+
+.filterModalContainer[id='salary'] input[type="range"],
+.filterModalContainer[id='salary'] input[type="range"]::-webkit-slider-runnable-track,
+.filterModalContainer[id='salary'] input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+
+.filterModalContainer[id='salary'] input[type="range"]::-webkit-slider-thumb {
+  background-color: #fff;
+  width: 100%;
+  max-width: 20px;
+  height: 20px;
+  border: 3px solid #eaeaea;
+  border-radius: 50%;
+  margin-top: -9px;
+}
+
+.filterModalContainer[id='salary'] input[type="range"]::-moz-range-thumb {
+  background-color: #777;
+  max-width: 15px;
+  height: 15px;
+  border: 3px solid #333;
+  border-radius: 50%;
+}
+
+.filterModalContainer[id='salary'] input[type="range"]::-ms-thumb {
+  background-color: #fff;
+  width: 20px;
+  height: 20px;
+  border: 3px solid #eaeaea;
+  border-radius: 50%;
+}
+
+.filterModalContainer[id='salary'] input[type="range"]::-webkit-slider-runnable-track {
+  height: 3px;
+  background: linear-gradient(
+    to right,
+    rgb(16, 158, 235) calc(var(--value) * 1%),
+    #eaeaea 0
+  );
+}
+.filterModalContainer[id='salary'] input[type="range"] {
+  height: 3px;
+  background-image: linear-gradient(
+    to right,
+    rgb(16, 158, 235) calc(var(--value) * 1%),
+    #eaeaea 0
+  );
+}
+
+.filterModalContainer[id='salary'] input[type="range"]::-ms-track {
+  background-color: #777;
+  height: 3px;
+}
+
+.filterModalContainer[id='salary'] input[type="range"]::-ms-fill-upper {
+  background-color: black;
+}
+
+@media only screen and (max-width: 1200px) {
+
+  .modal {
+    background: rgb(0,0,0,0.3);
+    position: absolute;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+  }
+
+  .filterModalContainer {
+    border: 1px solid grey;
+    width: 100%;
+    font-weight: 500;
+    height: auto;
+    min-height: 2.572em;
+    padding: 16px;
+    left: calc(50% - 350px);
+    text-align: center;
+    font-size: 14px;
+    margin-left: 16px;
+    margin-top: 16px;
+    border-radius: 7px;
+    background-color: white;
+    cursor: pointer;
+    max-width: 500px;
+  
+    position: static;
+    top: 180px;
+    left: calc(50% - 260px)!important;
+    z-index: 9;
+  }
+
+  .filterModalContainer[id='salary'] {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+  }
+}

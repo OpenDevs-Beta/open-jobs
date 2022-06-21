@@ -27,3 +27,10 @@ export type IUsuario = {
   rol: string,
   empresas: Object[]
 }
+
+export type ITestimonio = {
+  imagen: string,
+  nombre: string,
+  trabajo: string,
+  testimonio: string
+}
