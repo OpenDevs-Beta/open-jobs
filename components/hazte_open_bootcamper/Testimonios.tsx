@@ -23,7 +23,7 @@ export const Testimonios = ({testimonios}: {testimonios: ITestimonio[]}) => {
 
     return (
         <div className={styles.testimoniosContainer}>
-          <div>
+          <div className={styles.testimoniosBox}>
             <div className={styles.testimoniosOpiniones}>
               <div>
                 <div className={styles.testimoniosCarousel} style={{transform: "translateX(" + carouselPosition + "%)"}}>
