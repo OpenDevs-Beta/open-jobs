@@ -9,7 +9,6 @@ export default function Accordeon({ items }: { items: any[] }) {
   const router = useRouter();
 
   const [elems, setElems] = useState(items);
-  const router = useRouter();
 
   const toggleQuestion = (elem: any, index: number) => {
     if (elem.collapsed === undefined) {
