@@ -164,12 +164,29 @@
   overflow-x: auto;
 }
 
-.searcher > .searcherOfertasFilters > button {
+@media (max-width:766px){
+  .searcher > .searcherOfertasFilters.mobileHide{
+    display: none;
+  }
+  .searcher > .searcherOfertasFilters.mobileShow{
+    display: flex;
+  }
+  .searcher > .searcherOfertasFilters{
+    width: 100%;
+    flex-flow: column wrap;
+    margin: 0;
+  }
+  .searcher > .searcherOfertasFilters > button{
+    margin-left: 0 !important;
+  }
+}
+
+.searcher > .searcherOfertasFilters > button{
   border: 1px solid grey;
   font-weight: 500;
   height: auto;
   min-height: 2.572em;
-  padding: 4px 16px;
+  padding: 10px 26px;
   position: relative;
   text-align: center;
   font-size: 14px;
@@ -360,4 +377,35 @@
   text-align: center;
   height: 40px;
   width: 100%;
+}
+
+.searcherOfertasFiltersToggler{
+  display: flex;
+  justify-content: center;
+}
+
+.searcherOfertasFiltersToggler > button{
+  border: 1px solid grey;
+  font-weight: 500;
+  height: auto;
+  min-height: 2.572em;
+  padding: 4px 16px;
+  position: relative;
+  text-align: center;
+  font-size: 14px;
+  margin-top: 16px;
+  border-radius: 28px;
+  background-color: white;
+  width: 100%;
+}
+
+.searcherOfertasFiltersToggler > button.filtersShow{
+  color: white;
+  background-color: #4aaea1;
+}
+
+@media (min-width:767px){
+  .searcherOfertasFiltersToggler > button{
+    display: none;
+  }
 }
