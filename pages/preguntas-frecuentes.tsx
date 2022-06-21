@@ -26,10 +26,18 @@ export default function preguntasFrecuentes() {
         // Con tildes
         question.question.includes(queryParam) ||
         question.question.toLowerCase().includes(queryParam) ||
-        question.question.toUpperCase().includes(queryParam)
+        question.question.toUpperCase().includes(queryParam) ||
+        // .normalize("NFD").replace(/[\u0300-\u036f]/g, "") Quitar tildes //
+        question.response.normalize("NFD").replace(/[\u0300-\u036f]/g, "").includes(queryParam) ||
+        question.response.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().includes(queryParam) ||
+        question.response.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toUpperCase().includes(queryParam) ||
+        // Con tildes
+        question.response.includes(queryParam) ||
+        question.response.toLowerCase().includes(queryParam) ||
+        question.response.toUpperCase().includes(queryParam)
       })
       setQuestionsSearch(dataChange)
-    }
+          }
   };
 
   useEffect(() => {
@@ -38,8 +46,8 @@ export default function preguntasFrecuentes() {
 
   return (
     <div className={styles.homepageContainer}>
-      <QuestionSearcher />
-      <Questions />
+      <QuestionSearcher/>
+      <Questions questions={questionsSearch} />
     </div>
   );
 }

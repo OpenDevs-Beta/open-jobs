@@ -6,10 +6,10 @@ import cross from "../utils/images/cross.svg";
 import { useState } from "react";
 import FilterModal from "./FilterModal";
 
-const SearchBar = (query: any) => {
+const SearchBar = () => {
   const router: any = useRouter();
 
-  const [queryParam, setQueryParam] = useState(query.query);
+  const [queryParam, setQueryParam] = useState(router.query.query);
   const [isModalOpen, setIsModalOpen] = useState(false)
 
   const setModalShow = (status: boolean) => {
