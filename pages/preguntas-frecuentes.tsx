@@ -39,7 +39,7 @@ export default function preguntasFrecuentes() {
   return (
     <div className={styles.homepageContainer}>
       <QuestionSearcher />
-      <Questions questionsList={questionsSearch} />
+      <Questions />
     </div>
   );
 }

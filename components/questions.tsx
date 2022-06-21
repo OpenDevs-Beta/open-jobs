@@ -3,12 +3,12 @@ import Image from "next/image";
 import styles from "../styles/question.module.css";
 import { useRouter } from "next/router";
 
-export default function questions({ items }: { items: any[] }) {
+import faqs from '../public/faqs.json'
+
+export default function questions() {
   const router = useRouter();
 
   const queryParam = router.query.query;
-
-
 
   return (
     <div className={styles["questions-wrapper"]}>
@@ -28,7 +28,7 @@ export default function questions({ items }: { items: any[] }) {
           <div className={styles.title}>Recomendadores</div>
         ) : null}
         <div className={styles["question-list"]}>
-          {questionsList.map((item: any) => (
+          {faqs?.map((item: any) => (
             <div className={styles["question-item"]}>
               <div className={styles["question-text"]}>{item.question}</div>
               <div className={styles["question-response"]}>{item.response}</div>

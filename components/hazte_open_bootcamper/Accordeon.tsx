@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Image from "next/Image";
+import Image from "next/image";
 import styles from "../../styles/Accordeon.module.css";
 import { useRouter } from "next/router";
 
@@ -32,10 +32,6 @@ export default function Accordeon({ items }: { items: any[] }) {
       node.style.setProperty("height", newHeight);
     }
   };
-
-  const router = useRouter();
-
-  const queryParam = router.query.query;
 
   return (
     <div className={styles["questions-wrapper"]}>
