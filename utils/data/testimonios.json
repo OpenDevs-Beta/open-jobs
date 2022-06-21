@@ -1,0 +1,20 @@
+[
+  {
+    "imagen": "/testimonioMaria.jpg",
+    "nombre": "María Beatriz Vivanco",
+    "trabajo": "Software Developer",
+    "testimonio": "Gracias a OpenBootcamp en 4 meses pude actualizarme y conocer nuevas tecnologías con las que conseguí un trabajo como FullStack en el que estoy muy contenta"
+  },
+  {
+    "imagen": "/testimonioAna.jpg",
+    "nombre": "Ana Fernández",
+    "trabajo": "Software Developer",
+    "testimonio": "Vengo de la rama del diseño gráfico y he estado estudiando en OpenBootcamp 2-3 meses y gracias a esta formación, estoy trabajando de desarrolladora web en una empresa"
+  },
+  {
+    "imagen": "/testimonioIgnacio.jpg",
+    "nombre": "Ignacio de Bats",
+    "trabajo": "Software Developer",
+    "testimonio": "Entré a principios de Octubre cuando empezó OB y el 10 de Enero ya estaba firmando el contrato como programador"
+  }
+]

@@ -1,37 +1,48 @@
-import Image from 'next/image'
+import { useState } from 'react'
+import { ITestimonio } from '../../shared/models/models.interface'
 import styles from '../../styles/Testimonios.module.css'
+import { TestimoniosItem } from './TestimoniosItem'
 
-export const Testimonios = () => {
+export const Testimonios = ({testimonios}: {testimonios: ITestimonio[]}) => {  
+
+  const [carouselPosition, setCarouselPosition] = useState<number>(0)
+  const minCarouselPosition = 0
+  const maxCarouselPosition = -((testimonios.length - 1) * 100)
+
+  const handleLeft = () => {
+    if(carouselPosition != minCarouselPosition){
+      setCarouselPosition(carouselPosition + 100)
+    }
+  }
+
+  const handleRight = () => {
+    if(carouselPosition != maxCarouselPosition){
+      setCarouselPosition(carouselPosition - 100)
+    }
+  }
+
     return (
         <div className={styles.testimoniosContainer}>
           <div>
             <div className={styles.testimoniosOpiniones}>
               <div>
-                <div className={styles.testimoniosCarousel}>
-                  <div>
-                    <div>
-                      <Image 
-                        src='/testimonio1.jpg'
-                        width={84}
-                        height={84}
-                        alt='Testimonio'
-                      />
-                      <p>María Beatriz Vivanco</p>
-                      <p>Software Developer</p>
-                    </div>
-                    <div>
-                      Gracias a OpenBootcamp en 4 meses pude actualizarme y conocer nuevas tecnologías con las que conseguí un trabajo como FullStack en el que estoy muy contenta
-                    </div>
+                <div className={styles.testimoniosCarousel} style={{transform: "translateX(" + carouselPosition + "%)"}}>
+                    {testimonios.map((testimonio: ITestimonio) => (
+                      <TestimoniosItem testimonio={testimonio} />
+                    ))}
+                </div>
+                {minCarouselPosition != carouselPosition ? (
+                  <div className={`${styles.testimoniosArrow} ${styles.testimoniosArrowLeft}`} onClick={handleLeft}>
+                    <span></span>
+                    <span></span>
                   </div>
-                </div>
-                <div className={`${styles.testimoniosArrow} ${styles.testimoniosArrowLeft}`}>
-                  <span></span>
-                  <span></span>
-                </div>
-                <div className={`${styles.testimoniosArrow} ${styles.testimoniosArrowRight}`}>
-                  <span></span>
-                  <span></span>
-                </div>
+                ) : null }
+                {maxCarouselPosition != carouselPosition ? (
+                  <div className={`${styles.testimoniosArrow} ${styles.testimoniosArrowRight}`} onClick={handleRight}>
+                    <span></span>
+                    <span></span>
+                  </div>
+                ) : null }
               </div>
             </div>
             <hr/>

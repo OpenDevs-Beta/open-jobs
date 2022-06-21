@@ -8,6 +8,8 @@ export default function questions({ items }: { items: any[] }) {
 
   const queryParam = router.query.query;
 
+
+
   return (
     <div className={styles["questions-wrapper"]}>
       <div className={styles["main-content"]}>
@@ -26,9 +28,10 @@ export default function questions({ items }: { items: any[] }) {
           <div className={styles.title}>Recomendadores</div>
         ) : null}
         <div className={styles["question-list"]}>
-          {items.map((item: any) => (
+          {questionsList.map((item: any) => (
             <div className={styles["question-item"]}>
               <div className={styles["question-text"]}>{item.question}</div>
+              <div className={styles["question-response"]}>{item.response}</div>
             </div>
           ))}
         </div>
