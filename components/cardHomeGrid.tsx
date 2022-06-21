@@ -23,7 +23,6 @@ export const CardHomeGrid = (ofertas: any) => {
   const cardIndexForward = () => {
     let numerator = totalPages - 1;
     cardIndex < numerator ? setCardIndex(cardIndex + 1) : setCardIndex(cardIndex)
-    console.log(animation)
     setAnimation(styles.gridleft)
     setTimeout(() => setAnimation(styles.grid), 300)
   }
