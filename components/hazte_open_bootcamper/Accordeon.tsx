@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import Image from "next/image";
 import styles from "../../styles/Accordeon.module.css";
 import { useRouter } from "next/router";
+import preguntasFrecuentes from "../../pages/preguntas-frecuentes";
 
 export default function Accordeon({ items }: { items: any[] }) {
   const [elems, setElems] = useState(items);
+  const router = useRouter();
 
   const toggleQuestion = (elem: any, index: number) => {
     if (elem.collapsed === undefined) {
@@ -67,7 +69,7 @@ export default function Accordeon({ items }: { items: any[] }) {
                 id={`question-detail-${index}`}
                 className={styles["question-detail"]}
               >
-                {elem.answer}
+                {elem.response}
               </div>
             </div>
           ))}
@@ -75,7 +77,12 @@ export default function Accordeon({ items }: { items: any[] }) {
       </div>
 
       <div className={styles["button-wrapper"]}>
-        <button className={styles["view-all-button"]}>Ver todas</button>
+        <button
+          className={styles["view-all-button"]}
+          onClick={() => router.push("/preguntas-frecuentes")}
+        >
+          Ver todas
+        </button>
       </div>
     </div>
   );
