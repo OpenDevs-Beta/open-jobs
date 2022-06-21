@@ -39,10 +39,12 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  transition: 0.3s ease-in-out;
 }
 
 .grid {
-  height: 310px;
+  height: 325px;
+  padding-top: 8px;
   width: 100%;
   display: flex;
   flex: auto;
@@ -53,7 +55,60 @@
   overflow-y:hidden;
 }
 
-.grid .see {
+.gridleft {
+  animation: carouseleft ease 0.2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  height: 325px;
+  padding-top: 8px;
+  width: 100%;
+  display: flex;
+  flex: auto;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 16px;
+  flex-wrap: wrap;
+  overflow-y:hidden;
+}
+
+@keyframes carouseleft {
+  0% {
+      margin-left: 100%;
+  }
+  100% {
+      margin-left: 0%;
+   }
+}
+
+.gridright {
+  animation: carouselright ease 0.2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  height: 325px;
+  padding-top: 8px;
+  width: 100%;
+  display: flex;
+  flex: auto;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 16px;
+  flex-wrap: wrap;
+  overflow-y:hidden;
+}
+
+@keyframes carouselright {
+  0% {
+      margin-right: 100%;
+  }
+  100% {
+      margin-right: 0%;
+   }
+}
+
+.see {
+  animation: fadeInAnimation ease 0.8s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
   width: calc(25% - 12px);
   min-width: 250px;
   height: 310px;
@@ -72,9 +127,18 @@
   cursor: pointer;
 }
 
-.grid .see:hover,
-.grid .see:focus,
-.grid .see:active {
+@keyframes fadeInAnimation {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+   }
+}
+
+.see:hover,
+.see:focus,
+.see:active {
   margin-top: -2px;
   box-shadow: 0 4px 4px 0 #0000001f;
   background-color: #02aea2;
@@ -82,13 +146,13 @@
 }
 
 @media (max-width: 1088px) {
-  .grid .see {
+  .see {
     width: calc(33% - 8px);
   }
 }
 
 @media (max-width: 836px) {
-  .grid .see {
+  .see {
     width: calc(50% - 8px);
   }
 }
@@ -110,12 +174,12 @@
     overflow-x: visible;
   }
 
-  .grid .see {
+  .see {
     width: 100%;
   }
 }
 
-.grid .see h1{
+.see h1{
   font-weight: 100;
   font-size: 3em;
 }
@@ -127,19 +191,6 @@
   align-items: center;
   right: 0;
   top: 0;
-}
-
-.title button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #e0e0e0;
-  border: none;
-  height: 34px;
-  width: 34px;
-  padding: 0;
-  border-radius: 50%;
-  cursor: pointer;
 }
 
 @media (max-width: 1300px) {
@@ -168,7 +219,7 @@
   }
 }
 
-.container button {
+.title .button {
   display: inline;
   justify-content: center;
   align-items: center;
@@ -179,6 +230,20 @@
   padding: 0;
   border-radius: 50%;
   cursor: pointer;
+  box-shadow: 0 2px 4px 0 #0000000f;
+  }
+
+.title .buttonInactive {
+  opacity: 50%;
+  display: inline;
+  justify-content: center;
+  align-items: center;
+  background-color: #e0e0e0;
+  border: none;
+  height: 34px;
+  width: 34px;
+  padding: 0;
+  border-radius: 50%;
   box-shadow: 0 2px 4px 0 #0000000f;
 }
 
@@ -194,9 +259,9 @@ margin-bottom: 5px;
 transition: background-color 0.15s ease;
 }
 
-.grid .see:hover .outercircle,
-.grid .see:focus .outercircle,
-.grid .see:active .outercircle {
+.see:hover .outercircle,
+.see:focus .outercircle,
+.see:active .outercircle {
   background-color: #fff;
 }
 
@@ -211,8 +276,8 @@ transition: background-color 0.15s ease;
   transition: background-color 0.15s ease;
 }
 
-.grid .see:hover .innercircle,
-.grid .see:focus .innercircle,
-.grid .see:active .innercircle {
+.see:hover .innercircle,
+.see:focus .innercircle,
+.see:active .innercircle {
   background-color: #02aea2;
 }

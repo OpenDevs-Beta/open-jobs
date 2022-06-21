@@ -5,7 +5,7 @@ import styles from '../styles/cardHomeGrid.module.css'
 import Image from 'next/image'
 import left from '../utils/images/left-arrow.svg'
 import right from '../utils/images/right-arrow.svg'
-import Card from './card';
+import CardHome from './cardHome';
 
 export const CardHomeGrid = (ofertas: any) => {
 
@@ -18,13 +18,21 @@ export const CardHomeGrid = (ofertas: any) => {
   const [cardLimit, setCardLimit] = useState(4)
   const [totalPages, setTotalPages] = useState(1)
   const [cardsPaginated, setCardsPaginated] = useState<any>([])
+  const [animation, setAnimation] = useState(styles.grid)
 
   const cardIndexForward = () => {
     let numerator = totalPages - 1;
     cardIndex < numerator ? setCardIndex(cardIndex + 1) : setCardIndex(cardIndex)
+    console.log(animation)
+    setAnimation(styles.gridleft)
+    setTimeout(() => setAnimation(styles.grid), 300)
   }
 
-  const cardIndexRewind = () => { cardIndex > 0 ? setCardIndex(cardIndex - 1) : setCardIndex(cardIndex) }
+  const cardIndexRewind = () => {
+    cardIndex > 0 ? setCardIndex(cardIndex - 1) : setCardIndex(cardIndex)
+    setAnimation(styles.gridright)
+    setTimeout(() => setAnimation(styles.grid), 250)
+  }
 
   const cardIndexReset = () => { cardIndex > totalPages ? setCardIndex(0) : setCardIndex(cardIndex) }
 
@@ -55,11 +63,14 @@ export const CardHomeGrid = (ofertas: any) => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.title}><div><span>Últimas ofertas</span><span className={styles.link} onClick={() => router.push('/ofertas')}>Ver todas</span></div>
-        <div className={styles.control}><button onClick={cardIndexRewind}><Image src={left} width='20' height='20' /></button><button onClick={cardIndexForward}><Image src={right} width='20' height='20' /></button></div></div>
+        <div className={styles.control}>
+          {cardIndex !== 0 ? <button onClick={cardIndexRewind} className={styles.button}><Image src={left} width='20' height='20' /></button> : <button className={styles.buttonInactive}><Image src={left} width='20' height='20' /></button>}
+          {cardIndex !== totalPages - 1 ? <button onClick={cardIndexForward} className={styles.button}><Image src={right} width='20' height='20' /></button> : <button className={styles.buttonInactive}><Image src={right} width='20' height='20' /></button>}
+        </div></div>
       <div className={styles.container}>
-                <div className={styles.grid}>
+        <div className={animation} id='carousel'>
           {cardsPaginated.map((card: any) => (
-            <Card nombre={card.nombre} image={'/'} empresa={card.empresa.nombre} ubicacion={card.ubicacion} habilidades={card.habilidades} experiencia={card.experiencia} id={card.id} />
+            <CardHome nombre={card.nombre} image={'/'} empresa={card.empresa.nombre} ubicacion={card.ubicacion} habilidades={card.habilidades} experiencia={card.experiencia} id={card.id} />
           ))}
           {cardsPaginated.length < cardLimit || cardLimit > 4 ? <div className={styles.see} onClick={() => router.push('/ofertas')}><div className={styles.outercircle}><div className={styles.innercircle}><h1>+</h1></div></div><span>Ver más</span></div> : null}
         </div>
