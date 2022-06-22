@@ -10,11 +10,15 @@ const FilterSalario = () => {
 
   const handleClick = (filter: string) => {
     setSalario(filter)
-    router.replace("/ofertas/?salario=" + filter)
+    router.query.salario = filter
+    router.push({ 
+      pathname: '/ofertas',
+      query: router.query
+    })
   }
 
   return (
-    <div className={styles.filterSalario}>
+    <div className={styles.filter}>
       <input type="range" min="18000" max="80000" step="1000" onChange={(e) => handleClick(e.target.value)} />
       <output>{salario} &euro;</output>
     </div>
