@@ -3,7 +3,7 @@ import HeroOpenBootcamper from "../components/hazte_open_bootcamper/Hero";
 import Accordeon from "../components/hazte_open_bootcamper/Accordeon";
 import { Navbar } from "../components/navBar";
 import { Testimonios } from '../components/hazte_open_bootcamper/Testimonios'
-import { Footer } from '../components/footer';
+import { Footer } from '../components/Footer';
 
 import faqs from '../public/faqs.json'
 

@@ -5,7 +5,7 @@ import { CardGrid } from '../../components/cardGrid';
 import { Navbar } from '../../components/navBar';
 import SearchBar from '../../components/SearchBar';
 import { getAllJobs, getJobsPaginated } from '../../shared/middlewares/APImiddleware';
-import { Footer } from '../../components/footer';
+import { Footer } from '../../components/Footer';
 
 import styles from '../../styles/Ofertas.module.css'
 
