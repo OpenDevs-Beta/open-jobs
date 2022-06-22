@@ -5,6 +5,7 @@ import { CardGrid } from '../../components/cardGrid';
 import { Navbar } from '../../components/navBar';
 import SearchBar from '../../components/SearchBar';
 import { getAllJobs, getJobsPaginated } from '../../shared/middlewares/APImiddleware';
+import { Footer } from '../../components/footer';
 
 import styles from '../../styles/Ofertas.module.css'
 
@@ -92,6 +93,7 @@ const Ofertas = ({ data }: { data: any }) => {
       <Navbar />
       <SearchBar />
       <CardGrid ofertas={ofertasSearch} />
+      <Footer />
     </div>
   )
 }

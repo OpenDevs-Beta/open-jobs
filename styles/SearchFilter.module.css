@@ -111,11 +111,41 @@
   left: 15px;
 }
 
-.filtersPopup > div{
+.filtersPopup > .filter{
   display: flex;
-  flex-wrap: wrap;
-  padding: 16px;
+  flex-flow: row wrap;
+  gap: 15px;
+  padding: 24px;
   background-color: #fff;
-  max-width: 350px;
+  max-width: 380px;
   position: relative;
+}
+
+.filtersPopup > .filter > div{
+  display: flex;
+  border-radius: 4px;
+  border: 1px solid rgba(128,128,128,0.7);
+  outline: none;
+  cursor: pointer;
+}
+
+.filtersPopup > .filter > input[type="text"]{
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.filtersPopup > .filter > div > span{
+  width: 100%;
+  padding: 8px 16px;
+  display: flex;
+}
+
+.filtersPopup > .filter > div > span:hover{
+  background-color: rgba(171,171,171,0.7);
+}
+
+.filtersPopup > .filter > div > span.selected{
+  background-color: rgba(204, 249, 171, 0.7);
 }

@@ -3,6 +3,7 @@ import { Navbar } from '../../components/navBar'
 import Banner from '../../components/ofertas/Banner'
 import OfertaDetail from '../../components/ofertas/OfertaDetail'
 import { getAllJobs, getJobById } from '../../shared/middlewares/APImiddleware'
+import { Footer } from '../../components/footer';
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const { data } = await getAllJobs()
@@ -24,6 +25,7 @@ const IndexOferta = ({data}:{data:any }) => {
       <Navbar />
       <Banner />
       <OfertaDetail data={data} />
+      <Footer />
     </div>
   )
 }
