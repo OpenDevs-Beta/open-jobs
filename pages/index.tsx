@@ -5,6 +5,7 @@ import { CardHomeGrid } from '../components/cardHomeGrid';
 import { HomeSearcher } from '../components/HomeSearcher'
 import { getAllJobs } from '../shared/middlewares/APImiddleware';
 import styles from '../styles/index.module.css'
+import { Footer } from '../components/footer';
 
 export const getStaticProps: GetStaticProps = async () => {
   const { data } = await getAllJobs()
@@ -19,6 +20,7 @@ function HomePage({data}:{data:any}) {
         <Navbar />
         <HomeSearcher />
         <CardHomeGrid ofertas={data} />
+        <Footer />
     </div>
   )
 }

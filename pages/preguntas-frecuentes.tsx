@@ -4,6 +4,7 @@ import Image from "next/image";
 import Questions from "../components/questions";
 import QuestionSearcher from "../components/questionsSearcher";
 import styles from "../styles/index.module.css";
+import { Footer } from '../components/footer';
 
 import questions from '../public/faqs.json'
 
@@ -48,6 +49,7 @@ export default function preguntasFrecuentes() {
     <div className={styles.homepageContainer}>
       <QuestionSearcher/>
       <Questions questions={questionsSearch} />
+      <Footer />
     </div>
   );
 }
