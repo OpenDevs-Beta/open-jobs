@@ -4,10 +4,20 @@ import styles from "../../styles/Accordeon.module.css";
 import { useRouter } from "next/router";
 
 export default function Accordeon({ items }: { items: any[] }) {
-
   const router = useRouter();
 
   const [elems, setElems] = useState(items);
+
+  function rotate(node: any) {
+    let value: number = 180;
+    if (node.style.webkitTransform === "rotate(180deg)") {
+      value = 0;
+    }
+
+    node.style.webkitTransform = "rotate(" + value + "deg)";
+    node.style.msTransform = "rotate(" + value + "deg)";
+    node.style.transform = "rotate(" + value + "deg)";
+  }
 
   const toggleQuestion = (elem: any, index: number) => {
     if (elem.collapsed === undefined) {
@@ -37,16 +47,17 @@ export default function Accordeon({ items }: { items: any[] }) {
 
     const height: any = document.getElementById(`question-item-${index}`);
 
-  const lineHeight: any = document.getElementById(`question-line-${index}`);
+    const lineHeight: any = document.getElementById(`question-line-${index}`);
 
-  if (lineHeight) {
-    const newHeight = lineHeight.style.height !== "30px" ? "30px" : "18px";
-    lineHeight.style.setProperty("height", newHeight);
-  }
+    if (lineHeight) {
+      const newHeight = lineHeight.style.height !== "30px" ? "30px" : "18px";
+      lineHeight.style.setProperty("height", newHeight);
+    }
 
+    const buttonNode: any = document.getElementById(`question-button-${index}`);
+
+    rotate(buttonNode);
   };
-
-  
 
   return (
     <div className={styles["questions-wrapper"]}>
@@ -57,25 +68,21 @@ export default function Accordeon({ items }: { items: any[] }) {
         <div className={styles["question-list"]}>
           {elems.map((elem: any, index) => (
             <div className={styles["question-item"]}>
-              <div className={styles["question-line"]} id={`question-line-${index}`}>
+              <div
+                className={styles["question-line"]}
+                id={`question-line-${index}`}
+              >
                 <div className={styles["question-text"]}>{elem.question}</div>
                 <button
+                  id={`question-button-${index}`}
                   className={styles["question-button"]}
                   onClick={() => toggleQuestion(elem, index)}
                 >
-                  {elem.collapsed === false ? (
-                    <Image
-                      src="/down-svgrepo-com.svg"
-                      width={20}
-                      height={20}
-                    ></Image>
-                  ) : (
-                    <Image
-                      src="/up-svgrepo-com.svg"
-                      width={20}
-                      height={20}
-                    ></Image>
-                  )}
+                  <Image
+                    src="/down-svgrepo-com.svg"
+                    width={20}
+                    height={20}
+                  ></Image>
                 </button>
               </div>
               <div
