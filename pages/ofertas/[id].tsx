@@ -3,7 +3,7 @@ import { Navbar } from '../../components/navBar'
 import Banner from '../../components/ofertas/Banner'
 import OfertaDetail from '../../components/ofertas/OfertaDetail'
 import { getAllJobs, getJobById } from '../../shared/middlewares/APImiddleware'
-import { Footer } from '../../components/footer';
+import { Footer } from '../../components/Footer';
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const { data } = await getAllJobs()

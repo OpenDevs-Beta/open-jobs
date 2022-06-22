@@ -5,7 +5,7 @@ import { CardHomeGrid } from '../components/cardHomeGrid';
 import { HomeSearcher } from '../components/HomeSearcher'
 import { getAllJobs } from '../shared/middlewares/APImiddleware';
 import styles from '../styles/index.module.css'
-import { Footer } from '../components/footer';
+import { Footer } from '../components/Footer';
 
 export const getStaticProps: GetStaticProps = async () => {
   const { data } = await getAllJobs()
