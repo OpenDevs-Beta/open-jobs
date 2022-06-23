@@ -26,9 +26,6 @@ export default function questions(questions: any) {
         </div>
       </div>
       <div className={styles["list-wrapper"]}>
-        {queryParam === "" || queryParam === undefined ? (
-          <div className={styles.title}>Recomendadores</div>
-        ) : null}
         <div className={styles["question-list"]}>
           {questionsDelivered.map((item: any) => (
             <div className={styles["question-item"]}>
