@@ -19,7 +19,7 @@ a {
 button {
   font-family: Inter,
     sans-serif;
-  transition: all 0.3s ease;
+  transition: opacity 0.3s ease;
 }
 
 button:hover {
