@@ -81,6 +81,12 @@
   flex-direction: column;
   font-weight: 700;
   line-height: 1.715em;
+  transition: all 0.3s ease;
+}
+
+.empresaContainer > .empresaHeader .empresaHeaderText a:hover{
+  background-color: #35bfb5;
+  border: 1px solid #35bfb5;
 }
 
 @media (max-width: 1024px){
