@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useRef } from "react"
 import Image from "next/image"
 import { useRouter } from "next/router"
 import { useState } from "react"
@@ -7,10 +7,12 @@ import FilterCiudad from "./filtros/FilterCiudad"
 import FilterExperiencia from "./filtros/FilterExperiencia"
 import FilterHabilidades from "./filtros/FilterHabilidades"
 import FilterSalario from "./filtros/FilterSalario"
+import useOutsideClick from "../utils/hooks/useOutsideClick"
 
 const SearchFilter = () => {
 
   const router: any = useRouter()
+  const filtersPopup = useRef<HTMLHeadingElement>(null)
 
   const [filter, setFilter] = useState<JSX.Element | undefined>(undefined)
   const handleFilter = (filter: JSX.Element) => { setFilter(filter) }
@@ -24,8 +26,12 @@ const SearchFilter = () => {
     router.push("/ofertas")
   }
 
+  useOutsideClick(filtersPopup, () => {
+    filter ? setFilter(undefined) : null
+  })
+
   return (
-    <div className={styles.searcherOfertasFilters}>
+    <div className={styles.searcherOfertasFilters} ref={filtersPopup}>
       <button onClick={() => handleFilter(<FilterHabilidades />)}>Habilidades</button>
       <button onClick={() => handleFilter(<FilterSalario />)}>Salario aprox.</button>
       <button onClick={() => handleFilter(<FilterExperiencia />)}>Años de experiencia</button>
