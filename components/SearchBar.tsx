@@ -7,10 +7,10 @@ import SearchFilter from "./SearchFilter";
 
 import styles from "../styles/Searcher.module.css";
 
-const SearchBar = (query: any) => {
+const SearchBar = () => {
   const router: any = useRouter()
 
-  const [queryParam, setQueryParam] = useState(query.query)
+  const [queryParam, setQueryParam] = useState(router.query.query)
 
   const handleSearchInput = (e: any): void => {
     e === undefined || e === ""

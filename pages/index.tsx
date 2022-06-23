@@ -9,7 +9,6 @@ import { Footer } from '../components/Footer';
 
 export const getStaticProps: GetStaticProps = async () => {
   const { data } = await getAllJobs()
-//  console.log({data})
   return  {props: { data: data || null }}
 }
 
