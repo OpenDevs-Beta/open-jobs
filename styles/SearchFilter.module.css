@@ -119,6 +119,7 @@
 
 .filtersPopup > .filter{
   box-shadow: 0 6px 12px 0 #0000001a;
+  border: 1px solid lightgray;
   border-radius: 8px;
   display: flex;
   flex-flow: row wrap;
@@ -151,6 +152,7 @@
   padding: 8px 16px;
   border-radius: 28px;
   display: flex;
+  transition: background-color 0.3s ease;
 }
 
 .filtersPopup > .filter > div > span:hover{
