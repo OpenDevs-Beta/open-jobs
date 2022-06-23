@@ -1,4 +1,5 @@
 import fetch from 'isomorphic-unfetch'
+import { useState } from 'react'
 
 const ENDPOINT = '/api/ofertas'
 
@@ -25,7 +26,6 @@ export async function getAllJobs(limit?: any) {
       data: response?.data?.data,
     }
   }
-
 }
 
 /** 
@@ -33,26 +33,36 @@ export async function getAllJobs(limit?: any) {
  * @param page 
  * @returns Json data and isError
  */
-export async function getJobsPaginated(page: any, limit?: any) {
-  if (limit) {
-    let response = await fetch(process.env.NEXT_PUBLIC_API_URL + ENDPOINT + `/?page=${page}` + `/?limit=${limit}`)
-    .then(r => r.json())
-    .catch(e => console.error(`Error al hacer petición de ofertas: ${e}`))
+export async function getJobsPaginated(page: any, limit: any, filters?: any) {
 
-  return {
-    data: response?.data?.data,
-    meta: response?.data?.meta
-  }
+
+  if (filters) {
+    
+      let ciudad = filters.ciudad ? `&ubicacion=${filters.ciudad}` : ''
+      let salarioMin = filters.salarioMin ? `&salarioMin=${filters.salarioMin}` : ''
+      let salarioMax = filters.salarioMax ? `&salarioMax=${filters.salarioMax}` : ''
+
+      let nombre = filters.query ? `&nombre=${filters.query}` : ''
+
+    console.log(process.env.NEXT_PUBLIC_API_URL + ENDPOINT + '?' + ciudad + salarioMin + salarioMax + nombre + `&page=${page}` + `&limit=${limit}`)
+    let response = await fetch(process.env.NEXT_PUBLIC_API_URL + ENDPOINT + '?' + ciudad + salarioMin + salarioMax + nombre + `&page=${page}` + `&limit=${limit}`)
+      .then(r => r.json())
+      .catch(e => console.error(`Error al hacer petición de ofertas: ${e}`))
+    return {
+      data: response?.data?.data,
+      meta: response?.data?.meta
+    }
   } else {
-  let response = await fetch(process.env.NEXT_PUBLIC_API_URL + ENDPOINT + `/?page=${page}`)
-    .then(r => r.json())
-    .catch(e => console.error(`Error al hacer petición de ofertas: ${e}`))
+    let response = await fetch(process.env.NEXT_PUBLIC_API_URL + ENDPOINT + `/?page=${page}` + `/?limit=${limit}`)
+      .then(r => r.json())
+      .catch(e => console.error(`Error al hacer petición de ofertas: ${e}`))
 
-  return {
-    data: response?.data?.data,
-    meta: response?.data?.meta
+    return {
+      data: response?.data?.data,
+      meta: response?.data?.meta
+    }
   }
-}
+
 }
 
 /*
