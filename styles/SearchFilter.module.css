@@ -55,14 +55,6 @@
   background: rgba(79, 179, 179, 0.1);
 }
 
-.crossButton{
-  width: 2.572em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 4px 4px !important;
-}
-
 .switchButton{
   display: inline-block;
   margin-top: 25px;
