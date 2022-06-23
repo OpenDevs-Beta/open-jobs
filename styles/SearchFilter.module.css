@@ -149,6 +149,7 @@
 .filtersPopup > .filter > div > span{
   width: 100%;
   padding: 8px 16px;
+  border-radius: 28px;
   display: flex;
 }
 
