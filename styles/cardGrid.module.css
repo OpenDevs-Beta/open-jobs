@@ -1,6 +1,7 @@
 .wrapper {
   background-color: #abb4bc1f;
   padding: 30px calc(50% - 633px);
+  flex-grow: 1;
 }
 
 .container {
