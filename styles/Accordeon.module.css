@@ -35,6 +35,7 @@
 .questions-wrapper .list-wrapper .question-list .question-line {
   height: 18px;
   display: flex;
+  align-items: flex-start;
   justify-content: space-between;
   transition: height 0.5s linear;
 }
@@ -78,6 +79,7 @@
 }
 
 .questions-wrapper .list-wrapper .question-list .question-item .question-button {
+  margin-top: 0px;
   padding: 0;
   border: 0;
   background: transparent;
