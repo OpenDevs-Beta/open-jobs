@@ -21,71 +21,53 @@ const Ofertas = ({ data }: { data: any }) => {
 
   const queryParam = router.query.query
 
+  const queryFilters = router.query
+
   const [dataSaved, setDataSaved] = useState(data)
-  const [ofertasSearch, setOfertasSearch] = useState(dataSaved)
   const [page, setPage] = useState(1)
   const [totalPages, setTotalPages] = useState(1)
 
-  const getMore = async () => {
-    if (page === 1 || page -1 === totalPages) {
-      setDataSaved(dataSaved)
-    } else {
-      const res = await getJobsPaginated(page, 12)
-      let dataTemp = dataSaved.concat(res.data)
-      setDataSaved(dataTemp)
-    }
-  }
-
   const getTotalPages = async () => {
     const res = await getJobsPaginated(page, 12)
-      setTotalPages(res.meta.last_page)
-  }
-
-  const search = () => {
-    if (queryParam === undefined || queryParam === '') {
-      setOfertasSearch(dataSaved)
-      setPage(page)
-    }
-    else {
-      let dataChange = dataSaved.filter((oferta: any) => {
-        // .normalize("NFD").replace(/[\u0300-\u036f]/g, "") Quitar tildes //
-        return oferta.nombre.normalize("NFD").replace(/[\u0300-\u036f]/g, "").includes(queryParam) ||
-          oferta.nombre.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().includes(queryParam) ||
-          oferta.nombre.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toUpperCase().includes(queryParam) ||
-          oferta.ubicacion.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().includes(queryParam) ||
-          oferta.ubicacion.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toUpperCase().includes(queryParam) ||
-          oferta.ubicacion.normalize("NFD").replace(/[\u0300-\u036f]/g, "").includes(queryParam) ||
-          oferta.experiencia.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().includes(queryParam) ||
-          oferta.experiencia.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toUpperCase().includes(queryParam) ||
-          oferta.experiencia.normalize("NFD").replace(/[\u0300-\u036f]/g, "").includes(queryParam) ||
-          oferta.empresa.nombre.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().includes(queryParam) ||
-          oferta.empresa.nombre.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toUpperCase().includes(queryParam) ||
-          oferta.empresa.nombre.normalize("NFD").replace(/[\u0300-\u036f]/g, "").includes(queryParam) ||
-          // Con tildes
-          oferta.nombre.includes(queryParam) ||
-          oferta.nombre.toLowerCase().includes(queryParam) ||
-          oferta.nombre.toUpperCase().includes(queryParam) ||
-          oferta.ubicacion.toLowerCase().includes(queryParam) ||
-          oferta.ubicacion.toUpperCase().includes(queryParam) ||
-          oferta.ubicacion.includes(queryParam) ||
-          oferta.experiencia.toLowerCase().includes(queryParam) ||
-          oferta.experiencia.toUpperCase().includes(queryParam) || oferta.experiencia.includes(queryParam) ||
-          oferta.empresa.nombre.toLowerCase().includes(queryParam) ||
-          oferta.empresa.nombre.toUpperCase().includes(queryParam) ||
-          oferta.empresa.nombre.includes(queryParam)
-      })
-      setOfertasSearch(dataChange)
-      setPage(page)
-    }
+    setTotalPages(res.meta.last_page)
   }
 
   const handleScroll = (e: any) => {
     const target = e.target
     if (target.scrollHeight - target.scrollTop === target.clientHeight) {
-      if(page === totalPages) {
+      if (page === totalPages) {
         setPage(page)
-      }else {
-      setPage(page + 1)
+      } else {
+        setPage(page + 1)
+      }
+    }
+  }
+
+
+  const search = async () => {
+    if (Object.keys(queryFilters).length === 0) {
+      const res = await getJobsPaginated(1, 12)
+      setDataSaved(res.data)
+    }
+    else {
+      const res = await getJobsPaginated(1, 12, queryFilters)
+      setDataSaved(res.data)
+    }
+    setPage(1)
+  }
+
+  const getMore = async () => {
+    if (page === 1 || page - 1 === totalPages) {
+      setDataSaved(dataSaved)
+    } else {
+      if (Object.keys(queryFilters).length === 0) {
+        const res = await getJobsPaginated(page, 12)
+        let dataTemp = dataSaved.concat(res.data)
+        setDataSaved(dataTemp)
+      } else {
+        const res = await getJobsPaginated(page, 12, queryFilters)
+        let dataTemp = dataSaved.concat(res.data)
+        setDataSaved(dataTemp)
       }
     }
   }
@@ -93,18 +75,18 @@ const Ofertas = ({ data }: { data: any }) => {
   useEffect(() => {
     getMore()
     getTotalPages()
-    }, [page])
+  }, [page])
 
   useEffect(() => {
     search()
-  }, [queryParam, dataSaved])
+  }, [queryFilters])
 
 
   return (
     <div className={styles.ofertasContainer} onScroll={handleScroll}>
       <Navbar />
       <SearchBar />
-      <CardGrid ofertas={ofertasSearch} />
+      <CardGrid ofertas={dataSaved} />
       <Footer />
     </div>
   )

@@ -45,7 +45,7 @@ const SearchFilter = () => {
         <label htmlFor="switch-label" />
         <span>Remoto</span>
       </div>
-      <button onClick={handleEraseSearch} className={styles.crossButton}>
+      <button onClick={handleEraseSearch} className={styles.crossButton} >
         <Image src="/cross.svg" width="12" height="12"/>
       </button>
       <div className={styles.filtersPopup}>
