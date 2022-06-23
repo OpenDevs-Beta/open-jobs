@@ -8,8 +8,7 @@ import styles from '../styles/index.module.css'
 import { Footer } from '../components/Footer';
 
 export const getStaticProps: GetStaticProps = async () => {
-  const { data } = await getAllJobs()
-//  console.log({data})
+  const { data } = await getAllJobs(11)
   return  {props: { data: data || null }}
 }
 

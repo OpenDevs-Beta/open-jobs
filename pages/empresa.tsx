@@ -14,7 +14,7 @@ function Empresa() {
                         <h3>Encuentra candidatos IT que de otra forma no encontrarías</h3>
                         <p>La única plataforma capaz de alcanzar el talento disponible en la red a través de la distribución inteligente.</p>
                         <Link href='#'>
-                            <a>Publicar una oferta</a>
+                            <button>Publicar una oferta</button>
                         </Link>
                     </div>
                     <div className={styles.empresaHeaderGif}>

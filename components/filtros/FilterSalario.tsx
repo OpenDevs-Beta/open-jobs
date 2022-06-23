@@ -6,11 +6,21 @@ import styles from "../../styles/SearchFilter.module.css"
 const FilterSalario = () => {
 
   const router: any = useRouter()
-  const [salario, setSalario] = useState<string>('18000')
+  const [salarioMin, setSalarioMin] = useState<string>('18000')
+  const [salarioMax, setSalarioMax] = useState<string>('80000')
 
-  const handleClick = (filter: string) => {
-    setSalario(filter)
-    router.query.salario = filter
+  const handleMin = (filter: string) => {
+    setSalarioMin(filter)
+    router.query.salarioMin = filter
+    router.push({ 
+      pathname: '/ofertas',
+      query: router.query
+    })
+  }
+
+  const handleMax = (filter: string) => {
+    setSalarioMax(filter)
+    router.query.salarioMax = filter
     router.push({ 
       pathname: '/ofertas',
       query: router.query
@@ -19,8 +29,12 @@ const FilterSalario = () => {
 
   return (
     <div className={styles.filter}>
-      <input type="range" min="18000" max="80000" step="1000" onChange={(e) => handleClick(e.target.value)} />
-      <output>{salario} &euro;</output>
+      <label>Min:</label>
+      <input type="range" min="18000" max="80000" step="1000" onChange={(e) => handleMin(e.target.value)} />
+      <output>{salarioMin} &euro;</output>
+      <label>Max:</label>
+      <input type="range" min="18000" max="80000" step="1000" onChange={(e) => handleMax(e.target.value)} />
+      <output>{salarioMax} &euro;</output>
     </div>
   )
 }

@@ -28,7 +28,7 @@
 }
 
 .searcherOfertasFilters {
-  display: flex;
+  display: inline-flex;
   padding: 6px 0 16px;
   margin-left: -16px;
   margin-top: -16px;
@@ -53,6 +53,14 @@
 
 .searcherOfertasFilters > button:hover {
   background: rgba(79, 179, 179, 0.1);
+}
+
+.crossButton{
+  width: 2.572em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 4px !important;
 }
 
 .switchButton{
@@ -148,4 +156,8 @@
 
 .filtersPopup > .filter > div > span.selected{
   background-color: rgba(204, 249, 171, 0.7);
+}
+
+.filtersPopup > .filter > label{
+  width: 15%;
 }

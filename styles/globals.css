@@ -17,8 +17,9 @@ a {
 }
 
 button {
-  font-family: Roboto, -apple-system, Helvetica Neue, Helvetica, Arial,
+  font-family: Inter,
     sans-serif;
+  transition: opacity 0.3s ease;
 }
 
 button:hover {
