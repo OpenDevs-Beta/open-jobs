@@ -53,6 +53,7 @@ const Ofertas = ({ data }: { data: any }) => {
       const res = await getJobsPaginated(1, 12, queryFilters)
       setDataSaved(res.data)
     }
+    setPage(1)
   }
 
   const getMore = async () => {
@@ -65,7 +66,8 @@ const Ofertas = ({ data }: { data: any }) => {
         setDataSaved(dataTemp)
       } else {
         const res = await getJobsPaginated(page, 12, queryFilters)
-        setDataSaved(res.data)
+        let dataTemp = dataSaved.concat(res.data)
+        setDataSaved(dataTemp)
       }
     }
   }
