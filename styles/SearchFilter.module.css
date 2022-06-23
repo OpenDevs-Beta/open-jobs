@@ -55,6 +55,14 @@
   background: rgba(79, 179, 179, 0.1);
 }
 
+.searcherOfertasFilters > .crossButton {
+  width: 2.572em;
+  padding: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .switchButton{
   display: inline-block;
   margin-top: 25px;
@@ -101,17 +109,18 @@
 }
 
 .filtersPopup{
-  border: 3px solid #abb4bc85;
-  border-radius: 8px;
-  box-shadow: 0 6px 12px 0 #0000001a;
-  background: #fff;
+
+  background: none;
   position: absolute;
   z-index: 6000;
-  top: 85px;
+  top: 70px;
   left: 15px;
 }
 
 .filtersPopup > .filter{
+  box-shadow: 0 6px 12px 0 #0000001a;
+  border: 1px solid lightgray;
+  border-radius: 8px;
   display: flex;
   flex-flow: row wrap;
   gap: 15px;
@@ -123,7 +132,7 @@
 
 .filtersPopup > .filter > div{
   display: flex;
-  border-radius: 4px;
+  border-radius: 28px;
   border: 1px solid rgba(128,128,128,0.7);
   outline: none;
   cursor: pointer;
@@ -132,14 +141,18 @@
 .filtersPopup > .filter > input[type="text"]{
   width: 100%;
   padding: 10px;
-  border-radius: 6px;
+  border: 1px solid #abb4bc85;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px 0 #0000001f;
   font-size: 16px;
 }
 
 .filtersPopup > .filter > div > span{
   width: 100%;
   padding: 8px 16px;
+  border-radius: 28px;
   display: flex;
+  transition: background-color 0.3s ease;
 }
 
 .filtersPopup > .filter > div > span:hover{
