@@ -10,8 +10,9 @@ import { Footer } from '../../components/Footer';
 import styles from '../../styles/Ofertas.module.css'
 
 export const getStaticProps: GetStaticProps = async () => {
-  const { data } = await getAllJobs()
+  const { data } = await getAllJobs(12)
   return { props: { data } }
+
 };
 
 const Ofertas = ({ data }: { data: any }) => {
@@ -23,15 +24,21 @@ const Ofertas = ({ data }: { data: any }) => {
   const [dataSaved, setDataSaved] = useState(data)
   const [ofertasSearch, setOfertasSearch] = useState(dataSaved)
   const [page, setPage] = useState(1)
+  const [totalPages, setTotalPages] = useState(1)
 
   const getMore = async () => {
-    if (page === 1) {
+    if (page === 1 || page -1 === totalPages) {
       setDataSaved(dataSaved)
     } else {
-      const res = await getJobsPaginated(page)
+      const res = await getJobsPaginated(page, 12)
       let dataTemp = dataSaved.concat(res.data)
       setDataSaved(dataTemp)
     }
+  }
+
+  const getTotalPages = async () => {
+    const res = await getJobsPaginated(page, 12)
+      setTotalPages(res.meta.last_page)
   }
 
   const search = () => {
@@ -75,13 +82,18 @@ const Ofertas = ({ data }: { data: any }) => {
   const handleScroll = (e: any) => {
     const target = e.target
     if (target.scrollHeight - target.scrollTop === target.clientHeight) {
+      if(page === totalPages) {
+        setPage(page)
+      }else {
       setPage(page + 1)
+      }
     }
   }
 
   useEffect(() => {
     getMore()
-  }, [page])
+    getTotalPages()
+    }, [page])
 
   useEffect(() => {
     search()
