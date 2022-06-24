@@ -60,10 +60,10 @@
 }
 
 .card-image {
-  padding: 4px !important;
-  border-radius: 10%;
-  border: 1px solid #eaeaea !important;
+  border-radius: 8px;
+  border: 1px solid #ccc !important;
 }
+
 .card-title {
   font-weight: 600;
   font-size: 20px;
