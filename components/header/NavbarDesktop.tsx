@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/router";
 
-import styles from "../../styles/Navbar.module.css";
+import styles from "./Navbar.module.css";
 import logo from "../../utils/images/logo_mock.svg";
 import logoWhite from "../../utils/images/logo_mock_white.svg";
 

@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { ITestimonio } from '../../shared/models/models.interface'
-import styles from '../../styles/Testimonios.module.css'
+import styles from './Testimonios.module.css'
 import { TestimoniosItem } from './TestimoniosItem'
 
 export const Testimonios = ({testimonios}: {testimonios: ITestimonio[]}) => {  

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from 'next/link'
-import styles from '../styles/Footer.module.css'
+import styles from './Footer.module.css'
 import logoWhite from "../utils/images/logo_mock_white_large.svg";
 import email from '../utils/images/icons8-mail.svg'
 import instagram from '../utils/images/icons8-instagram.svg'

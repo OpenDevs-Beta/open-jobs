@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router';
 import { useWindowSize } from '../shared/hooks/useWindowSize';
-import styles from '../styles/cardHomeGrid.module.css'
+import styles from './cardHomeGrid.module.css'
 import Image from 'next/image'
 import left from '../utils/images/left-arrow.svg'
 import right from '../utils/images/right-arrow.svg'

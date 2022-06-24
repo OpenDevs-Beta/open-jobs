@@ -1,4 +1,4 @@
-import styles from "../styles/cardHome.module.css";
+import styles from "./cardHome.module.css";
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";

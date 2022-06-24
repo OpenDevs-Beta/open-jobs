@@ -1,4 +1,4 @@
-import styles from '../../styles/BeOpenBootcamper.module.css'
+import styles from './BeOpenBootcamper.module.css'
 import Banner from './Banner'
 
 const HeroOpenBootcamper = () => {

@@ -1,6 +1,6 @@
 import { useRouter } from "next/router"
 
-import styles from "../../styles/SearchFilter.module.css"
+import styles from "../SearchFilter.module.css"
 
 const FilterExperiencia = () => {
 

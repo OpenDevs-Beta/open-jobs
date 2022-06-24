@@ -1,5 +1,5 @@
 import Image from "next/image";
-import styles from "../../styles/OfertaDetail.module.css";
+import styles from "./OfertaDetail.module.css";
 
 const OfertaDetail = ({ data }: { data: any }) => {
   return (

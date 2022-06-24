@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Image from "next/image";
-import styles from "../../styles/Accordeon.module.css";
+import styles from "./Accordeon.module.css";
 import { useRouter } from "next/router";
 
 export default function Accordeon({ items }: { items: any[] }) {

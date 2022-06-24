@@ -7,7 +7,7 @@ import SearchBar from '../../components/SearchBar';
 import { getAllJobs, getJobsPaginated } from '../../shared/middlewares/APImiddleware';
 import { Footer } from '../../components/Footer';
 
-import styles from '../../styles/Ofertas.module.css'
+import styles from './Ofertas.module.css'
 
 export const getStaticProps: GetStaticProps = async () => {
   const { data } = await getAllJobs(12)
