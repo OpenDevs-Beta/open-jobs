@@ -24,13 +24,13 @@ export const CardHomeGrid = (ofertas: any) => {
     let numerator = totalPages - 1;
     cardIndex < numerator ? setCardIndex(cardIndex + 1) : setCardIndex(cardIndex)
     setAnimation(styles.gridleft)
-    setTimeout(() => setAnimation(styles.grid), 300)
+    setTimeout(() => setAnimation(styles.grid), 550)
   }
 
   const cardIndexRewind = () => {
     cardIndex > 0 ? setCardIndex(cardIndex - 1) : setCardIndex(cardIndex)
     setAnimation(styles.gridright)
-    setTimeout(() => setAnimation(styles.grid), 300)
+    setTimeout(() => setAnimation(styles.grid), 550)
   }
 
   const cardIndexReset = () => { cardIndex > totalPages ? setCardIndex(0) : setCardIndex(cardIndex) }
