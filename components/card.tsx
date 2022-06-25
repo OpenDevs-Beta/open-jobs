@@ -1,7 +1,7 @@
 import styles from "../styles/card.module.css";
 import React from "react";
 import Image from "next/image";
-import Link from "next/link";
+import { useRouter } from "next/router";
 
 type ICard = {
   nombre: string,
@@ -26,10 +26,11 @@ export default function Card({
   experiencia,
   id,
 }: ICard) {
+
+  const router = useRouter()
+  
   return (
-    <div className={styles.card}>
-      <Link href={"/ofertas/" + id}>
-        <a>
+    <div className={styles.card} onClick={() => router.push('/ofertas/' + id)}>
           <div>
             <Image
               className={styles["card-image"]}
@@ -50,8 +51,6 @@ export default function Card({
             )) : null}
           </div>
           <div className={styles["card-experience"]}>{experiencia}</div>
-        </a>
-      </Link>
     </div>
   );
 }
