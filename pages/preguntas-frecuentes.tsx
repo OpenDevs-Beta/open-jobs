@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import Image from "next/image";
 import Questions from "../components/questions";
 import QuestionSearcher from "../components/questionsSearcher";
 import styles from "./index.module.css";
