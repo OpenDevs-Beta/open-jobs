@@ -1,7 +1,7 @@
 import styles from "./cardHome.module.css";
 import React from "react";
 import Image from "next/image";
-import Link from "next/link";
+import { useRouter } from "next/router";
 
 type ICard = {
   nombre: string,
@@ -17,7 +17,7 @@ type ISkill = {
   nombre: string,
 }
 
-export default function CardHome({
+export default function Card({
   nombre,
   image,
   empresa,
@@ -26,32 +26,34 @@ export default function CardHome({
   experiencia,
   id,
 }: ICard) {
+
+const router = useRouter()
+
   return (
-    <div className={styles.card}>
-      <Link href={"/ofertas/" + id}>
-        <a>
+    <div className={styles.card} onClick={() => router.push("/ofertas/" + id)}>
           <div>
-            <Image
-              className={styles["card-image"]}
-              src={image}
-              width={64}
-              height={64}
-            ></Image>
+            <div>
+              <Image
+                className={styles["card-image"]}
+                src={image}
+                width={64}
+                height={64}
+              ></Image>
+            </div>
+            <div className={styles["card-title"]}>{nombre}</div>
+            <div className={styles["card-inline"]}>
+              <div className={styles["card-companyName"]}>{empresa}</div>
+              <div>&nbsp;·&nbsp;</div>
+              <div className={styles["card-location"]}>{ubicacion}</div>
+            </div>
+          </div><div>
+            <div className={styles["card-experience"]}>{experiencia.toUpperCase()}</div>
+            <div className={styles["card-tags"]}>
+              {habilidades ? habilidades.map((habilidad: ISkill) => (
+                <span>{habilidad.nombre}</span>
+              )) : null}
+            </div>
           </div>
-          <div className={styles["card-title"]}>{nombre}</div>
-          <div className={styles["card-inline"]}>
-            <div className={styles["card-companyName"]}>{empresa}</div>
-            <div>&nbsp;·&nbsp;</div>
-            <div className={styles["card-location"]}>{ubicacion}</div>
-          </div>
-          <div className={styles["card-tags"]}>
-            {habilidades ? habilidades.map((habilidad: ISkill) => (
-              <span>{habilidad.nombre}</span>
-            )) : null}
-          </div>
-          <div className={styles["card-experience"]}>{experiencia}</div>
-        </a>
-      </Link>
     </div>
   );
 }
