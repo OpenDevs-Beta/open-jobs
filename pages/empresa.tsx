@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { Navbar } from '../components/navBar'
-import styles from '../styles/empresa.module.css'
+import styles from './empresa.module.css'
 import { Footer } from '../components/Footer';
 
 function Empresa() {
@@ -54,7 +54,7 @@ function Empresa() {
                         <span>Talento pasivo</span>
                         <span>+ Fuentes captación</span>
                         <Link href='#'>
-                            <button>Contacta con nosotros</button>
+                            <a>Contacta con nosotros</a>
                         </Link>
                     </div>
                 </div>

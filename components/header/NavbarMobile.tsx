@@ -3,7 +3,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
 
-import styles from '../../styles/Navbar.module.css'
+import styles from './Navbar.module.css'
 import logo from '../../utils/images/logo_mock.svg'
 
 export const NavbarMobile = () => {

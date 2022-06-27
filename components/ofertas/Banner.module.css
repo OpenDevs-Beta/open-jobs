@@ -3,11 +3,6 @@
   z-index: -9999;
 }
 
-@media (max-width: 767px){
-  .banner{
-    display: none;
-  }
-}
 
 .banner > picture{
   display: block;

@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import styles from '../../styles/BannerOpenBootcamper.module.css'
+import styles from './BannerOpenBootcamper.module.css'
 
 const Banner = () => {
 

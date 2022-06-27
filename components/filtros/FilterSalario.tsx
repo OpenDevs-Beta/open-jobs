@@ -1,7 +1,7 @@
 import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
 
-import styles from "../../styles/SearchFilter.module.css"
+import styles from "../SearchFilter.module.css"
 
 const FilterSalario = () => {
 

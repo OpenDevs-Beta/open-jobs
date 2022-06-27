@@ -1,5 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
-import styles from '../styles/FilterModal.module.css'
+import styles from './FilterModal.module.css'
 
 const FilterModal = ({ children, divId, setIsModalOpen }: any) => {
 

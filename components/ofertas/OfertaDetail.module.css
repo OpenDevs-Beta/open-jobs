@@ -2,26 +2,13 @@
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
-  padding: 16px calc(50% - 400px) 48px;
-  position: relative;
+  padding: 30px calc(50% - 633px);
 }
 
-@media (max-width: 1023px) {
+@media (max-width: 1300px) {
   .ofertaDetailContainer {
     flex-wrap: wrap;
-    padding-top: 20px;
-  }
-}
-
-@media (max-width: 770px) {
-  .ofertaDetailContainer {
-    padding-top: 70px;
-  }
-}
-
-@media (max-width: 550px) {
-  .ofertaDetailContainer {
-    padding-bottom: 40px;
+    padding: 30px 20px;
   }
 }
 
@@ -72,6 +59,8 @@
 }
 
 .ofertaDetailContainer > .ofertaDetailTitle > h4 {
+  font-size: 1.8em;
+  color: #02aea2;
   margin-top: 8px;
   margin-bottom: 0;
   width: 100%;
@@ -93,7 +82,9 @@
 
 .ofertaDetailContainer > .ofertaDetailTitle > div > span:nth-of-type(2) {
   display: inline-block;
+  color: #02aea2;
   font-size: 18px;
+  font-weight: 600;
   line-height: 1.2;
   padding: 0 10px;
 }
@@ -111,6 +102,7 @@
 }
 
 .ofertaDetailContainer > .ofertaDetailDescription > h6 {
+  color: #02aea2;
   font-size: 1.25rem;
   font-weight: 700;
   letter-spacing: -0.02em;
@@ -118,17 +110,18 @@
 }
 
 .ofertaDetailContainer > .ofertaDetailDescription > p {
-  font-size: 1.2em;
+  font-size: 1em;
   line-height: 1.6em;
 }
 .ofertaDetailContainer .apply-button {
-  background-color: #e64954;
+  background-color: #02aea2;
   color: #fff;
   font-weight: 500;
   font-size: 14px;
   padding: 12px 33px;
-  border-radius: 4px;
+  border-radius: 8px;
   border: 0;
+  cursor: pointer;
 }
 
 .ofertaDetailContainer .apply-button .apply-button-text {

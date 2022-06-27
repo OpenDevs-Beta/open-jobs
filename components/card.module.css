@@ -2,10 +2,13 @@
   animation: fadeInAnimation ease 0.8s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   width: calc(25% - 12px);
   min-width: 250px;
   height: 310px;
-  padding: 16px;
+  padding: 16px 16px 24px 16px;
   background-color: #fff;
   text-align: left;
   color: inherit;
@@ -13,8 +16,6 @@
   border: 0px;
   border-radius: 10px;
   transition: margin-top 0.15s ease, box-shadow 0.15s ease;
-  font-family: Roboto, -apple-system, Helvetica Neue, Helvetica, Arial,
-    sans-serif;
   box-shadow: 0 2px 4px 0 #0000000f;
   cursor: pointer;
 }
@@ -59,22 +60,23 @@
 }
 
 .card-image {
-  padding: 4px !important;
-  border-radius: 10%;
-  border: 1px solid #eaeaea !important;
+  border-radius: 8px;
+  border: 1px solid #ccc !important;
 }
+
 .card-title {
-  font-weight: 500;
+  font-weight: 600;
   font-size: 20px;
   padding-bottom: 4px;
+  color: #02aea2;
 }
 .card-companyName {
-  font-weight: 400;
+  font-weight: 200;
   font-size: 16px;
 }
 
 .card-location {
-  font-weight: 400;
+  font-weight: 200;
   font-size: 16px;
 }
 
@@ -82,13 +84,13 @@
   font-weight: 400;
   font-size: 14px;
   max-height: 68px;
-  padding-bottom: 16px;
+  padding-top: 16px;
 }
 
 .card-tags span {
   border: 1px solid #abb4bc;
-  border-radius: 4px;
-  padding: 4px;
+  border-radius: 14px;
+  padding: 4px 8px;
   transition: all 0.6s;
 }
 
@@ -101,8 +103,8 @@
 }
 
 .card-experience {
-  color: rgb(97, 97, 97);
-  font-weight: 400;
+  color: #02aea2;
+  font-weight: 600;
   font-size: 14px;
   line-height: 22px;
   margin-right: 8px;

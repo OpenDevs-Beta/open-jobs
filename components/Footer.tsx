@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from 'next/link'
-import styles from '../styles/Footer.module.css'
+import styles from './Footer.module.css'
 import logoWhite from "../utils/images/logo_mock_white_large.svg";
 import email from '../utils/images/icons8-mail.svg'
 import instagram from '../utils/images/icons8-instagram.svg'
@@ -14,38 +14,28 @@ export const Footer = () => {
     <div className={styles.wrapper}>
       <div className={styles.grid}>
         <div className={styles.sides}>
-          <Image src={logoWhite}/>
+          <Image src={logoWhite} />
         </div>
         <div className={styles.center}>
           <span>
-          <h1>Producto</h1>
-          <span className={styles.link}>Acerca de Open Jobs</span>
-          <span className={styles.link}>Hazte Open Bootcamper</span>
-          <span className={styles.link}>Empleos</span>
-          <span className={styles.link}>Empresas</span>
-          <span className={styles.link}>Publicar empleo</span>
-          <span className={styles.link}>Regístrate</span>
-        </span>
+            <h1>Producto</h1>
+            <span className={styles.link}><Link href={'/'}>Home</Link></span>
+            <span className={styles.link}><Link href={'/hazte-open-bootcamper'}>Hazte OpenBootcamper</Link></span>
+            <span className={styles.link}><Link href={'/ofertas'}>Ofertas</Link></span>
+            <span className={styles.link}><Link href={'/empresa'}>Empresa</Link></span>
+          </span>
           <span>
             <h1>Recursos</h1>
-            <span className={styles.link}>Canal de IT Recruiters</span>
-            <span className={styles.link}>Blog</span>
-            <span className={styles.link}>FAQs</span>
-            <span className={styles.link}>Centro de ayuda</span>
-            <span className={styles.link}>Contacta con nosotros</span>
-            <span className={styles.link}>Chat de soporte directo</span>
+            <span className={styles.link}><Link href={'https://www.open-bootcamp.com'}>Campus OpenBootcamp</Link></span>
+            <span className={styles.link}><Link href={'/preguntas-frecuentes'}>Preguntas frecuentes</Link></span>
           </span>
-          </div>
-          <div className={styles.sides}>
-          <h1>Te envíamos las mejores ofertas para ti</h1>
-            <button>Crea tu alerta aquí</button>
         </div>
       </div>
       <div className={styles.baseline}>
         <div>
-          <span className={styles.left}>Términos y condiciones</span>
-          <span className={styles.left}>Política privacidad</span>
-          <span className={styles.left}>Cookies</span>
+          <span className={styles.left}><Link href={'######'}>Términos y condiciones</Link></span>
+          <span className={styles.left}><Link href={'#######'}>Política privacidad</Link></span>
+          <span className={styles.left}><Link href={'########'}>Cookies</Link></span>
           <span className={styles.left}>© 2022 OpenBootcamp</span>
         </div>
         <div>

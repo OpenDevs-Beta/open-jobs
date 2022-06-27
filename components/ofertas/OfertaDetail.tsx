@@ -1,7 +1,10 @@
 import Image from "next/image";
-import styles from "../../styles/OfertaDetail.module.css";
+import styles from "./OfertaDetail.module.css";
 
 const OfertaDetail = ({ data }: { data: any }) => {
+
+  const experiencia: string = data.experiencia.toUpperCase()
+
   return (
     <div className={styles.ofertaDetailContainer}>
       <div className={styles.ofertaDetailLogo}>
@@ -14,7 +17,6 @@ const OfertaDetail = ({ data }: { data: any }) => {
           alt="Logo de la empresa"
         />
         <div>
-          {console.log(data)}
           <span>{data.empresa.nombre}</span>
           <span>{data.empresa.createdAt}</span>
         </div>
@@ -23,7 +25,7 @@ const OfertaDetail = ({ data }: { data: any }) => {
         <h4>{data.nombre}</h4>
         <div>
           <span>{data.ubicacion}</span>
-          <span>{data.experiencia}</span>
+          <span>{experiencia}</span>
         </div>
       </div>
       <hr />

@@ -266,7 +266,7 @@
   justify-content: center;
 }
 
-.empresaContainer > .empresaContacto > div:nth-of-type(3) > div > button{
+.empresaContainer > .empresaContacto > div:nth-of-type(3) > div > a {
   display: flex;
   justify-content: center;
   border-radius: 4px;
@@ -279,4 +279,5 @@
   font-weight: 600;
   box-shadow: 0 1px 5px #0003, 0 2px 2px #00000024, 0 3px 1px -2px #0000001f;
   cursor: pointer;
+  width: 200px;
 }
