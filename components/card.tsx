@@ -1,7 +1,6 @@
 import styles from "./card.module.css";
 import React from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { useRouter } from "next/router";
 
 type ICard = {
@@ -55,6 +54,7 @@ const router = useRouter()
               )) : null}
             </div>
           </div>
+          <div className={styles["card-experience"]}>{experiencia}</div>
     </div>
   );
 }
