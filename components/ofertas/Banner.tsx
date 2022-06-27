@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-import styles from '../../styles/Banner.module.css'
+import styles from '.styles/Banner.module.css'
 
 const DivBanner = ({ imgSrc }: any) => {
 

@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import styles from "../styles/question.module.css";
+import styles from "./question.module.css";
 import { useRouter } from "next/router";
 
 export default function questions(questions: any) {

@@ -2,7 +2,7 @@ import React, { useRef } from "react"
 import Image from "next/image"
 import { useRouter } from "next/router"
 import { useState } from "react"
-import styles from "../styles/SearchFilter.module.css"
+import styles from "./SearchFilter.module.css"
 import FilterCiudad from "./filtros/FilterCiudad"
 import FilterExperiencia from "./filtros/FilterExperiencia"
 import FilterHabilidades from "./filtros/FilterHabilidades"
@@ -32,10 +32,10 @@ const SearchFilter = () => {
 
   return (
     <div className={styles.searcherOfertasFilters} ref={filtersPopup}>
-      <button onClick={() => handleFilter(<FilterHabilidades />)}>Habilidades</button>
-      <button onClick={() => handleFilter(<FilterSalario />)}>Salario aprox.</button>
-      <button onClick={() => handleFilter(<FilterExperiencia />)}>Años de experiencia</button>
-      <button onClick={() => handleFilter(<FilterCiudad />)}>Ciudad</button>
+      {router.query.skill ? <button className={styles.filterSelected} onClick={() => handleFilter(<FilterHabilidades />)}>Habilidades</button> : <button onClick={() => handleFilter(<FilterHabilidades />)}>Habilidades</button>}
+      {router.query.salarioMin || router.query.salarioMax? <button className={styles.filterSelected} onClick={() => handleFilter(<FilterSalario />)}>Salario aprox.</button> : <button onClick={() => handleFilter(<FilterSalario />)}>Salario aprox.</button>}
+      {router.query.anos ? <button className={styles.filterSelected} onClick={() => handleFilter(<FilterExperiencia />)}>Años de experiencia</button> : <button onClick={() => handleFilter(<FilterExperiencia />)}>Años de experiencia</button>}
+      {router.query.ciudad ? <button className={styles.filterSelected} onClick={() => handleFilter(<FilterCiudad />)}>Ciudad</button> : <button onClick={() => handleFilter(<FilterCiudad />)}>Ciudad</button>}
       <div className={styles.switchButton} >
         { router.query.remote == "true" ? 
           ( <input type="checkbox" id="switch-label" onClick={() => handleClick(false)} checked /> )

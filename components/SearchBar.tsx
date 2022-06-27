@@ -5,7 +5,7 @@ import cross from "../utils/images/cross.svg";
 import { useState } from "react";
 import SearchFilter from "./SearchFilter";
 
-import styles from "../styles/Searcher.module.css";
+import styles from "./Searcher.module.css";
 
 const SearchBar = () => {
   const router: any = useRouter()

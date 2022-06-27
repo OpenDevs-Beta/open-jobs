@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import Image from "next/image";
-import styles from "../styles/QuestionSearcher.module.css";
+import styles from "./QuestionSearcher.module.css";
 import searchIcon from "../utils/images/search-24.svg";
 import cross from "../utils/images/cross.svg";
 import { useState } from "react";

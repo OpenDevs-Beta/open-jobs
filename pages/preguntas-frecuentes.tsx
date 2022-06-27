@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import Image from "next/image";
 import Questions from "../components/questions";
 import QuestionSearcher from "../components/questionsSearcher";
-import styles from "../styles/index.module.css";
+import styles from "./index.module.css";
 import { Footer } from '../components/Footer';
 
 import questions from '../public/faqs.json'

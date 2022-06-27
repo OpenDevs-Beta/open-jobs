@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router';
 import { useWindowSize } from '../shared/hooks/useWindowSize';
-import styles from '../styles/cardHomeGrid.module.css'
+import styles from './cardHomeGrid.module.css'
 import Image from 'next/image'
 import left from '../utils/images/left-arrow.svg'
 import right from '../utils/images/right-arrow.svg'
@@ -24,13 +24,13 @@ export const CardHomeGrid = (ofertas: any) => {
     let numerator = totalPages - 1;
     cardIndex < numerator ? setCardIndex(cardIndex + 1) : setCardIndex(cardIndex)
     setAnimation(styles.gridleft)
-    setTimeout(() => setAnimation(styles.grid), 300)
+    setTimeout(() => setAnimation(styles.grid), 550)
   }
 
   const cardIndexRewind = () => {
     cardIndex > 0 ? setCardIndex(cardIndex - 1) : setCardIndex(cardIndex)
     setAnimation(styles.gridright)
-    setTimeout(() => setAnimation(styles.grid), 300)
+    setTimeout(() => setAnimation(styles.grid), 550)
   }
 
   const cardIndexReset = () => { cardIndex > totalPages ? setCardIndex(0) : setCardIndex(cardIndex) }

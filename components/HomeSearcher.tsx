@@ -1,8 +1,7 @@
 import { useState } from 'react'
 import { useRouter } from 'next/router'
 
-import styles from '../styles/Searcher.module.css'
-import Link from 'next/link'
+import styles from './Searcher.module.css'
 
 export const HomeSearcher = () => {
 

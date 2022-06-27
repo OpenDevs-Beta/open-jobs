@@ -59,7 +59,7 @@
 }
 
 .gridleft {
-  animation: carouseleft linear 0.2s;
+  animation: carouseleft linear 0.5s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
   height: 325px;
@@ -84,7 +84,7 @@
 }
 
 .gridright {
-  animation: carouselright linear 0.2s;
+  animation: carouselright linear 0.5s;
   animation-iteration-count: 1;
   animation-fill-mode:both;
   height: 325px;
