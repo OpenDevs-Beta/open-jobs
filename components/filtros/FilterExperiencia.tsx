@@ -25,7 +25,7 @@ const FilterExperiencia = () => {
         }
       </div>
       <div onClick={() => handleClick('semisenior')}>
-        {  router.query.anos == 'senior' ? 
+        {  router.query.anos == 'semisenior' ? 
           (<span className={styles.selected}>3-5 años</span>)
         :
           (<span>3-5 años</span>)
