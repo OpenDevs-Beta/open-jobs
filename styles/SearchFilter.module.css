@@ -51,6 +51,23 @@
   cursor: pointer;
 }
 
+.searcherOfertasFilters > .filterSelected {
+  border: 1px solid #02aea2;
+  color: #fff;
+  font-weight: 500;
+  height: auto;
+  min-height: 2.572em;
+  padding: 4px 16px;
+  position: relative;
+  text-align: center;
+  font-size: 14px;
+  margin-left: 16px;
+  margin-top: 16px;
+  border-radius: 28px;
+  background-color: #02aea2;
+  cursor: pointer;
+}
+
 .searcherOfertasFilters > button:hover {
   background: rgba(79, 179, 179, 0.1);
 }
@@ -133,7 +150,7 @@
 .filtersPopup > .filter > div{
   display: flex;
   border-radius: 28px;
-  border: 1px solid rgba(128,128,128,0.7);
+  
   outline: none;
   cursor: pointer;
 }
@@ -148,6 +165,7 @@
 }
 
 .filtersPopup > .filter > div > span{
+  border: 1px solid rgba(128,128,128,0.7);
   width: 100%;
   padding: 8px 16px;
   border-radius: 28px;
@@ -160,7 +178,9 @@
 }
 
 .filtersPopup > .filter > div > span.selected{
-  background-color: rgba(204, 249, 171, 0.7);
+  border: 1px solid #02aea2;
+  color: #fff;
+  background-color: #02aea2;
 }
 
 .filtersPopup > .filter > label{
