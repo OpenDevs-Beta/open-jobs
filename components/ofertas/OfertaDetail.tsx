@@ -5,6 +5,12 @@ const OfertaDetail = ({ data }: { data: any }) => {
 
   const experiencia: string = data.experiencia.toUpperCase()
 
+  const date = new Date(data.createdAt)
+
+  const actualDate = date.getHours() + ':' + date.getMinutes() + ' - ' + date.getDay() + '/' + date.getMonth() + '/' +  date.getFullYear()
+
+  console.log(date)
+
   return (
     <div className={styles.ofertaDetailContainer}>
       <div className={styles.ofertaDetailLogo}>
@@ -18,7 +24,7 @@ const OfertaDetail = ({ data }: { data: any }) => {
         />
         <div>
           <span>{data.empresa.nombre}</span>
-          <span>{data.empresa.createdAt}</span>
+          <span>{actualDate}</span>
         </div>
       </div>
       <div className={styles.ofertaDetailTitle}>
