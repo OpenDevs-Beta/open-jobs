@@ -1,0 +1,76 @@
+.skeleton {
+  animation: fadeInAnimation ease 0.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: calc(25% - 12px);
+  min-width: 250px;
+  height: 310px;
+  padding: 16px 16px 24px 16px;
+  background-color: #fff;
+  text-align: left;
+  color: inherit;
+  text-decoration: none;
+  border: 0px;
+  border-radius: 10px;
+  transition: margin-top 0.15s ease, box-shadow 0.15s ease;
+  box-shadow: 0 2px 4px 0 #0000000f;
+  cursor: pointer;
+}
+
+@keyframes fadeInAnimation {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+   }
+}
+
+.skeleton .image {
+  animation: colorChange ease 1s infinite;
+  width: 64px;
+  height: 64px;
+  background-color: #eee;
+  border-radius: 8px;
+}
+
+.skeleton .line {
+  animation: colorChange ease 1s infinite;
+  width: 100%;
+  height: 32px;
+  background-color: #eee;
+  border-radius: 8px;
+}
+
+@keyframes colorChange {
+  0% {
+    background-color: #eee;
+  }
+  50% {
+    background-color: #fafafa;
+  }
+  100% {
+    background-color: #eee;
+   }
+}
+
+@media (max-width: 1088px) {
+  .skeleton {
+    width: calc(33% - 8px);
+  }
+}
+
+@media (max-width: 836px) {
+  .skeleton {
+    width: calc(50% - 8px);
+  }
+}
+
+@media (max-width: 555px) {
+  .skeleton {
+    width: 100%;
+  }
+}

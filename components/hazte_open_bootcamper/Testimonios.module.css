@@ -1,0 +1,243 @@
+.testimoniosContainer{
+  padding: 60px calc(50% - 632.5px);
+}
+
+.testimoniosBox{
+  border-radius: 10px;
+  box-shadow: 0 3px 5px 0 #00000055;
+}
+
+@media (max-width: 1285px){
+  .testimoniosContainer{
+    padding: 60px 20px;
+  }
+}
+
+@media (max-width: 550px){
+  .testimoniosContainer{
+    padding: 16px 20px;
+  }
+}
+
+.testimoniosContainer > div{
+  background-color: #004356;
+  color: #fff;
+  padding: 60px calc(50% - 540px);
+}
+
+@media (max-width: 1100px){
+  .testimoniosContainer > div{
+    padding: 60px 20px;
+  }
+}
+
+@media (max-width: 550px){
+  .testimoniosContainer > div{
+    padding: 16px 20px;
+  }
+}
+
+.testimoniosContainer > div > .testimoniosOpiniones{
+  padding: 0 24px 24px;
+}
+
+@media (max-width: 550px){
+  .testimoniosContainer > div > .testimoniosOpiniones{
+    padding: 0 0 16px;
+  }
+}
+
+.testimoniosContainer > div > .testimoniosOpiniones > div{
+  overflow: hidden;
+  position: relative;
+}
+
+.testimoniosContainer > div > .testimoniosOpiniones > div > .testimoniosCarousel{
+  display: flex;
+  flex-flow: nowrap row;
+  transition: transform 1s;
+}
+
+.testimoniosContainer > div > .testimoniosOpiniones > div > .testimoniosCarousel > div{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 60px;
+  flex: 0 0 100%;
+}
+
+@media (min-width: 0){
+  .testimoniosContainer > div > .testimoniosOpiniones > div > .testimoniosCarousel > div > div:nth-of-type(1){
+    flex: 0 0 auto;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (min-width: 600px){
+  .testimoniosContainer > div > .testimoniosOpiniones > div > .testimoniosCarousel > div > div:nth-of-type(1){
+    flex: 0 0 auto;
+    width: 25%;
+    text-align: center;
+  }
+}
+
+.testimoniosContainer > div > .testimoniosOpiniones > div > .testimoniosCarousel > div > div:nth-of-type(1) img{
+  border-radius: 100%;
+  border: 3px solid white !important;
+}
+
+.testimoniosContainer > div > .testimoniosOpiniones > div > .testimoniosCarousel > div > div:nth-of-type(1) > p:nth-of-type(1){
+  margin-top: 16px;
+  margin-bottom: 5px;
+  font-size: 1.1rem;
+  letter-spacing: .03125em;
+  line-height: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.testimoniosContainer > div > .testimoniosOpiniones > div > .testimoniosCarousel > div > div:nth-of-type(1) > p:nth-of-type(2){
+  margin: 0;
+  font-size: 1.1rem;
+  letter-spacing: .03125em;
+  line-height: 1.5rem;
+  font-weight: 400;
+  text-align: center;
+}
+
+.testimoniosContainer > div > .testimoniosOpiniones > div > .testimoniosCarousel > div > div:nth-of-type(2){
+  flex: 0 0 auto;
+  padding: 48px 24px 0;
+  font-size: 1.30rem;
+  letter-spacing: .0125em;
+  line-height: 2rem;
+  font-weight: 600;
+  position: relative;
+}
+
+.testimoniosContainer > div > .testimoniosOpiniones > div > .testimoniosCarousel > div > div:nth-of-type(2)::before{
+  content: ",,";
+  position: absolute;
+  top: -30px;
+  left: 5px;
+  font-size: 90px;
+  color: #02aea2;
+  letter-spacing: -8px;
+}
+
+@media (min-width: 0){
+  .testimoniosContainer > div > .testimoniosOpiniones > div > .testimoniosCarousel > div > div:nth-of-type(2){
+    width: 100%;
+  }
+}
+
+@media (min-width: 600px){
+  .testimoniosContainer > div > .testimoniosOpiniones > div > .testimoniosCarousel > div > div:nth-of-type(2){
+    width: 66.6667%;
+  }
+}
+
+.testimoniosContainer > div > .testimoniosOpiniones > div > .testimoniosArrow{
+  position: absolute;
+  top: 16px;
+  bottom: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  width: 40px;
+}
+
+.testimoniosContainer > div > .testimoniosOpiniones > div > .testimoniosArrowLeft{
+  left: 16px;
+}
+
+.testimoniosContainer > div > .testimoniosOpiniones > div > .testimoniosArrowRight{
+  right: 16px;
+}
+
+.testimoniosContainer > div > .testimoniosOpiniones > div > .testimoniosArrow > span{
+  height: 20px;
+  width: 5px;
+  border-radius: 10px;
+  background-color: white;
+  position: relative;
+}
+
+.testimoniosContainer > div > .testimoniosOpiniones > div > .testimoniosArrowLeft > span:nth-of-type(1){
+  transform: rotate(135deg);
+  top: 11px;
+}
+
+.testimoniosContainer > div > .testimoniosOpiniones > div > .testimoniosArrowLeft > span:nth-of-type(2){
+  transform: rotate(-135deg);
+  right: 5px;
+}
+
+.testimoniosContainer > div > .testimoniosOpiniones > div > .testimoniosArrowRight > span:nth-of-type(1){
+  transform: rotate(135deg);
+}
+
+.testimoniosContainer > div > .testimoniosOpiniones > div > .testimoniosArrowRight > span:nth-of-type(2){
+  transform: rotate(-135deg);
+  right: 5px;
+  top: 11px;
+}
+
+.testimoniosContainer > div > hr{
+  height: 1px;
+  background: #fff;
+  margin-bottom: 24px;
+  margin-top: 24px;
+  opacity: 0.2;
+}
+
+.testimoniosContainer > div > .testimoniosData{
+  text-align: center;
+}
+
+.testimoniosContainer > div > .testimoniosData > p{
+  margin-bottom: 16px;
+  font-size: 1.5rem;
+  letter-spacing: normal;
+  line-height: 2rem;
+}
+
+.testimoniosContainer > div > .testimoniosData > div{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@media (min-width: 0){
+  .testimoniosContainer > div > .testimoniosData > div > div{
+    width: 100%;
+  }
+}
+
+@media (min-width: 600px){
+  .testimoniosContainer > div > .testimoniosData > div > div{
+    width: 50%;
+  }
+}
+
+@media (min-width: 1024px){
+  .testimoniosContainer > div > .testimoniosData > div > div{
+    flex: 0 0 auto;
+    padding-top: 16px;
+    width: 33.3333%;
+  }
+}
+
+.testimoniosContainer > div > .testimoniosData > div > div > h3{
+  padding: 16px 0;
+  margin: 0;
+}
+
+.testimoniosContainer > div > .testimoniosData > div > div > h6{
+  padding: 16px 0;
+  margin: 0;
+}
