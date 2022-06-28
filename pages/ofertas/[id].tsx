@@ -16,7 +16,10 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async ({params}) => {
   const { data } = await getJobById(params?.id)
-  return { props: { data } }
+  return {
+    props: { data: data || null },
+    revalidate: 10,
+}
 }
 
 const IndexOferta = ({data}:{data:any }) => {
