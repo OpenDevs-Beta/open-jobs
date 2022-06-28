@@ -6,12 +6,17 @@ const FilterCiudad = (query: any) => {
 
   const router: any = useRouter()
 
+  let question = router.query ? '?' : '';
+  let search = router.query.search ? `&search=${router.query.search}` : '';
+  let skill = router.query.skill ? `&skill=${router.query.skill}` : '';
+  let salarioMin = router.query.salarioMin ? `&salarioMin=${router.query.salarioMin}` : '';
+  let salarioMax = router.query.salarioMax ? `&salarioMax=${router.query.salarioMax}` : '';
+  let anos = router.query.anos ? `&anos=${router.query.anos}` : '';
+  let remote = router.query.remote ? `&remote=${router.query.remote}` : '';
+
   const handleClick = (filter: string) => {
     router.query.ciudad != filter ? router.query.ciudad = filter : router.query.ciudad = ''
-    router.push({ 
-      pathname: '/ofertas',
-      query: router.query
-    })
+    router.push(router.query.ciudad.length !== 0 ? '/ofertas' + question + search + skill + salarioMin + salarioMax + anos + remote + `&ciudad=${router.query.ciudad}` : '/ofertas' + question + search + skill + salarioMin + salarioMax + anos + remote)
   }
 
   // TODO: Modificar cuando se tenga la api del back

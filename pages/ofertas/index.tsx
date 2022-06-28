@@ -19,8 +19,6 @@ const Ofertas = ({ data }: { data: any }) => {
 
   const router = useRouter();
 
-  const queryParam = router.query.query
-
   const queryFilters = router.query
 
   const [dataSaved, setDataSaved] = useState(data)

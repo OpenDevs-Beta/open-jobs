@@ -6,6 +6,7 @@ import Image from 'next/image'
 import left from '../utils/images/left-arrow.svg'
 import right from '../utils/images/right-arrow.svg'
 import CardHome from './cardHome';
+import symbol from '../utils/images/symbol_mock.svg'
 
 export const CardHomeGrid = (ofertas: any) => {
 
@@ -69,13 +70,14 @@ export const CardHomeGrid = (ofertas: any) => {
           {cardIndex !== totalPages - 1 ? <button onClick={cardIndexForward} className={styles.button}><Image src={right} width='20' height='20' /></button> : <button className={styles.buttonInactive}><Image src={right} width='20' height='20' /></button>}
         </div></div>
       <div className={styles.container}>
-        <div className={animation} id='carousel'>
-          {cardsPaginated.map((card: any) => (
-            <CardHome nombre={card.nombre} image={'/tstory-1.jpg'} empresa={card.empresa.nombre} ubicacion={card.ubicacion} habilidades={card.habilidades} experiencia={card.experiencia} id={card.id} />
-          ))}
-          {cardsPaginated.length < cardLimit || cardLimit > 4 ? <div className={styles.see} onClick={() => router.push('/ofertas')}><div className={styles.outercircle}><div className={styles.innercircle}><h1>+</h1></div></div><span>Ver más</span></div> : null}
+        <div>
+          <div className={animation} id='carousel'>
+            {cardsPaginated.map((card: any) => (
+              <CardHome nombre={card.nombre} image={card.empresa.imagen ? card.empresa.imagen : symbol} empresa={card.empresa.nombre} ubicacion={card.ubicacion} habilidades={card.habilidades} experiencia={card.experiencia} id={card.id} />
+            ))}
+            {cardsPaginated.length < cardLimit || cardLimit > 4 ? <div className={styles.see} onClick={() => router.push('/ofertas')}><div className={styles.outercircle}><div className={styles.innercircle}><h1>+</h1></div></div><span>Ver más</span></div> : null}
+          </div>
         </div>
-
       </div>
     </div>
   )

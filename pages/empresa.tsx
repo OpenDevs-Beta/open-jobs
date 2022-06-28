@@ -1,10 +1,13 @@
 import Image from 'next/image'
-import Link from 'next/link'
 import { Navbar } from '../components/navBar'
 import styles from './empresa.module.css'
 import { Footer } from '../components/Footer';
+import { useRouter } from 'next/router';
 
 function Empresa() {
+
+  const router = useRouter()
+
     return (
               <div className={styles.empresaContainer}>
           <Navbar />
@@ -13,9 +16,7 @@ function Empresa() {
                     <div className={styles.empresaHeaderText}>
                         <h3>Encuentra candidatos IT que de otra forma no encontrarías</h3>
                         <p>La única plataforma capaz de alcanzar el talento disponible en la red a través de la distribución inteligente.</p>
-                        <Link href='#'>
-                            <button>Publicar una oferta</button>
-                        </Link>
+                            <button onClick={() => router.push('#')}>Publicar una oferta</button>
                     </div>
                     <div className={styles.empresaHeaderGif}>
                         <div>
@@ -53,9 +54,7 @@ function Empresa() {
                         <span>Oferta dinámica</span>
                         <span>Talento pasivo</span>
                         <span>+ Fuentes captación</span>
-                        <Link href='#'>
-                            <a>Contacta con nosotros</a>
-                        </Link>
+                            <button onClick={() => router.push('#')}>Contacta con nosotros</button>
                     </div>
                 </div>
             </div>
