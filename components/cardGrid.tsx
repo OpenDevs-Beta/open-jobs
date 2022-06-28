@@ -1,5 +1,6 @@
 import styles from './cardGrid.module.css'
 import Card from './card';
+import symbol from '../utils/images/symbol_mock.svg'
 
 export const CardGrid = (ofertas: any) => {
 
@@ -11,7 +12,7 @@ export const CardGrid = (ofertas: any) => {
     <div className={styles.wrapper}>
       <div className={styles.container}>
         {cards.length > 0 ? <div className={styles.grid}>
-          {cards.map((card: any) => (<Card nombre={card.nombre} image={'/tstory-1.jpg'} empresa={card.empresa.nombre} ubicacion={card.ubicacion} habilidades={card.habilidades} experiencia={card.experiencia} id={card.id} />))}
+          {cards.map((card: any) => (<Card nombre={card.nombre} image={card.empresa.imagen ? card.empresa.imagen : symbol} empresa={card.empresa.nombre} ubicacion={card.ubicacion} habilidades={card.habilidades} experiencia={card.experiencia} id={card.id} />))}
         </div> : <span>No hemos encontrado resultados que coincidan con tu búsqueda</span>}
       </div>
     </div>

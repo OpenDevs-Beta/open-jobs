@@ -45,6 +45,12 @@
   transition: 0.3s ease-in-out;
 }
 
+.container > div {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
 .grid {
   height: 325px;
   padding-top: 8px;
@@ -76,7 +82,13 @@
 
 @keyframes carouseleft {
   0% {
-      margin-left: 100%;
+    margin-left: 0%;
+  }
+  50% {
+    margin-left: -100%;
+  }
+  51%{
+    margin-left: 100%;
   }
   100% {
       margin-left: 0%;
@@ -101,7 +113,13 @@
 
 @keyframes carouselright {
   0% {
-      margin-left: -100%;
+    margin-left: 0%;
+  }
+  50% {
+    margin-left: 100%;
+  }
+  51%{
+    margin-left: -100%;
   }
   100% {
       margin-left: 0%;
