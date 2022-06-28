@@ -9,7 +9,7 @@ export const HomeSearcher = () => {
     const [oferta, setOferta] = useState('');
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
-        router.push('/ofertas/?query=' + oferta)
+        router.push('/ofertas/?search=' + oferta)
     }
 
     return (
@@ -33,12 +33,12 @@ export const HomeSearcher = () => {
               </form>
             </div>
             <div className={styles.searcherHomeFilters}>
-              <span onClick={() => router.push('/ofertas/?query=Javascript')}>Javascript</span>
-              <span onClick={() => router.push('/ofertas/?query=Madrid')}>Madrid</span>
-              <span onClick={() => router.push('/ofertas/?query=Python')}>Python</span>
-              <span onClick={() => router.push('/ofertas/?query=Frontend')}>Frontend</span>
-              <span onClick={() => router.push('/ofertas/?query=Node.js')}>Node.js</span>
-              <span onClick={() => router.push('/ofertas/?query=Remoto')}>Remoto</span>
+              <span onClick={() => router.push('/ofertas/?skill=Javascript')}>Javascript</span>
+              <span onClick={() => router.push('/ofertas/?ciudad=Madrid')}>Madrid</span>
+              <span onClick={() => router.push('/ofertas/?skill=Python')}>Python</span>
+              <span onClick={() => router.push('/ofertas/?search=Frontend')}>Frontend</span>
+              <span onClick={() => router.push('/ofertas/?skill=Node.js')}>Node.js</span>
+              <span onClick={() => router.push('/ofertas/?remote=true')}>Remoto</span>
             </div>
         </div>
     )

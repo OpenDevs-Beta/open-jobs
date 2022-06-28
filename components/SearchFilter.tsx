@@ -31,12 +31,20 @@ const SearchFilter = () => {
   const router: any = useRouter()
   const filtersPopup = useRef<HTMLHeadingElement>(null)
 
+  let question = router.query ? '?' : '';
+  let search = router.query.search ? `&search=${router.query.search}` : '';
+  let skill = router.query.skill ? `&skill=${router.query.skill}` : '';
+  let salarioMin = router.query.salarioMin ? `&salarioMin=${router.query.salarioMin}` : '';
+  let salarioMax = router.query.salarioMax ? `&salarioMax=${router.query.salarioMax}` : '';
+  let anos = router.query.anos ? `&anos=${router.query.anos}` : '';
+  let ciudad = router.query.ciudad ? `&ciudad=${router.query.ciudad}` : '';
+
   const [filter, setFilter] = useState<JSX.Element | undefined>(undefined)
   const handleFilter = (filter: JSX.Element) => { setFilter(filter) }
 
   const handleClick = (filter: boolean) => {
     router.query.remote = filter
-    router.push({ pathname: '/ofertas', query: router.query })
+    router.push('/ofertas' + question + search + skill + salarioMin + salarioMax + anos + ciudad + `&remote=${router.query.remote}`)
   }
 
   const handleEraseSearch = () => {
