@@ -34,7 +34,7 @@ const QuestionSearcher = () => {
         <input
           name="searchBar"
           type="text"
-          placeholder="Buscar respuestas..."
+          placeholder="Buscar preguntas..."
           className={styles.inputSearch}
           value={queryParam}
           onChange={(e) => handleSearchInputHome(e.target.value)}
