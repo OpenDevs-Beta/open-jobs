@@ -167,6 +167,22 @@
   z-index: 1;
 }
 
+.empresaContainer > .empresaContacto button{
+  padding: 7px 26px;
+  margin: 16px 0px 8px 0;
+  border-radius: 4px;
+  background-color: #02aea2;
+  color:white;
+  border: 1px solid #02aea2;
+  align-items: stretch;
+  display: inline-flex;
+  flex-direction: column;
+  font-weight: 700;
+  line-height: 1.715em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
 @media (max-width: 640px){
   .empresaContainer > .empresaContacto{
       padding: 50px 20px;

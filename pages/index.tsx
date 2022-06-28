@@ -9,7 +9,10 @@ import { Footer } from '../components/Footer';
 
 export const getStaticProps: GetStaticProps = async () => {
   const { data } = await getAllJobs(11)
-  return  {props: { data: data || null }}
+  return  {
+    props: { data: data || null },
+    revalidate: 10,
+}
 }
 
 function HomePage({data}:{data:any}) {

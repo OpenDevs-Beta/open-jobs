@@ -16,6 +16,7 @@ export async function getAllJobs(limit?: any) {
     .catch(e => console.error(`Error al hacer petición de ofertas: ${e}`))
   return {
     data: response?.data?.data,
+    meta: response?.data?.meta
   }
 }
 
@@ -30,7 +31,7 @@ export async function getJobsPaginated(page: any, limit: any, filters?: any) {
   let salarioMin = filters?.salarioMin ? `&salarioMin=${filters.salarioMin}` : ''
   let salarioMax = filters?.salarioMax ? `&salarioMax=${filters.salarioMax}` : ''
   let experiencia = filters?.anos ? `&experiencia=${filters.anos}` : ''
-  let nombre = filters?.query ? `&nombre=${filters.query}` : ''
+  let nombre = filters?.search ? `&nombre=${filters.search}` : ''
 
   let response = await fetch(process.env.NEXT_PUBLIC_API_URL + ENDPOINT + '?' + ciudad + salarioMin + salarioMax + experiencia + nombre + `&page=${page}` + `&limit=${limit}`)
     .then(r => r.json())

@@ -6,7 +6,8 @@ import { getAllJobs, getJobById } from '../../shared/middlewares/APImiddleware'
 import { Footer } from '../../components/Footer';
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const { data } = await getAllJobs()
+
+  const { data } = await getAllJobs(1000)
 
   const paths = data?.map((oferta: any) => ({params: { id: oferta?.id?.toString() }}))
 
@@ -15,7 +16,10 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async ({params}) => {
   const { data } = await getJobById(params?.id)
-  return { props: { data } }
+  return {
+    props: { data: data || null },
+    revalidate: 10,
+}
 }
 
 const IndexOferta = ({data}:{data:any }) => {

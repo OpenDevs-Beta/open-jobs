@@ -11,15 +11,16 @@ import styles from './Ofertas.module.css'
 
 export const getStaticProps: GetStaticProps = async () => {
   const { data } = await getAllJobs(12)
-  return { props: { data } }
+  return {
+    props: { data: data || null },
+    revalidate: 10,
+}
 
 };
 
 const Ofertas = ({ data }: { data: any }) => {
 
   const router = useRouter();
-
-  const queryParam = router.query.query
 
   const queryFilters = router.query
 

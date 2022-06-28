@@ -27,34 +27,33 @@ export default function Card({
   id,
 }: ICard) {
 
-const router = useRouter()
+  const router = useRouter()
 
   return (
     <div className={styles.card} onClick={() => router.push("/ofertas/" + id)}>
-          <div>
-            <div>
-              <Image
-                className={styles["card-image"]}
-                src={image}
-                width={64}
-                height={64}
-              ></Image>
-            </div>
-            <div className={styles["card-title"]}>{nombre}</div>
-            <div className={styles["card-inline"]}>
-              <div className={styles["card-companyName"]}>{empresa}</div>
-              <div>&nbsp;·&nbsp;</div>
-              <div className={styles["card-location"]}>{ubicacion}</div>
-            </div>
-          </div><div>
-            <div className={styles["card-experience"]}>{experiencia.toUpperCase()}</div>
-            <div className={styles["card-tags"]}>
-              {habilidades ? habilidades.map((habilidad: ISkill) => (
-                <span>{habilidad.nombre}</span>
-              )) : null}
-            </div>
-          </div>
-          <div className={styles["card-experience"]}>{experiencia}</div>
+      <div>
+        <div>
+          <Image
+            className={styles["card-image"]}
+            src={image}
+            width={64}
+            height={64}
+          ></Image>
+        </div>
+        <div className={styles["card-title"]}>{nombre}</div>
+        <div className={styles["card-inline"]}>
+          <div className={styles["card-companyName"]}>{empresa}</div>
+          <div>&nbsp;·&nbsp;</div>
+          <div className={styles["card-location"]}>{ubicacion}</div>
+        </div>
+      </div><div>
+        <div className={styles["card-experience"]}>{experiencia.toUpperCase()}</div>
+        <div className={styles["card-tags"]}>
+          {habilidades ? habilidades.map((habilidad: ISkill) => (
+            <span>{habilidad.nombre}</span>
+          )) : null}
+        </div>
+      </div>
     </div>
   );
 }
