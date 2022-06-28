@@ -11,7 +11,10 @@ import styles from './Ofertas.module.css'
 
 export const getStaticProps: GetStaticProps = async () => {
   const { data } = await getAllJobs(12)
-  return { props: { data } }
+  return {
+    props: { data: data || null },
+    revalidate: 10,
+}
 
 };
 
