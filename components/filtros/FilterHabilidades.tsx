@@ -22,41 +22,43 @@ const FilterHabilidades = () => {
 
   // TODO: Modificar cuando se tenga la api del back
   return (
-    <div className={styles.filter}>
-      <div onClick={() => handleClick('development')}>
-        { router.query.skill == 'development' ? 
-          (<span className={styles.selected}>Development</span>)
-        :
-          (<span>Development</span>)
-        }
-      </div>
-      <div onClick={() => handleClick('data')}>
-        { router.query.skill == 'data' ? 
-          (<span className={styles.selected}>Data</span>)
-        :
-          (<span>Data</span>)
-        }
-      </div>
-      <div onClick={() => handleClick('sysops and cybersecurity')}>
-        { router.query.skill == 'sysops and cybersecurity' ? 
-          (<span className={styles.selected}>Sysops and cybersecurity</span>)
-        :
-          (<span>Sysops and cybersecurity</span>)
-        }
-      </div>
-      <div onClick={() => handleClick('quality assurance')}>
-        { router.query.skill == 'quality assurance' ? 
-          (<span className={styles.selected}>Quality assurance</span>)
-        :
-          (<span>Quality assurance</span>)
-        }
-      </div>
-      <div onClick={() => handleClick('digital product')}>
-        { router.query.skill == 'digital product' ? 
-          (<span className={styles.selected}>Digital product</span>)
-        :
-          (<span>Digital product</span>)
-        }
+    <div id='skills' className={styles.filtersPopup}>
+      <div className={styles.filter}>
+        <div onClick={() => handleClick('development')}>
+          { router.query.skill == 'development' ? 
+            (<span className={styles.selected}>Development</span>)
+          :
+            (<span>Development</span>)
+          }
+        </div>
+        <div onClick={() => handleClick('data')}>
+          { router.query.skill == 'data' ? 
+            (<span className={styles.selected}>Data</span>)
+          :
+            (<span>Data</span>)
+          }
+        </div>
+        <div onClick={() => handleClick('sysops and cybersecurity')}>
+          { router.query.skill == 'sysops and cybersecurity' ? 
+            (<span className={styles.selected}>Sysops and cybersecurity</span>)
+          :
+            (<span>Sysops and cybersecurity</span>)
+          }
+        </div>
+        <div onClick={() => handleClick('quality assurance')}>
+          { router.query.skill == 'quality assurance' ? 
+            (<span className={styles.selected}>Quality assurance</span>)
+          :
+            (<span>Quality assurance</span>)
+          }
+        </div>
+        <div onClick={() => handleClick('digital product')}>
+          { router.query.skill == 'digital product' ? 
+            (<span className={styles.selected}>Digital product</span>)
+          :
+            (<span>Digital product</span>)
+          }
+        </div>
       </div>
     </div>
   )

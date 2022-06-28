@@ -126,12 +126,24 @@
 }
 
 .filtersPopup{
-
+  width: 100%;
   background: none;
   position: absolute;
   z-index: 6000;
   top: 70px;
+}
+
+.filtersPopup[id='skills'] {
   left: 15px;
+}
+.filtersPopup[id='salary'] {
+  left: 140px;
+}
+.filtersPopup[id='experience'] {
+  left: 275px;
+}
+.filtersPopup[id='city'] {
+  left: 450px;
 }
 
 .filtersPopup > .filter{

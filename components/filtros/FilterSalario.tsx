@@ -44,13 +44,15 @@ if(router.query.salarioMax === '' || router.query.salarioMax === undefined) {
   
 
   return (
-    <div className={styles.filter}>
-      <label>Min:</label>
-      <input type="range" min="18000" max="80000" value={salarioMin} step="1000" onChange={(e) => handleMin(e.target.value)} />
-      <output>{salarioMin} &euro;</output>
-      <label>Max:</label>
-      <input type="range" min="18000" max="80000" value={salarioMax} step="1000" onChange={(e) => handleMax(e.target.value)} />
-      <output>{salarioMax} &euro;</output>
+    <div id='salary' className={styles.filtersPopup}>
+      <div className={styles.filter}>
+        <label>Min:</label>
+        <input type="range" min="18000" max="80000" value={salarioMin} step="1000" onChange={(e) => handleMin(e.target.value)} />
+        <output>{salarioMin} &euro;</output>
+        <label>Max:</label>
+        <input type="range" min="18000" max="80000" value={salarioMax} step="1000" onChange={(e) => handleMax(e.target.value)} />
+        <output>{salarioMax} &euro;</output>
+      </div>
     </div>
   )
 }

@@ -40,6 +40,7 @@ const SearchFilter = () => {
   let ciudad = router.query.ciudad ? `&ciudad=${router.query.ciudad}` : '';
 
   const [filter, setFilter] = useState<JSX.Element | undefined>(undefined)
+
   const handleFilter = (filter: JSX.Element) => { setFilter(filter) }
 
   const handleClick = (filter: boolean) => {
@@ -73,9 +74,9 @@ const SearchFilter = () => {
       <button onClick={handleEraseSearch} className={styles.crossButton} >
         <Image src="/cross.svg" width="12" height="12"/>
       </button>
-      <div className={styles.filtersPopup}>
-        { filter }
-      </div>
+
+      {/* Filter Popup */}
+      { filter }
   </div>
   )
 }
