@@ -68,10 +68,6 @@
   cursor: pointer;
 }
 
-.searcherOfertasFilters > button:hover {
-  background: rgba(79, 179, 179, 0.1);
-}
-
 .searcherOfertasFilters > .crossButton {
   width: 2.572em;
   padding: 0px;
