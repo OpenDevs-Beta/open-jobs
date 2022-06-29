@@ -40,8 +40,12 @@ const SearchFilter = () => {
   let ciudad = router.query.ciudad ? `&ciudad=${router.query.ciudad}` : '';
 
   const [filter, setFilter] = useState<JSX.Element | undefined>(undefined)
+  const [filterSelected, setFilterSelected] = useState<any | undefined>(undefined)
 
-  const handleFilter = (filter: JSX.Element) => { setFilter(filter) }
+  const handleFilter = (filter: JSX.Element | undefined, filterSelectedArg: string | undefined) => {
+    setFilterSelected(filterSelectedArg)
+    setFilter(filter)
+  }
 
   const handleClick = (filter: boolean) => {
     router.query.remote = filter
@@ -54,14 +58,15 @@ const SearchFilter = () => {
 
   useOutsideClick(filtersPopup, () => {
     filter ? setFilter(undefined) : null
+    filter ? setFilterSelected(undefined) : null
   })
 
   return (
     <div className={styles.searcherOfertasFilters} ref={filtersPopup}>
-      {router.query.skill ? <button className={styles.filterSelected} onClick={() => handleFilter(<DynamicFilterHabilidades />)}>Habilidades</button> : <button onClick={() => handleFilter(<DynamicFilterHabilidades />)}>Habilidades</button>}
-      {router.query.salarioMin || router.query.salarioMax? <button className={styles.filterSelected} onClick={() => handleFilter(<DynamicFilterSalario />)}>Salario aprox.</button> : <button onClick={() => handleFilter(<DynamicFilterSalario />)}>Salario aprox.</button>}
-      {router.query.anos ? <button className={styles.filterSelected} onClick={() => handleFilter(<DynamicFilterExperiencia />)}>Años de experiencia</button> : <button onClick={() => handleFilter(<DynamicFilterExperiencia />)}>Años de experiencia</button>}
-      {router.query.ciudad ? <button className={styles.filterSelected} onClick={() => handleFilter(<DynamicFilterCiudad />)}>Ciudad</button> : <button onClick={() => handleFilter(<DynamicFilterCiudad />)}>Ciudad</button>}
+      {router.query.skill || filterSelected === 'skills' ? <button className={styles.filterSelected} onClick={() => handleFilter(<DynamicFilterHabilidades />, 'skills')}>Habilidades</button> : <button onClick={() => handleFilter(<DynamicFilterHabilidades />, 'skills')}>Habilidades</button>}
+      {router.query.salarioMin || router.query.salarioMax || filterSelected === 'salary' ? <button className={styles.filterSelected} onClick={() => handleFilter(<DynamicFilterSalario />, 'salary')}>Salario aprox.</button> : <button onClick={() => handleFilter(<DynamicFilterSalario />, 'salary')}>Salario aprox.</button>}
+      {router.query.anos || filterSelected === 'experience' ? <button className={styles.filterSelected} onClick={() => handleFilter(<DynamicFilterExperiencia />, 'experience')}>Años de experiencia</button> : <button onClick={() => handleFilter(<DynamicFilterExperiencia />, 'experience')}>Años de experiencia</button>}
+      {router.query.ciudad || filterSelected === 'city' ? <button className={styles.filterSelected} onClick={() => handleFilter(<DynamicFilterCiudad />, 'city')}>Ciudad</button> : <button onClick={() => handleFilter(<DynamicFilterCiudad />, 'city')}>Ciudad</button>}
       <div className={styles.switchButton} >
         { router.query.remote == "true" ? 
           ( <input type="checkbox" id="switch-label" onClick={() => handleClick(false)} checked /> )
